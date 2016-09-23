@@ -13,7 +13,7 @@ public class RepositorioFilmes {
 		if (filme != null) {
 			Filme search = new Filme();
 			search = pesquisarnome(filme);
-			if (search == null && numerofilmes == 100 && filme.getTitulo() != null) {
+			if (search == null && numerofilmes != this.numerofilmes.lenght-1 && filme.getTitulo() != null) {
 				this.filmes[numerofilmes].setTitulo(filme.getTitulo());
 				this.filmes[numerofilmes].setClassificacao(filme.getClassificacao());
 				this.filmes[numerofilmes].setGenero(filme.getGenero());
