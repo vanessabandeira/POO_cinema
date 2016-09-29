@@ -6,7 +6,7 @@ public class RepositorioSalas {
 	
 	public boolean inserir(Sala sala){
 		if(sala != null){
-			Sala search =  new Sala;
+			Sala search =  new Sala();
 			search = pesquisarsalaID(sala);
 			if(search == null && numerosalas < this.numerosalas.lenght-1 && sala.identidade>0){
 				this.salas[numerosalas]=sala;
@@ -29,10 +29,10 @@ public class RepositorioSalas {
 	}
 	public Sala pesquisarsalaTipo(Sala sala){
 		//esse metodo busca salas pelo tipo, ex: 3D, 4K, etc...
-		
+		return sala;
 	}
 	public boolean alterar(Sala sala){
-		
+		return true;
 	}
 	public void listar(){
 		
