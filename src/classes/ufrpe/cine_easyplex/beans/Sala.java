@@ -8,7 +8,7 @@ public class Sala {
 	private boolean v4k;
 	private boolean prime;
 	
-	public class Sala(int capacidade, int identidade, boolean v3d, boolean v4k, boolean prime){
+	public Sala(int capacidade, int identidade, boolean v3d, boolean v4k, boolean prime){
 		this.capacidade=capacidade;
 		this.identidade=identidade;
 		this.v3d=v3d;

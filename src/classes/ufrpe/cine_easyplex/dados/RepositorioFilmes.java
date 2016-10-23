@@ -13,14 +13,9 @@ public class RepositorioFilmes {
 
 	public boolean inserir(Filme filme) {
 		if (filme != null) {
-			Filme search = new Filme();
-			search = pesquisarnome(filme);
-			if (search == null && numerofilmes != this.numerofilmes.lenght-1 && filme.getTitulo() != null) {
-				this.filmes[numerofilmes].setTitulo(filme.getTitulo());
-				this.filmes[numerofilmes].setClassificacao(filme.getClassificacao());
-				this.filmes[numerofilmes].setGenero(filme.getGenero());
-				this.filmes[numerofilmes].setDuracao(filme.getDuracao());
-				this.numerofilmes++;
+			int search = pesquisar(filme);
+			if (search == -1 && numerofilmes != this.numerofilmes-1 && filme.getTitulo() != null) {
+				this.filmes[numerofilmes]=filme;
 				return true;
 			}
 		}
@@ -28,28 +23,39 @@ public class RepositorioFilmes {
 	}
 
 	public boolean remover(Filme filme) {
+		int search = pesquisar(filme);
+		if(search!=-1){
+			this.filmes[search]=null;
+			this.filmes[search]=this.filmes[numerofilmes];
+			numerofilmes--;
+			return true;
+		}
+		return false;
 
 	}
 
-	public Filme pesquisarnome(Filme filme) {
+	public int pesquisar(Filme filme) {
 		int i;
 		for (i = 0; i < numerofilmes; i++) {
 			if (this.filmes[i].getTitulo().equals(filmes[i].getTitulo())) {
-				return filmes[i];
+				return i;
 			}
 		}
-		return null;
-	}
-
-	public Filme pesquisargenero(Filme filme) {
-
+		return -1;
 	}
 
 	public boolean alterar(Filme filme) {
-
+		int search = pesquisar(filme);
+		if(search!=-1){
+			this.filmes[search]=filme;
+			return true;
+		}
+		return false;
+		
 	}
 
-	void listar() {
+	public Filme[] listar() {
+		return this.filmes;
 
 	}
 
