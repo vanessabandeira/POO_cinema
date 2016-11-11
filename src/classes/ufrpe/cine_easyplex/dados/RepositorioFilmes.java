@@ -13,7 +13,7 @@ public class RepositorioFilmes {
 
 	public boolean inserir(Filme filme) {
 		if (filme != null) {
-			int search = pesquisar(filme);
+			int search = pesquisarIndice(filme);
 			if (search == -1 && numerofilmes != this.numerofilmes-1 && filme.getTitulo() != null) {
 				this.filmes[numerofilmes]=filme;
 				return true;
@@ -23,7 +23,7 @@ public class RepositorioFilmes {
 	}
 
 	public boolean remover(Filme filme) {
-		int search = pesquisar(filme);
+		int search = pesquisarIndice(filme);
 		if(search!=-1){
 			this.filmes[search]=null;
 			this.filmes[search]=this.filmes[numerofilmes];
@@ -34,7 +34,7 @@ public class RepositorioFilmes {
 
 	}
 
-	public int pesquisar(Filme filme) {
+	public int pesquisarIndice(Filme filme) {
 		int i;
 		for (i = 0; i < numerofilmes; i++) {
 			if (this.filmes[i].getTitulo().equals(filmes[i].getTitulo())) {
@@ -45,7 +45,7 @@ public class RepositorioFilmes {
 	}
 
 	public boolean alterar(Filme filme) {
-		int search = pesquisar(filme);
+		int search = pesquisarIndice(filme);
 		if(search!=-1){
 			this.filmes[search]=filme;
 			return true;
