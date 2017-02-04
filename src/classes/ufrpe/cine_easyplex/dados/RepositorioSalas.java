@@ -1,66 +1,57 @@
 package classes.ufrpe.cine_easyplex.dados;
 
-import classes.ufrpe.cine_easyplex.beans.Filme;
+import java.util.ArrayList;
+
 import classes.ufrpe.cine_easyplex.beans.Sala;
 
 public class RepositorioSalas {
-	public Sala[] salas;
-	private int numerosalas;
+	public 	ArrayList<Sala> salas;
 	
-	public RepositorioSalas(int tam){
-		this.salas = new Sala[tam];
-		numerosalas = 0;
+	public RepositorioSalas(){
+		this.salas = new ArrayList();
 	}
 	
 	public boolean inserir(Sala sala){
 			int search = pesquisar(sala);
-			if(search == -1 && numerosalas < this.salas.length-1 && sala.getCapacidade()>0){
-				this.salas[numerosalas]=sala;
+			if(sala != null && search == -1 && sala.getCapacidade()>0){
+				this.salas.add(sala);
 				return true;
 			}
 			return false;
 	}
 	
 	public int pesquisar(Sala sala){
-		int i;
-		for(i=0; i<numerosalas; i++){
-			if(this.salas[i].getIdentidade()==sala.getIdentidade()){
-				return i;
-			}
-		}
-		return -1;
+		return this.salas.indexOf(sala);
 	}
 	
 	public boolean remover(Sala sala){
 		int search = pesquisar(sala);
-		if(search!=-1){
-			this.salas[search]=null;
-			this.salas[search]=this.salas[numerosalas];
-			numerosalas--;
+		if(sala != null && search!=-1){
+			this.salas.remove(sala);
 			return true;
 		}
 		return false;
 	}
 	
 	public int getNumerosalas(){
-		return numerosalas;
+		return salas.size();
 	}
 	
-	public Sala pesquisarsalaTipo(Sala sala){
+	public Sala pesquisarSalaTipo(Sala sala){
 		//esse metodo busca salas pelo tipo, ex: 3D, 4K, etc...
 		return sala;
 	}
 	
 	public boolean alterar(Sala sala){
 		int search = pesquisar(sala);
-		if(search!=-1){
-			this.salas[search]=sala;
+		if(sala != null && search!=-1){
+			this.salas.set(search, sala);
 			return true;
 		}
 		return false;
 	}
 	
-	public Sala[] listar(){
+	public ArrayList<Sala> listar(){
 		return this.salas;
 	}
 }

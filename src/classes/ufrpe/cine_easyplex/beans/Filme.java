@@ -6,6 +6,15 @@ public class Filme {
 	private String genero;
 	private int duracao;
 	private int nvendas;
+	
+
+	public Filme(String titulo, int classificacao, String genero, int duracao, int nvendas) {
+		this.titulo = titulo;
+		this.classificacao = classificacao;
+		this.genero = genero;
+		this.duracao = duracao;
+		this.nvendas = nvendas;
+	}
 
 	public String getTitulo() {
 		return titulo;
@@ -46,5 +55,12 @@ public class Filme {
 	public void setNvendas(int nvendas) {
 		this.nvendas = nvendas;
 	}
+
+	@Override
+	public String toString() {
+		return "Filme [titulo=" + titulo + ", classificacao=" + classificacao + ", genero=" + genero + ", duracao="
+				+ duracao + ", nvendas=" + nvendas + "]";
+	}
+	
 
 }

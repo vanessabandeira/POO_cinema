@@ -6,28 +6,41 @@ import classes.ufrpe.cine_easyplex.dados.RepositorioFilmes;
 public class CadastroFilmes {
 	RepositorioFilmes repositorioFilmes;
 	
+	private static CadastroFilmes instancia;
+	
+	public static synchronized CadastroFilmes getInstance(){
+		if(instancia == null){
+			instancia = new CadastroFilmes();
+		}
+		return instancia;
+	}
+	
+	private CadastroFilmes() {
+		this.repositorioFilmes = new RepositorioFilmes();
+	}
+	
 	public void adicionarFilme(Filme filme){
 		boolean adicionar = this.repositorioFilmes.inserir(filme);
 		if(adicionar){
-			//mensagem de filme adicionado com sucesso
+			System.out.println("Adicionado com sucesso!");
 		}
 		else{
-			//mensagem de erro
+			System.out.println("Sorry, guy, mas n rola");
 		}
 		
 	}
 	public void removerFilme(Filme filme){
 		boolean remover = this.repositorioFilmes.remover(filme);
 		if(remover){
-			//mensagem de filme removido com sucesso
+			System.out.println("Adicionado com sucesso!");
 		}
 		else{
-			//mensagem de erro
+			System.out.println("Sorry, guy, mas n rola");
 		}
 		
 	}
 	public boolean existe(Filme filme){
-		int existir = this.repositorioFilmes.pesquisarIndice(filme);
+		int existir = this.repositorioFilmes.pesquisar(filme);
 		if(existir!=-1){
 			return true;
 		}
@@ -35,5 +48,14 @@ public class CadastroFilmes {
 			return false;
 		}
 	}
+
+	public RepositorioFilmes getRepositorioFilmes() {
+		return repositorioFilmes;
+	}
+
+	public void setRepositorioFilmes(RepositorioFilmes repositorioFilmes) {
+		this.repositorioFilmes = repositorioFilmes;
+	}
+	
 
 }
