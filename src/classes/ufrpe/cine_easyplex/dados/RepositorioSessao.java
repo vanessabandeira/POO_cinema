@@ -2,26 +2,52 @@ package classes.ufrpe.cine_easyplex.dados;
 
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.beans.Sessao;
+import java.util.ArrayList;
 
 public class RepositorioSessao {
-	private Sessao[] sessoes; // serve para mostrar quais os filmes dispon�veis
-								// e em quais hor�rios e salas
-	private int nSessoes;
-
+	private ArrayList<Sessao> sessoes;
+	
 	/*
 	 * public RepositorioSessao{ M�TODO CONSTRUTOR }
 	 */
-
-	public boolean inserir(Sessao sessao) {
-		// A desenvolver
-		// Insere uma Sess�o no Array de sess�es
-		this.sessoes[nSessoes]=sessao;
+	
+	public RepositorioSessao(){
+		this.sessoes = new ArrayList<Sessao>();
 	}
 
-	public boolean remover(Sessao Sessao) {
-		// A desenvolver
-		// Remove uma sess�o do array
+	public boolean inserir(Sessao sessao) {
+		if (sessao != null) {
+			int search = pesquisar(sessao);
+			if (search == -1) {
+				this.sessoes.add(sessao);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	public boolean remover(Sessao sessao) {
+		int search = pesquisar(sessao);
+		if (search != -1) {
+			this.sessoes.remove(sessao);
+			return true;
+		}
+		return false;
+
+	}
+	
+	public boolean alterar (Sessao sessao) {
+		int search = pesquisar(sessao);
+		if(search!=-1){
+			this.sessoes.set(search, sessao);
+			return true;
+		}
+		return false;
 		
+	}
+	
+	public int pesquisar(Sessao sessao){
+		return this.sessoes.indexOf(sessao);
 	}
 
 	public void pesquisarHorario(/* HoraInicio, HoraFim */) {
@@ -33,35 +59,10 @@ public class RepositorioSessao {
 		
 	}
 
-	public Sessao pesquisarFilme(Filme filme){
-		//retorna sess�o que contenha o filme especificado
-		if(filme==null){
-			return null;
-			//imprimir na tela o erro
-		}
-		for(int i=0; i<nSessoes; i++){
-			if(this.sessoes[i].exibicao.equals(filme)){
-				return this.sessoes[i];
-			}
-		}
-	}
+	
 
-	public Sessao pesquisarSala(int identidade) {
-		// retorna a sess�o atual da sala pesquisada;
-		for(int i=0; i<nSessoes; i++){
-			if(this.sessoes[i].hall.identidade==identidade){
-				return this.sessoes[i];
-			}
-		}
-	}
-
-	public boolean alterar(Sessao sessao) {
-		// altera infor�oes de uma sessao, retornando verdadeiro caso ela
-		// exista. Retorna falso, caso a sess�o n�o exista
-	}
-
-	public void listar() {
-		// Imprime todas as sess�es disponiveis;
+	public ArrayList listar() {
+		return this.sessoes;
 	}
 
 }

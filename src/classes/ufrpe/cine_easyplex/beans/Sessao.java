@@ -6,17 +6,17 @@ import java.time.LocalTime;
 public class Sessao {
 	private LocalTime horario;
 	public Filme exibicao;
-	private LocalDate data; // SERÁ SUBSTITUIDO POR UM OBJETO DO TIPO LocalDate da
+	private LocalDate data; // SERï¿½ SUBSTITUIDO POR UM OBJETO DO TIPO LocalDate da
 						// biblioteca Java.time
 	private Sala hall;
 	private int ocupacao;
 	private float valor; // valor do ingresso inteiro
-	private int nvInteiro; // número de vendas de ingressos inteiros
-	private int nvMeia; // número de vendas de meio ingressos
+	private int nvInteiro; // nï¿½mero de vendas de ingressos inteiros
+	private int nvMeia; // nï¿½mero de vendas de meio ingressos
 	private boolean[] posicao; // as cadeiras da sala
 
 	/*
-	 * public Sessao{ MÉTODO CONSTRUTOR }
+	 * public Sessao{ Mï¿½TODO CONSTRUTOR }
 	 */
 	public Sessao(LocalTime horario, Filme exibicao, LocalDate data, Sala hall){
 		this.exibicao=exibicao;
@@ -26,7 +26,7 @@ public class Sessao {
 		this.posicao = new boolean[hall.getCapacidade()];
 		this.nvInteiro=0;
 		this.nvMeia=0;
-		for(int i; i<hall.getCapacidade(); i++){
+		for(int i = 0; i<hall.getCapacidade(); i++){
 			this.posicao[i]=true;
 		}
 	}
@@ -42,7 +42,7 @@ public class Sessao {
 	public Filme getExibicao() {
 		return exibicao;
 	}
-	public void setExibição(Filme exibicao) {
+	public void setExibicao(Filme exibicao) {
 		this.exibicao = exibicao;
 	}
 	public Sala getHall() {
@@ -51,10 +51,10 @@ public class Sessao {
 	public void setHall(Sala hall) {
 		this.hall = hall;
 	}
-	public int getOcupação() {
+	public int getOcupacao() {
 		return ocupacao;
 	}
-	public void setOcupação(int ocupacao) {
+	public void setOcupacao(int ocupacao) {
 		this.ocupacao = ocupacao;
 	}
 	public float getValor() {
