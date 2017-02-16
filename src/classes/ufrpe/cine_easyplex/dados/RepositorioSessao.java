@@ -4,37 +4,37 @@ import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.beans.Sessao;
 
 public class RepositorioSessao {
-	private Sessao[] sessoes; // serve para mostrar quais os filmes disponíveis
-								// e em quais horários e salas
-	private int nSessões;
+	private Sessao[] sessoes; // serve para mostrar quais os filmes disponï¿½veis
+								// e em quais horï¿½rios e salas
+	private int nSessoes;
 
 	/*
-	 * public RepositorioSessao{ MÉTODO CONSTRUTOR }
+	 * public RepositorioSessao{ Mï¿½TODO CONSTRUTOR }
 	 */
 
 	public boolean inserir(Sessao sessao) {
 		// A desenvolver
-		// Insere uma Sessão no Array de sessões
+		// Insere uma Sessï¿½o no Array de sessï¿½es
 		this.sessoes[nSessoes]=sessao;
 	}
 
-	public boolean remover(Sessão Sessão) {
+	public boolean remover(Sessao Sessao) {
 		// A desenvolver
-		// Remove uma sessão do array
+		// Remove uma sessï¿½o do array
 		
 	}
 
 	public void pesquisarHorario(/* HoraInicio, HoraFim */) {
-		// recebe horario de inicio e fim e imprime sessões disponíveis entre o
-		// período,
-		// caso horafim seja NULL, imprimirá todas as sessões disponíveis após o
+		// recebe horario de inicio e fim e imprime sessï¿½es disponï¿½veis entre o
+		// perï¿½odo,
+		// caso horafim seja NULL, imprimirï¿½ todas as sessï¿½es disponï¿½veis apï¿½s o
 		// horario de inicio
-		// HoraInício não pode ser NULL
+		// HoraInï¿½cio nï¿½o pode ser NULL
 		
 	}
 
 	public Sessao pesquisarFilme(Filme filme){
-		//retorna sessão que contenha o filme especificado
+		//retorna sessï¿½o que contenha o filme especificado
 		if(filme==null){
 			return null;
 			//imprimir na tela o erro
@@ -47,7 +47,7 @@ public class RepositorioSessao {
 	}
 
 	public Sessao pesquisarSala(int identidade) {
-		// retorna a sessão atual da sala pesquisada;
+		// retorna a sessï¿½o atual da sala pesquisada;
 		for(int i=0; i<nSessoes; i++){
 			if(this.sessoes[i].hall.identidade==identidade){
 				return this.sessoes[i];
@@ -56,12 +56,12 @@ public class RepositorioSessao {
 	}
 
 	public boolean alterar(Sessao sessao) {
-		// altera inforçoes de uma sessao, retornando verdadeiro caso ela
-		// exista. Retorna falso, caso a sessão não exista
+		// altera inforï¿½oes de uma sessao, retornando verdadeiro caso ela
+		// exista. Retorna falso, caso a sessï¿½o nï¿½o exista
 	}
 
 	public void listar() {
-		// Imprime todas as sessões disponiveis;
+		// Imprime todas as sessï¿½es disponiveis;
 	}
 
 }

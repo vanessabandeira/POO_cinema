@@ -1,11 +1,15 @@
 package classes.ufrpe.cine_easyplex.beans;
 
 public class Ingresso {
-	public Sessao sessao;
-	public int indiceLugar;
-	public Ingresso(Sessao sessao, int lugar){
+	
+	private Sessao sessao;
+	private int indiceLugar;
+	private boolean meia;
+	
+	public Ingresso(Sessao sessao, int lugar, boolean meia){
 		this.sessao = sessao;
 		this.indiceLugar = lugar;
+		this.setMeia(meia);
 	}
 	
 	public Sessao getSessao() {
@@ -28,6 +32,14 @@ public class Ingresso {
 		}
 		
 		return false;
+	}
+
+	public boolean getMeia() {
+		return meia;
+	}
+
+	public void setMeia(boolean meia) {
+		this.meia = meia;
 	}
 	
 }

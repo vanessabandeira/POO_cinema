@@ -5,7 +5,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		CadastroFilmes controladorFilmes = new CadastroFilmes();
+		CadastroFilmes controladorFilmes = CadastroFilmes.getInstance();
 		
 		Filme esquadrao = new Filme("Esquadrão Suicida",14,"ação",120,0);
 		controladorFilmes.adicionarFilme(esquadrao);
@@ -14,9 +14,11 @@ public class Main {
 		
 		for(Filme titulo : controladorFilmes.getRepositorioFilmes().getFilmes()){
 			System.out.println(titulo);
+			System.out.println(controladorFilmes.getRepositorioFilmes().getFilmes().size());
 		}
 		
 		controladorFilmes.adicionarFilme(bvs);
+		
 		
 		
 
