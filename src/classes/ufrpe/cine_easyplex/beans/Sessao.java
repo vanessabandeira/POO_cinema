@@ -81,5 +81,17 @@ public class Sessao {
 	public void setPosicao(boolean[] posicao) {
 		this.posicao = posicao;
 	}
+	public boolean equals(Sessao comparada){
+		if (this.exibicao.equals(comparada.exibicao)){
+			if (this.horario.equals(comparada.horario)){
+				if(this.data.equals(comparada.data)){
+					if(this.hall.equals(comparada.hall)){
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
 	
 }
