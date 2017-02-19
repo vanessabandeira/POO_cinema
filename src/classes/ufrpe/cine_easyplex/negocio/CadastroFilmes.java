@@ -16,7 +16,7 @@ public class CadastroFilmes {
 	}
 	
 	private CadastroFilmes() {
-		this.repositorioFilmes = new RepositorioFilmes();
+		this.repositorioFilmes = RepositorioFilmes.getInstance();
 	}
 	
 	public void adicionarFilme(Filme filme){
