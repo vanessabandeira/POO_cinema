@@ -62,5 +62,12 @@ public class Filme {
 				+ duracao + ", nvendas=" + nvendas + "]";
 	}
 	
+	public boolean equals(Filme filme){
+		if(this.titulo.equals(filme.titulo)){
+			return true;
+		}
+		return false;
+	}
+	
 
 }

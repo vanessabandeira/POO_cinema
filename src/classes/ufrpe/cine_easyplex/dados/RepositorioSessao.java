@@ -1,9 +1,12 @@
 package classes.ufrpe.cine_easyplex.dados;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
 import classes.ufrpe.cine_easyplex.beans.Sessao;
+import classes.ufrpe.cine_easyplex.comparadores.ComparadorSessao;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
 
 public class RepositorioSessao implements iRepositorioSessao{
 	private ArrayList<Sessao> sessoes;
@@ -64,8 +67,10 @@ public class RepositorioSessao implements iRepositorioSessao{
 		
 	}
 
-	public ArrayList<Sessao> listar() {
-		return this.sessoes;
+	public List<Sessao> listar() {
+		List<Sessao> listaOrdenada = this.sessoes;
+		Collections.sort(listaOrdenada, new ComparadorSessao());
+		return listaOrdenada;
 	}
 
 }
