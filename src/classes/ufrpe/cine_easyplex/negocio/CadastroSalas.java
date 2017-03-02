@@ -18,7 +18,7 @@ public class CadastroSalas {
 	}
 	
 	public CadastroSalas() {
-		this.repositorioSalas = new RepositorioSalas();
+		this.repositorioSalas = RepositorioSalas.getInstance();
 	}
 	public void adicionarSala(Sala sala){
 		boolean adicionar = this.repositorioSalas.inserir(sala);

@@ -2,13 +2,23 @@ package classes.ufrpe.cine_easyplex.dados;
 
 import java.util.ArrayList;
 
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSalas;
 import classes.ufrpe.cine_easyplex.beans.Sala;
 
-public class RepositorioSalas {
+public class RepositorioSalas implements iRepositorioSalas{
 	public 	ArrayList<Sala> salas;
 	
-	public RepositorioSalas(){
-		this.salas = new ArrayList();
+	private static RepositorioSalas instancia;
+	
+	public static synchronized RepositorioSalas getInstance(){
+		if(instancia == null){
+			instancia = new RepositorioSalas();
+		}
+		return instancia;
+	}
+	
+	private RepositorioSalas(){
+		this.salas = new ArrayList<Sala>();
 	}
 	
 	public boolean inserir(Sala sala){
