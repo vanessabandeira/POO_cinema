@@ -3,30 +3,63 @@ package classes.ufrpe.cine_easyplex.beans;
 import java.util.ArrayList;
 
 public class Venda {
-	private ArrayList<Ingresso> ingressos;
-	private int idVenda,valorInteiro;
+	private int qtdIngressos, qtdMeias;
+	private Sessao sessao;
+	private ArrayList<Integer> indiceLugar; 
+	private int valorInteiro;
+	private int idVenda;
 	
-	public Venda(ArrayList<Ingresso> ingressos){
-		this.ingressos = new ArrayList<Ingresso>();
+	public Venda(int qtdIngressos, int qtdMeias, Sessao sessao, ArrayList<Integer> indiceLugar, int valorInteiro) {
+		super();
+		this.qtdIngressos = qtdIngressos;
+		this.qtdMeias = qtdMeias;
+		this.sessao = sessao;
+		this.indiceLugar = indiceLugar;
+		this.valorInteiro = valorInteiro;
 	}
-	
+
 	public float calcularPreço(){
-		int meiaEntrada = 0;
-		int quantidade = this.ingressos.size();
-		for(int i = 0; i < quantidade; i++){
-			if(this.ingressos.get(i).getMeia()){
-				meiaEntrada++;
-			}
-		}
-		return (quantidade-meiaEntrada)*valorInteiro + meiaEntrada*valorInteiro/2;
+		return (this.qtdIngressos-this.qtdMeias)*valorInteiro + this.qtdMeias*valorInteiro/2;
 	}
 
-	public ArrayList<Ingresso> getIngressos() {
-		return ingressos;
+	public int getQtdIngressos() {
+		return qtdIngressos;
 	}
 
-	public void setIngressos(ArrayList<Ingresso> ingressos) {
-		this.ingressos = ingressos;
+	public void setQtdIngressos(int qtdIngressos) {
+		this.qtdIngressos = qtdIngressos;
+	}
+
+	public int getQtdMeias() {
+		return this.getQtdMeias();
+	}
+
+	public void setQtdMeias(int qtdMeias) {
+		this.qtdMeias = qtdMeias;
+	}
+
+	public Sessao getSessao() {
+		return sessao;
+	}
+
+	public void setSessao(Sessao sessao) {
+		this.sessao = sessao;
+	}
+
+	public ArrayList<Integer> getIndiceLugar() {
+		return indiceLugar;
+	}
+
+	public void setIndiceLugar(ArrayList<Integer> indiceLugar) {
+		this.indiceLugar = indiceLugar;
+	}
+
+	public int getValorInteiro() {
+		return valorInteiro;
+	}
+
+	public void setValorInteiro(int valorInteiro) {
+		this.valorInteiro = valorInteiro;
 	}
 
 	public int getIdVenda() {
@@ -36,4 +69,7 @@ public class Venda {
 	public void setIdVenda(int idVenda) {
 		this.idVenda = idVenda;
 	}
+
+
+	
 }

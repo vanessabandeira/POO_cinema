@@ -1,6 +1,8 @@
 package classes.ufrpe.cine_easyplex.dados;
 
 import java.util.ArrayList;
+
+import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.beans.Venda;
 
 public class RepositorioVendas {
@@ -10,33 +12,52 @@ public class RepositorioVendas {
 		this.vendas = vendas;
 	}
 	
-	public void inserir(Venda venda){
-		this.vendas.add(venda);
-	}
-	public boolean remover(int idVenda){
-		int indice = this.pesquisar(idVenda);
-		if(indice != -1){
-			this.vendas.remove(indice);
-			return true;
-		}
-		return false;
-	}
-	public int pesquisar(int idVenda){
-		for(int i = 0; i < this.vendas.size(); i++){
-			if(this.vendas.get(i).getIdVenda()==idVenda){
-				return this.vendas.indexOf(i);
-			}
-		}
-		return -1;
-	}
-	public boolean alterar(Venda venda) {
-		int indice = this.pesquisar(venda.getIdVenda());
-		if(indice!=-1){
-			this.vendas.set(indice, venda);
-			return true;
+	public boolean inserir(Venda venda){
+		if(venda.getQtdIngressos() != 0){
+			if(venda.getIndiceLugar().size()==venda.getQtdIngressos()){
+				if(venda.getQtdMeias()<=venda.getQtdIngressos()){
+					int conferir = 0;
+					for(int i = 0; i < venda.getIndiceLugar().size(); i++){
+						if(venda.getSessao().conferirOcupacao(venda.getIndiceLugar().get(i))){
+							conferir++;
+						}
+					}
+					if(conferir == venda.getIndiceLugar().size()){
+						venda.setIdVenda(this.vendas.size()+1);
+						for(int i = 0; i < venda.getIndiceLugar().size(); i++){
+							venda.getSessao().getPosicao()[venda.getIndiceLugar().get(i)] = false;
+						}
+						this.vendas.add(venda);
+						return true;
+					}
+				}
+			}	
 		}
 		return false;
 		
 	}
+	public boolean remover(int idVenda){
+		Venda venda = this.pesquisar(idVenda);
+		if(venda != null){
+			for(int i = 0; i < venda.getIndiceLugar().size(); i++){
+				if(venda.getSessao().getPosicao()[venda.getIndiceLugar().get(i)]){
+					this.vendas.remove(venda);
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	public Venda pesquisar(int idVenda) {
+		for(int i = 0; i < this.vendas.size(); i++){
+			if(idVenda == this.vendas.get(i).getIdVenda()){
+				return this.vendas.get(i);
+			}
+		}
+		return null;
+	}
+	
+	
 	
 }

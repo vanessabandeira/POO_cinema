@@ -1,9 +1,12 @@
 package classes.ufrpe.cine_easyplex.dados;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 import classes.ufrpe.cine_easyplex.beans.Filme;
+import classes.ufrpe.cine_easyplex.comparadores.ComparadorFilme;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 
 public class RepositorioFilmes implements iRepositorioFilmes{
 	private ArrayList<Filme> filmes;
@@ -57,7 +60,9 @@ public class RepositorioFilmes implements iRepositorioFilmes{
 	}
 
 	public ArrayList<Filme> listar() {
-		return this.filmes;
+		ArrayList<Filme> listaOrdenada = this.filmes;
+		Collections.sort(listaOrdenada, new ComparadorFilme());
+		return listaOrdenada;
 
 	}
 
@@ -68,5 +73,6 @@ public class RepositorioFilmes implements iRepositorioFilmes{
 	public void setFilmes(Filme filme, int posicao) {
 		this.filmes.set(posicao, filme);
 	}
+	
 
 }

@@ -8,8 +8,6 @@ public class Sessao {
 	private Sala hall;
 	private int ocupacao;
 	private float valor; // valor do ingresso inteiro
-	private int nvInteiro; // n�mero de vendas de ingressos inteiros
-	private int nvMeia; // n�mero de vendas de meio ingressos
 	private boolean[] posicao; // as cadeiras da sala
 
 	/*
@@ -20,11 +18,13 @@ public class Sessao {
 		this.horario = horario;
 		this.hall = hall;
 		this.posicao = new boolean[hall.getCapacidade()];
-		this.nvInteiro = 0;
-		this.nvMeia = 0;
 		for (int i = 0; i < hall.getCapacidade(); i++) {
 			this.posicao[i] = true;
 		}
+	}
+	
+	public boolean conferirOcupacao(int posicao){
+		return this.posicao[posicao];
 	}
 
 	public void ocuparcadeira(int Poltrona) {
@@ -69,22 +69,6 @@ public class Sessao {
 
 	public void setValor(float valor) {
 		this.valor = valor;
-	}
-
-	public int getNvInteiro() {
-		return nvInteiro;
-	}
-
-	public void setNvInteiro(int nvInteiro) {
-		this.nvInteiro = nvInteiro;
-	}
-
-	public int getNvMeia() {
-		return nvMeia;
-	}
-
-	public void setNvMeia(int nvMeia) {
-		this.nvMeia = nvMeia;
 	}
 
 	public boolean[] getPosicao() {
