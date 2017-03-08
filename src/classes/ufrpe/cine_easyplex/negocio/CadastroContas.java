@@ -12,6 +12,7 @@ public class CadastroContas {
 		
 	}
 	public boolean logar(){
+		return true;
 		
 	}
 
