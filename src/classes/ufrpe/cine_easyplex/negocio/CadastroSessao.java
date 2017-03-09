@@ -6,10 +6,15 @@ import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.beans.Sala;
 import classes.ufrpe.cine_easyplex.beans.Sessao;
 import classes.ufrpe.cine_easyplex.dados.RepositorioSessao;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
 
 public class CadastroSessao {
-	private RepositorioSessao repositorioSessao;
+	private iRepositorioSessao repositorioSessao;
 	
+	public CadastroSessao() {
+		super();
+		this.repositorioSessao = RepositorioSessao.getInstance();
+	}
 	public void adicionarSessao(){
 		
 	}

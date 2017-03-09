@@ -2,9 +2,10 @@ package classes.ufrpe.cine_easyplex.negocio;
 
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.dados.RepositorioFilmes;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 
 public class CadastroFilmes {
-	RepositorioFilmes repositorioFilmes;
+	private iRepositorioFilmes repositorioFilmes;
 	
 	private static CadastroFilmes instancia;
 	
@@ -49,8 +50,8 @@ public class CadastroFilmes {
 		}
 	}
 
-	public RepositorioFilmes getRepositorioFilmes() {
-		return repositorioFilmes;
+	public iRepositorioFilmes getRepositorioFilmes() {
+		return this.repositorioFilmes;
 	}
 
 	public void setRepositorioFilmes(RepositorioFilmes repositorioFilmes) {

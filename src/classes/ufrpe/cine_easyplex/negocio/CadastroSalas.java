@@ -1,21 +1,11 @@
 package classes.ufrpe.cine_easyplex.negocio;
 
-import java.util.ArrayList;
-
 import classes.ufrpe.cine_easyplex.beans.Sala;
 import classes.ufrpe.cine_easyplex.dados.RepositorioSalas;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSalas;
 
 public class CadastroSalas {
-	RepositorioSalas repositorioSalas;
-	
-	private static CadastroSalas instancia;
-	
-	public static synchronized CadastroSalas getInstance(){
-		if(instancia == null){
-			instancia = new CadastroSalas();
-		}
-		return instancia;
-	}
+	private iRepositorioSalas repositorioSalas;
 	
 	public CadastroSalas() {
 		this.repositorioSalas = RepositorioSalas.getInstance();
