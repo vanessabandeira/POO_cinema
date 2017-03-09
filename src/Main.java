@@ -12,10 +12,10 @@ public class Main {
 		Filme bvs = new Filme("Batam v Superman",14,"ação",150,0);
 		controladorFilmes.adicionarFilme(bvs);
 		
-		for(Filme titulo : controladorFilmes.getRepositorioFilmes().getFilmes()){
-			System.out.println(titulo);
-			System.out.println(controladorFilmes.getRepositorioFilmes().getFilmes().size());
-		}
+//		for(Filme titulo : controladorFilmes.getRepositorioFilmes().getFilmes()){
+//			System.out.println(titulo);
+//			System.out.println(controladorFilmes.getRepositorioFilmes().getFilmes().size());
+//		}
 		
 		controladorFilmes.adicionarFilme(bvs);
 		

@@ -18,7 +18,7 @@ public class Venda {
 		this.valorInteiro = valorInteiro;
 	}
 
-	public float calcularPreço(){
+	public float calcularPreco(){
 		return (this.qtdIngressos-this.qtdMeias)*valorInteiro + this.qtdMeias*valorInteiro/2;
 	}
 
