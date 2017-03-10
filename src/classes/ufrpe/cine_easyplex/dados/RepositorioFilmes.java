@@ -14,6 +14,7 @@ import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.comparadores.ComparadorFilme;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 
+@SuppressWarnings("serial")
 public class RepositorioFilmes implements iRepositorioFilmes, Serializable{
 	
 	private ArrayList<Filme> filmes;
