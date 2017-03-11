@@ -1,39 +1,42 @@
 package classes.ufrpe.cine_easyplex.dados;
 
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioContas;
-
-import java.io.Serializable;
-import java.util.ArrayList;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
 
 import classes.ufrpe.cine_easyplex.beans.Conta;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioContas;
 
 @SuppressWarnings("serial")
 public class RepositorioConta implements iRepositorioContas, Serializable{
 	
 	
-	private ArrayList<Conta> repositorio;
-	private static RepositorioConta instance;
+	private ArrayList<Conta> contas;
 	
-	//private int numerocontas;
-	//private Conta[] contas;
+	private static iRepositorioContas instancia;
 	
+	public static synchronized iRepositorioContas getInstance(){
+		if(instancia == null){
+			instancia = lerArquivo();
+		}
+		return instancia;
+	}	
 	private RepositorioConta()
 	{
-		this.repositorio = new ArrayList<Conta>();
-		Conta user = new Conta("user", "2017");
-		repositorio.add(user);
+		Conta user = new Conta("admin","admin");
+		this.contas = new ArrayList<Conta>();
+		this.contas.add(user);
 	}
 	
 	public static RepositorioConta lerArquivo()
 	{
 		RepositorioConta instancia = null;
-		File in = new File("Conta.dat");
+		File in = new File("Contas.dat");
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         
@@ -56,12 +59,12 @@ public class RepositorioConta implements iRepositorioContas, Serializable{
                 
             }
         }
-        return instance;
+        return instancia;
         
 	}
 	
 	public void salvarArquivo(){
-		File out = new File("Conta.dat");
+		File out = new File("Contas.dat");
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         
@@ -69,7 +72,7 @@ public class RepositorioConta implements iRepositorioContas, Serializable{
             fos = new FileOutputStream(out);
             oos = new ObjectOutputStream(fos);
             
-			oos.writeObject(instance);
+			oos.writeObject(instancia);
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
@@ -83,10 +86,9 @@ public class RepositorioConta implements iRepositorioContas, Serializable{
         }
 	}
 
-	public static RepositorioConta getInstance() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Conta> getContas() {
+		return this.contas;
 	}
 	
 	
-	}
+}

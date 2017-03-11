@@ -1,24 +1,25 @@
 package classes.ufrpe.cine_easyplex.negocio;
 
+import classes.ufrpe.cine_easyplex.beans.Conta;
 import classes.ufrpe.cine_easyplex.dados.RepositorioConta;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioContas;
 
 public class CadastroContas {
-	RepositorioConta repositorioContas;
+	iRepositorioContas repositorioContas;
 	
 	public CadastroContas()
 	{
 		this.repositorioContas = RepositorioConta.getInstance();
 	}
 	
-	public void adicionarConta(){
-		//fiquei em duvida se vai ser necessario isso
-		//discutir sobre isso e remoção tbm
-	}
-	public void removerConta(){
-		
-	}
-	public boolean logar(){
-		return true;
+	public boolean logar(String login, String senha){
+		Conta conta = new Conta(login, senha);
+		for(int i = 0; i < this.repositorioContas.getContas().size(); i++){
+			if(this.repositorioContas.getContas().get(i).equals(conta)){
+				return true;
+			}
+		}
+		return false;
 		
 	}
 

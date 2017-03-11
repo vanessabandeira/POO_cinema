@@ -22,12 +22,21 @@ public class Conta {
 		this.login = login;
 	}
 		
-		public String getSenha() {
-			return senha;
-		}
+	public String getSenha() {
+		return senha;
+	}
 
-		public void setSenha(String senha) {
-			this.senha = senha;
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+	
+	public boolean equals(String login, String senha){
+		if(login.equals(login)){
+			if(senha.equals(senha)){
+				return true;
+			}
 		}
+		return false;
+	}
 		
 }
