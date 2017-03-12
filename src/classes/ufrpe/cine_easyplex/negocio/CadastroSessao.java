@@ -10,10 +10,16 @@ import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
 
 public class CadastroSessao {
 	private iRepositorioSessao repositorioSessao;
+	private CadastroSessao instancia = null;
 	
-	public CadastroSessao() {
-		super();
+	private CadastroSessao() {
 		this.repositorioSessao = RepositorioSessao.getInstance();
+	}
+	public CadastroSessao getInstance(){
+		if(this.instancia==null){
+			this.instancia = new CadastroSessao();
+		}
+		return this.instancia;
 	}
 	public void adicionarSessao(){
 		
