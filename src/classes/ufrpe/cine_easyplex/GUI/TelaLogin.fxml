@@ -12,10 +12,10 @@
       <AnchorPane prefHeight="459.0" prefWidth="743.0" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="508.0" layoutY="440.0" mnemonicParsing="false" onAction="#Login" prefHeight="29.0" prefWidth="66.0" text="Entrar" />
-            <TextField fx:id="tfSenha" layoutX="450.0" layoutY="382.0" prefHeight="25.0" prefWidth="183.0" />
             <TextField fx:id="tfLogin" layoutX="451.0" layoutY="322.0" prefHeight="25.0" prefWidth="183.0" />
             <Label layoutX="387.0" layoutY="323.0" prefHeight="23.0" prefWidth="60.0" text="Login" />
             <Label layoutX="387.0" layoutY="383.0" prefHeight="23.0" prefWidth="60.0" text="Senha" />
+            <PasswordField fx:id="tfSenha" layoutX="451.0" layoutY="382.0" prefHeight="25.0" prefWidth="183.0" />
          </children>
       </AnchorPane>
    </center>

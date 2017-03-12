@@ -24,24 +24,23 @@ public class Fachada implements Serializable {
 
 	private static Fachada instancia = null;
 
-	public Fachada(){
-		this.instancia = lerArquivo();
-		//Implementar Cadastro de COntas
-		this.filmes.getInstance();
+	private Fachada(){
+		this.contas = new CadastroContas();
+		this.filmes = new CadastroFilmes();
 		this.salas = new CadastroSalas();
-		this.sessoes.getInstance();
 		this.vendas = vendas;
+		this.sessoes = new CadastroSessao();
 	}
 
-	public Fachada getInstancia() {
+	public static Fachada getInstancia() {
 		if (instancia == null) {
-			instancia = new Fachada();
+			instancia = lerArquivo();
 		}
 		return instancia;
 	}
 
-	private Fachada lerArquivo() {
-		this.instancia = null;
+	private static Fachada lerArquivo() {
+		Fachada instancia = null;
 		File in = new File("Fachada.dat");
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
@@ -51,7 +50,7 @@ public class Fachada implements Serializable {
 			ois = new ObjectInputStream(fis);
 
 			Object o = ois.readObject();
-			this.instancia = (Fachada) o;
+			instancia = (Fachada) o;
 
 		} catch (Exception e) {
 			instancia = new Fachada();
@@ -90,5 +89,51 @@ public class Fachada implements Serializable {
 			}
 		}
 	}
+
+	public CadastroContas getContas() {
+		return contas;
+	}
+
+	public void setContas(CadastroContas contas) {
+		this.contas = contas;
+	}
+
+	public CadastroFilmes getFilmes() {
+		return filmes;
+	}
+
+	public void setFilmes(CadastroFilmes filmes) {
+		this.filmes = filmes;
+	}
+
+	public CadastroSalas getSalas() {
+		return salas;
+	}
+
+	public void setSalas(CadastroSalas salas) {
+		this.salas = salas;
+	}
+
+	public CadastroSessao getSessoes() {
+		return sessoes;
+	}
+
+	public void setSessoes(CadastroSessao sessoes) {
+		this.sessoes = sessoes;
+	}
+
+	public RepositorioVendas getVendas() {
+		return vendas;
+	}
+
+	public void setVendas(RepositorioVendas vendas) {
+		this.vendas = vendas;
+	}
+
+	public static void setInstancia(Fachada instancia) {
+		Fachada.instancia = instancia;
+	}
+	
+	
 
 }

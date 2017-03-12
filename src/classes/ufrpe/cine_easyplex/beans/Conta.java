@@ -30,9 +30,9 @@ public class Conta {
 		this.senha = senha;
 	}
 	
-	public boolean equals(String login, String senha){
-		if(login.equals(login)){
-			if(senha.equals(senha)){
+	public boolean equals(Conta conta){
+		if(login.equals(conta.login)){
+			if(senha.equals(conta.senha)){
 				return true;
 			}
 		}

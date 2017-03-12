@@ -1,6 +1,7 @@
 package classes.ufrpe.cine_easyplex.negocio;
 
 import java.util.ArrayList;
+import java.util.GregorianCalendar;
 
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.beans.Sala;
@@ -10,17 +11,11 @@ import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
 
 public class CadastroSessao {
 	private iRepositorioSessao repositorioSessao;
-	private CadastroSessao instancia = null;
 	
-	private CadastroSessao() {
+	public CadastroSessao() {
 		this.repositorioSessao = RepositorioSessao.getInstance();
 	}
-	public CadastroSessao getInstance(){
-		if(this.instancia==null){
-			this.instancia = new CadastroSessao();
-		}
-		return this.instancia;
-	}
+	
 	public void adicionarSessao(){
 		
 	}
@@ -50,8 +45,10 @@ public class CadastroSessao {
 		return listaPorSala;
 		
 	}
+	
 	public Sessao buscarPorHorario(){
 		return null;
 	}
+	
 
 }

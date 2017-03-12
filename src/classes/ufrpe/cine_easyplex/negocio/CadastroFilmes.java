@@ -7,16 +7,7 @@ import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 public class CadastroFilmes {
 	private iRepositorioFilmes repositorioFilmes;
 	
-	private static CadastroFilmes instancia;
-	
-	public static synchronized CadastroFilmes getInstance(){
-		if(instancia == null){
-			instancia = new CadastroFilmes();
-		}
-		return instancia;
-	}
-	
-	private CadastroFilmes() {
+	public CadastroFilmes() {
 		this.repositorioFilmes = RepositorioFilmes.getInstance();
 	}
 	
