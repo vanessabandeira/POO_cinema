@@ -16,6 +16,7 @@
             <Label layoutX="387.0" layoutY="323.0" prefHeight="23.0" prefWidth="60.0" text="Login" />
             <Label layoutX="387.0" layoutY="383.0" prefHeight="23.0" prefWidth="60.0" text="Senha" />
             <PasswordField fx:id="tfSenha" layoutX="451.0" layoutY="382.0" prefHeight="25.0" prefWidth="183.0" />
+            <Label fx:id="lblError" layoutX="452.0" layoutY="416.0" prefHeight="17.0" prefWidth="180.0" textFill="#ff0404" />
          </children>
       </AnchorPane>
    </center>
