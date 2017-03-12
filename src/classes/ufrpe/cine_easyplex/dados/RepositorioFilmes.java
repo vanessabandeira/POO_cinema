@@ -10,6 +10,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.comparadores.ComparadorFilme;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
@@ -83,26 +84,25 @@ public class RepositorioFilmes implements iRepositorioFilmes, Serializable{
         }
 	}
 
-	public boolean inserir(Filme filme) {
+	public boolean inserir(Filme filme) throws ValorInvalidoException {
 		if (filme != null) {
 			int search = pesquisar(filme);
 			if (search == -1) {
 				this.filmes.add(filme);
 				this.salvarArquivo();
 				return true;
-			}
+			}else throw new ValorInvalidoException("filme já existe portanto");
 		}
-		return false;
+		else throw new ValorInvalidoException("filme");
 	}
 
-	public boolean remover(Filme filme) {
+	public boolean remover(Filme filme) throws ValorInvalidoException {
 		int search = pesquisar(filme);
 		if (search != -1) {
 			this.filmes.remove(filme);
 			this.salvarArquivo();
 			return true;
-		}
-		return false;
+		}else throw new ValorInvalidoException("filme não existe portanto");
 
 	}
 
@@ -110,14 +110,13 @@ public class RepositorioFilmes implements iRepositorioFilmes, Serializable{
 		return this.filmes.indexOf(filme);
 	}
 
-	public boolean alterar(Filme filme) {
+	public boolean alterar(Filme filme) throws ValorInvalidoException {
 		int search = pesquisar(filme);
 		if(search!=-1){
 			this.filmes.set(search, filme);
 			this.salvarArquivo();
 			return true;
-		}
-		return false;
+		}else throw new ValorInvalidoException("filme não existe portanto");
 		
 	}
 

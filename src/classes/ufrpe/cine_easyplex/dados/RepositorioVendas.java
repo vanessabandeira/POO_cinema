@@ -8,6 +8,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
+import classes.ufrpe.cine_easyplex.Exceptions.PosicaoOcupadaException;
+import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Venda;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioVendas;
 
@@ -78,7 +80,7 @@ public class RepositorioVendas implements iRepositorioVendas{
         }
 	}
 	
-	public boolean inserir(Venda venda){
+	public boolean inserir(Venda venda) throws ValorInvalidoException, PosicaoOcupadaException{
 		if(venda.getQtdIngressos() != 0){
 			if(venda.getIndiceLugar().size()==venda.getQtdIngressos()){
 				if(venda.getQtdMeias()<=venda.getQtdIngressos()){
@@ -97,13 +99,15 @@ public class RepositorioVendas implements iRepositorioVendas{
 						this.salvarArquivo();
 						return true;
 					}
-				}
-			}	
-		}
-		return false;
+					else{
+						throw new PosicaoOcupadaException();
+					}
+				}else throw new ValorInvalidoException("meias");
+			}else throw new ValorInvalidoException("lugares");
+		}else throw new ValorInvalidoException("ingressos");
 		
 	}
-	public boolean remover(int idVenda){
+	public boolean remover(int idVenda) throws ValorInvalidoException{
 		Venda venda = this.pesquisar(idVenda);
 		if(venda != null){
 			for(int i = 0; i < venda.getIndiceLugar().size(); i++){
@@ -114,7 +118,7 @@ public class RepositorioVendas implements iRepositorioVendas{
 				}
 			}
 		}
-		return false;
+		throw new ValorInvalidoException("venda");
 	}
 	
 	public Venda pesquisar(int idVenda) {
