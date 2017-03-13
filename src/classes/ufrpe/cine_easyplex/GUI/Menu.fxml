@@ -63,19 +63,19 @@
    <right>
       <Pane prefHeight="511.0" prefWidth="338.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutY="150.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="220.0" text="COMPRAR">
+            <Button layoutY="150.0" mnemonicParsing="false" onAction="#comprar" prefHeight="54.0" prefWidth="220.0" text="COMPRAR">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
-            <Button layoutY="229.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="220.0" text="OPÇÕES">
+            <Button layoutY="229.0" mnemonicParsing="false" onAction="#opcoes" prefHeight="54.0" prefWidth="220.0" text="OPÇÕES">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
             <Button layoutY="302.0" mnemonicParsing="false" onAction="#sair" prefHeight="54.0" prefWidth="220.0" text="SAIR">
                <font>
-                  <Font size="19.0" />
+                  <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
          </children>

@@ -44,7 +44,16 @@ public class MenuController implements Initializable {
 	}
 	
 	public void opcoes(){
-		
+		try{
+			URL paneUrl = getClass().getResource("Opcoes.fxml"); 
+			BorderPane pane = FXMLLoader.load( paneUrl );     
+			BorderPane border = Main.getRoot(); 
+			border.setCenter(pane);
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	public void sair(){
@@ -55,7 +64,7 @@ public class MenuController implements Initializable {
 			border.setCenter(pane);
 		}
 		catch(Exception e){
-			
+			System.out.println(e.getMessage());
 		}
 		
 	}
