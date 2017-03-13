@@ -31,6 +31,8 @@ public class RepositorioFilmes implements iRepositorioFilmes, Serializable{
 	
 	private RepositorioFilmes() {
 		this.filmes = new ArrayList<Filme>();
+		Filme filme = new Filme("Batman v Superman",14,"Ação",150);
+		this.filmes.add(filme);
 	}
 	
 	public static RepositorioFilmes lerArquivo() {

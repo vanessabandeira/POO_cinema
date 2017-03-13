@@ -7,11 +7,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 public class Main extends Application{
-
+	
+	private static BorderPane root = new BorderPane();
+	
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("TelaLogin.fxml"));
+			this.root = (BorderPane)FXMLLoader.load(getClass().getResource("TelaLogin.fxml"));
 			Scene scene = new Scene(root,1080,720);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setResizable(false);
@@ -26,5 +28,10 @@ public class Main extends Application{
 		launch(args);
 		Fachada sistema = Fachada.getInstancia();
 	}
+	
+	public static BorderPane getRoot() { 
+		return root; 
+	} 
+
 
 }

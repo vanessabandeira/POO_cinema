@@ -8,12 +8,11 @@ public class Filme {
 	private int nvendas;
 	
 
-	public Filme(String titulo, int classificacao, String genero, int duracao, int nvendas) {
+	public Filme(String titulo, int classificacao, String genero, int duracao) {
 		this.titulo = titulo;
 		this.classificacao = classificacao;
 		this.genero = genero;
 		this.duracao = duracao;
-		this.nvendas = nvendas;
 	}
 
 	public String getTitulo() {
@@ -46,14 +45,6 @@ public class Filme {
 
 	public void setDuracao(int duracao) {
 		this.duracao = duracao;
-	}
-
-	public int getNvendas() {
-		return nvendas;
-	}
-
-	public void setNvendas(int nvendas) {
-		this.nvendas = nvendas;
 	}
 
 	@Override
