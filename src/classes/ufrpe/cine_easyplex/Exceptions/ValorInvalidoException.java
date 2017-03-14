@@ -1,5 +1,6 @@
 package classes.ufrpe.cine_easyplex.Exceptions;
 
+@SuppressWarnings("serial")
 public class ValorInvalidoException extends Exception{
 	
 	private String valor;

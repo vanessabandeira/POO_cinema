@@ -1,4 +1,4 @@
-package classes.ufrpe.cine_easyplex.dados;
+package classes.ufrpe.cine_easyplex.Exceptions;
 
 public class PosicaoOcupadaException extends Exception {
 	
