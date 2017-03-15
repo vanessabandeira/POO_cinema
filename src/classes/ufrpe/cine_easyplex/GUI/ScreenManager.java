@@ -12,6 +12,8 @@ public class ScreenManager {
 	BorderPane paneOpcoes;
 	BorderPane border;
 	
+	FXMLLoader filmes;
+	
 	public static ScreenManager instancia;
 	
 	public static synchronized ScreenManager getInstance(){
@@ -23,11 +25,12 @@ public class ScreenManager {
 	
 	private ScreenManager(){
 		try{
-			URL paneMenuUrl = getClass().getResource("Menu.fxml"); 
-			this.paneMenu = FXMLLoader.load( paneMenuUrl );     
+			
+			filmes = new FXMLLoader(this.getClass().getResource("Menu.fxml"));
+			this.paneMenu = filmes.load();     
 			URL paneLoginUrl = getClass().getResource("TelaLogin.fxml"); 
 			this.paneLogin = FXMLLoader.load( paneLoginUrl );   
-			URL paneOpcoesUrl = getClass().getResource("Menu.fxml"); 
+			URL paneOpcoesUrl = getClass().getResource("Opcoes.fxml"); 
 			this.paneOpcoes = FXMLLoader.load( paneOpcoesUrl );   
 			this.border = Main.getRoot();
 		}
@@ -41,9 +44,15 @@ public class ScreenManager {
 	
 	public void getMenu(){
 		border.setCenter(this.paneMenu);
+		MenuController controlador = this.getFilmes().getController();
+		controlador.preencherTabela();
 	}
 	
 	public void getOpcoes(){
 		border.setCenter(this.paneOpcoes);
+	}
+	
+	public FXMLLoader getFilmes(){
+		return this.filmes;
 	}
 }

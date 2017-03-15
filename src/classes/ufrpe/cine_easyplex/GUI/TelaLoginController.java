@@ -9,6 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
+import classes.ufrpe.cine_easyplex.GUI.ScreenManager;
+
 
 public class TelaLoginController {
 	
@@ -23,10 +25,7 @@ public class TelaLoginController {
 		try{
 			this.fachada.getContas().logar(login, senha);
 			
-			URL paneUrl = getClass().getResource("Menu.fxml"); 
-			BorderPane pane = FXMLLoader.load( paneUrl );     
-			BorderPane border = Main.getRoot(); 
-			border.setCenter(pane); 
+			ScreenManager.getInstance().getMenu();
 
 		}
 		catch(Exception e){

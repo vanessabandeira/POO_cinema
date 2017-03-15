@@ -22,7 +22,7 @@ public class CadastroFilmes {
 		}
 		
 	}
-	public void removerFilme(Filme filme){
+	public void removerFilme(Filme filme) throws ValorInvalidoException{
 		boolean remover = this.repositorioFilmes.remover(filme);
 		if(remover){
 			System.out.println("Adicionado com sucesso!");

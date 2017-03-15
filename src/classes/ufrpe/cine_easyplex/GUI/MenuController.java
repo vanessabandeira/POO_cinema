@@ -17,13 +17,17 @@ import javafx.scene.layout.BorderPane;
 
 public class MenuController implements Initializable {
 	
+	@FXML
 	private TableView<Filme> tableView;
-	@FXML TableColumn<Filme,String> listaTitulo;
-	@FXML TableColumn<Filme,String> listaGenero;
-	@FXML TableColumn<Filme, Integer> listaDuracao;
-	@FXML TableColumn<Filme,Integer> listaClassificacao;
-	private Fachada fachada = Fachada.getInstancia();
-	ObservableList<Filme> filmes = FXCollections.observableArrayList(this.fachada.getFilmes().getRepositorioFilmes().listar());
+	@FXML 
+	private TableColumn<Filme,String> listaTitulo;
+	@FXML 
+	private TableColumn<Filme,String> listaGenero;
+	@FXML 
+	private TableColumn<Filme, Integer> listaDuracao;
+	@FXML
+	private TableColumn<Filme,Integer> listaClassificacao;
+	
 
 	@Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -34,9 +38,10 @@ public class MenuController implements Initializable {
 		listaTitulo.setCellValueFactory(new PropertyValueFactory<Filme, String>("titulo"));
 		listaGenero.setCellValueFactory(new PropertyValueFactory<Filme, String>("genero"));
 		listaDuracao.setCellValueFactory(new PropertyValueFactory<Filme, Integer>("duracao"));
-		listaClassificacao.setCellValueFactory(new PropertyValueFactory<Filme, Integer>("classificao"));
+		listaClassificacao.setCellValueFactory(new PropertyValueFactory<Filme, Integer>("classificacao"));
 		
-        tableView.setItems(this.filmes);
+        tableView.setItems(FXCollections.observableArrayList(Fachada.getInstancia().getFilmes().getRepositorioFilmes().listar()));
+        tableView.refresh();
 	}
 	
 	public void comprar(){
@@ -45,10 +50,7 @@ public class MenuController implements Initializable {
 	
 	public void opcoes(){
 		try{
-			URL paneUrl = getClass().getResource("Opcoes.fxml"); 
-			BorderPane pane = FXMLLoader.load( paneUrl );     
-			BorderPane border = Main.getRoot(); 
-			border.setCenter(pane);
+			ScreenManager.getInstance().getOpcoes();
 			System.out.println("entrou aqui");
 		}
 		catch(Exception e){
@@ -58,10 +60,7 @@ public class MenuController implements Initializable {
 	
 	public void sair(){
 		try{
-			URL paneUrl = getClass().getResource("TelaLogin.fxml"); 
-			BorderPane pane = FXMLLoader.load( paneUrl );     
-			BorderPane border = Main.getRoot(); 
-			border.setCenter(pane);
+			ScreenManager.getInstance().getTelaLogin();
 		}
 		catch(Exception e){
 			System.out.println(e.getMessage());
