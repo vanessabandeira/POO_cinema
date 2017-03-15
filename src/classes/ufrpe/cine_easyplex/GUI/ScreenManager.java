@@ -11,6 +11,7 @@ public class ScreenManager {
 	BorderPane paneMenu;
 	BorderPane paneOpcoes;
 	BorderPane border;
+	BorderPane paneAdicionarFilme;
 	
 	FXMLLoader filmes;
 	
@@ -31,7 +32,8 @@ public class ScreenManager {
 			URL paneLoginUrl = getClass().getResource("TelaLogin.fxml"); 
 			this.paneLogin = FXMLLoader.load( paneLoginUrl );   
 			URL paneOpcoesUrl = getClass().getResource("Opcoes.fxml"); 
-			this.paneOpcoes = FXMLLoader.load( paneOpcoesUrl );   
+			this.paneOpcoes = FXMLLoader.load( paneOpcoesUrl ); 
+			this.paneAdicionarFilme = FXMLLoader.load(getClass().getResource("AdicionarFilme.fxml"));
 			this.border = Main.getRoot();
 		}
 		catch(Exception e){
@@ -54,5 +56,9 @@ public class ScreenManager {
 	
 	public FXMLLoader getFilmes(){
 		return this.filmes;
+	}
+	
+	public void getAdicionarFilme(){
+		border.setCenter(this.paneAdicionarFilme);
 	}
 }

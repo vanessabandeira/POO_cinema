@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
@@ -17,6 +19,14 @@
             <Label layoutX="387.0" layoutY="383.0" prefHeight="23.0" prefWidth="60.0" text="Senha" />
             <PasswordField fx:id="tfSenha" layoutX="451.0" layoutY="382.0" prefHeight="25.0" prefWidth="183.0" />
             <Label fx:id="lblError" layoutX="268.0" layoutY="416.0" prefHeight="17.0" prefWidth="540.0" textAlignment="CENTER" textFill="#ff0404" wrapText="true" />
+            <ImageView fitHeight="84.0" fitWidth="382.0" layoutX="347.0" layoutY="155.0">
+               <image>
+                  <Image url="@../Imagens/logo.png" />
+               </image>
+               <effect>
+                  <Reflection fraction="0.58" topOpacity="0.29" />
+               </effect>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>

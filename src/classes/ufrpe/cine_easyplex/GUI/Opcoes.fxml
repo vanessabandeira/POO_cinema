@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import javafx.scene.chart.*?>
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.*?>
@@ -72,7 +73,7 @@
                   <Font name="Gotham Light" size="15.0" />
                </font>
                <items>
-                  <MenuItem mnemonicParsing="false" text="Adicionar" />
+                  <MenuItem mnemonicParsing="false" onAction="#adicionarFilme" text="Adicionar" />
                   <MenuItem mnemonicParsing="false" text="Remover" />
                   <MenuItem mnemonicParsing="false" text="Editar" />
                   <MenuItem mnemonicParsing="false" text="Listar" />
@@ -194,6 +195,11 @@
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
+            <ImageView fitHeight="75.0" fitWidth="341.0" layoutX="-60.0" layoutY="-23.0">
+               <image>
+                  <Image url="@../Imagens/logo.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </right>

@@ -14,6 +14,10 @@ public class Filme {
 		this.genero = genero;
 		this.duracao = duracao;
 	}
+	
+	public Filme(){
+		
+	}
 
 	public String getTitulo() {
 		return titulo;
