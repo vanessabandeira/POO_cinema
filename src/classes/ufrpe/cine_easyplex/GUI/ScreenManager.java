@@ -27,7 +27,7 @@ public class ScreenManager {
 			this.paneMenu = FXMLLoader.load( paneMenuUrl );     
 			URL paneLoginUrl = getClass().getResource("TelaLogin.fxml"); 
 			this.paneLogin = FXMLLoader.load( paneLoginUrl );   
-			URL paneOpcoesUrl = getClass().getResource("Menu.fxml"); 
+			URL paneOpcoesUrl = getClass().getResource("Opcoes.fxml"); 
 			this.paneOpcoes = FXMLLoader.load( paneOpcoesUrl );   
 			this.border = Main.getRoot();
 		}

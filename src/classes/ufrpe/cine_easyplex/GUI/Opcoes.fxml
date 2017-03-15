@@ -191,7 +191,7 @@
             </Button>
             <Button layoutY="302.0" mnemonicParsing="false" onAction="#sair" prefHeight="54.0" prefWidth="220.0" text="SAIR">
                <font>
-                  <Font size="19.0" />
+                  <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
          </children>
