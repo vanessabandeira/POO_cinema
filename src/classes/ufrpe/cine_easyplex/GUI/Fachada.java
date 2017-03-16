@@ -11,7 +11,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 
+import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.dados.*;
 
 public class Fachada implements Serializable {
@@ -132,6 +134,11 @@ public class Fachada implements Serializable {
 
 	public static void setInstancia(Fachada instancia) {
 		Fachada.instancia = instancia;
+	}
+
+	public ArrayList<Filme> listarFilmes() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 	

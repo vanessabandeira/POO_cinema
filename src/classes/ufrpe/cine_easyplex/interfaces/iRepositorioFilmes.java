@@ -12,6 +12,7 @@ public interface iRepositorioFilmes {
 	public abstract int pesquisar(Filme filme);
 	public abstract ArrayList<Filme> listar();
 	public abstract boolean alterar(Filme filme) throws ValorInvalidoException;
+	public abstract void salvarArquivo();
 	
 	
 	
