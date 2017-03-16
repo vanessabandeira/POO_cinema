@@ -27,9 +27,7 @@ public class ScreenManager {
 	
 	private ScreenManager(){
 		try{
-			
-			filmes = new FXMLLoader(this.getClass().getResource("Menu.fxml"));
-			this.paneMenu = filmes.load();     
+			this.paneMenu = FXMLLoader.load(this.getClass().getResource("Menu.fxml"));     
 			URL paneLoginUrl = getClass().getResource("TelaLogin.fxml"); 
 			this.paneLogin = FXMLLoader.load( paneLoginUrl );   
 			URL paneOpcoesUrl = getClass().getResource("Opcoes.fxml"); 

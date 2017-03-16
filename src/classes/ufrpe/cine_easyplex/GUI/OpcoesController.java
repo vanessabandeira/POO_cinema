@@ -36,6 +36,11 @@ public class OpcoesController {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public void removerFilme(){
+		
+	}
+	
 	public void editarFilme(){
 		try{
 			ScreenManager.getInstance().getEditarFilme();;

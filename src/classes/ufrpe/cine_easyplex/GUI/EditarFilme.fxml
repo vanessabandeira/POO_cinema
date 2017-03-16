@@ -144,7 +144,7 @@
                   <Image url="@../Imagens/logo.png" />
                </image>
             </ImageView>
-            <Button layoutY="115.0" mnemonicParsing="false" onAction="#remover" prefHeight="54.0" prefWidth="220.0" text="COMPRAR">
+            <Button layoutY="115.0" mnemonicParsing="false" onAction="#comprar" prefHeight="54.0" prefWidth="220.0" text="COMPRAR">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>

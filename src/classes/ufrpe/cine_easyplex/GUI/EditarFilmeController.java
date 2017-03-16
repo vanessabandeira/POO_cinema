@@ -24,6 +24,10 @@ public class EditarFilmeController {
 		
 	}
 	
+	public void comprar(){
+		
+	}
+	
 	public void concluir(){
 		try{
 			filme.setTitulo(tfTitulo.getText());
