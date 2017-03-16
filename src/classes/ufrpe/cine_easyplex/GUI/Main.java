@@ -16,6 +16,7 @@ public class Main extends Application{
 			this.root = (BorderPane)FXMLLoader.load(getClass().getResource("TelaLogin.fxml"));
 			Scene scene = new Scene(root,1080,720);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			primaryStage.setTitle("Cine EasyPlex");
 			primaryStage.setResizable(false);
 			primaryStage.setScene(scene);
 			primaryStage.show();

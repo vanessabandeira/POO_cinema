@@ -27,13 +27,13 @@ public class ScreenManager {
 	private ScreenManager(){
 		try{
 			
-			filmes = new FXMLLoader(this.getClass().getResource("Menu.fxml"));
+			filmes = new FXMLLoader(this.getClass().getResource("classes/ufrpe/cine_easyplex/FXML/Menu.fxml"));
 			this.paneMenu = filmes.load();     
-			URL paneLoginUrl = getClass().getResource("TelaLogin.fxml"); 
+			URL paneLoginUrl = getClass().getResource("classes/ufrpe/cine_easyplex/FXML/TelaLogin.fxml"); 
 			this.paneLogin = FXMLLoader.load( paneLoginUrl );   
-			URL paneOpcoesUrl = getClass().getResource("Opcoes.fxml"); 
+			URL paneOpcoesUrl = getClass().getResource("classes/ufrpe/cine_easyplex/FXML/Opcoes.fxml"); 
 			this.paneOpcoes = FXMLLoader.load( paneOpcoesUrl ); 
-			this.paneAdicionarFilme = FXMLLoader.load(getClass().getResource("AdicionarFilme.fxml"));
+			this.paneAdicionarFilme = FXMLLoader.load(getClass().getResource("classes/ufrpe/cine_easyplex/FXML/AdicionarFilme.fxml"));
 			this.border = Main.getRoot();
 		}
 		catch(Exception e){
