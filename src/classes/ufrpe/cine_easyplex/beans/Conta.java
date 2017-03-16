@@ -1,6 +1,8 @@
 package classes.ufrpe.cine_easyplex.beans;
 
-public class Conta {
+import java.io.Serializable;
+
+public class Conta implements Serializable{
 
 	private String login;
 	private String senha;

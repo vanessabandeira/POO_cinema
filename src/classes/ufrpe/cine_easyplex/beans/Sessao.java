@@ -1,8 +1,9 @@
 package classes.ufrpe.cine_easyplex.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Sessao {
+public class Sessao implements Serializable {
 	private Date horario; //inicio da sessao
 	public Filme exibicao;
 	private Sala hall;

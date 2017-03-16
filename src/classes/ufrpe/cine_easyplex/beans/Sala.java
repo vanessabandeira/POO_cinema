@@ -1,6 +1,8 @@
 package classes.ufrpe.cine_easyplex.beans;
 
-public class Sala {
+import java.io.Serializable;
+
+public class Sala implements Serializable {
 	private Filme[] filmesdasala;
 	private int capacidade;
 	private int identidade;

@@ -1,8 +1,9 @@
 package classes.ufrpe.cine_easyplex.beans;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Venda {
+public class Venda implements Serializable {
 	private int qtdIngressos, qtdMeias;
 	private Sessao sessao;
 	private ArrayList<Integer> indiceLugar; 
