@@ -1,6 +1,9 @@
 package classes.ufrpe.cine_easyplex.beans;
 
-public class Filme {
+import java.io.Serializable;
+
+
+public class Filme implements Serializable {
 	private String titulo;
 	private int classificacao;
 	private String genero;
