@@ -14,7 +14,7 @@ public class ScreenManager {
 	BorderPane paneAdicionarFilme;
 	BorderPane paneEditarFilme;
 	
-	FXMLLoader filmes;
+	FXMLLoader menu, login, opcoes, adicionarFilme, editarFilme;
 	
 	public static ScreenManager instancia;
 	
@@ -27,13 +27,16 @@ public class ScreenManager {
 	
 	private ScreenManager(){
 		try{
-			this.paneMenu = FXMLLoader.load(this.getClass().getResource("Menu.fxml"));     
-			URL paneLoginUrl = getClass().getResource("TelaLogin.fxml"); 
-			this.paneLogin = FXMLLoader.load( paneLoginUrl );   
-			URL paneOpcoesUrl = getClass().getResource("Opcoes.fxml"); 
-			this.paneOpcoes = FXMLLoader.load( paneOpcoesUrl ); 
-			this.paneAdicionarFilme = FXMLLoader.load(getClass().getResource("AdicionarFilme.fxml"));
-			this.paneEditarFilme = FXMLLoader.load(getClass().getResource("EditarFilme.fxml"));
+			menu = new FXMLLoader(this.getClass().getResource("Menu.fxml"));
+			this.paneMenu = menu.load();  
+			login = new FXMLLoader(this.getClass().getResource("TelaLogin.fxml")); 
+			this.paneLogin = login.load();  
+			opcoes = new FXMLLoader(this.getClass().getResource("Opcoes.fxml"));
+			this.paneOpcoes = opcoes.load(); 
+			adicionarFilme = new FXMLLoader(this.getClass().getResource("AdicionarFilme.fxml"));
+			this.paneAdicionarFilme = adicionarFilme.load();
+			editarFilme = new FXMLLoader(this.getClass().getResource("EditarFilme.fxml"));
+			this.paneEditarFilme = editarFilme.load();
 			this.border = Main.getRoot();
 		}
 		catch(Exception e){
@@ -55,7 +58,7 @@ public class ScreenManager {
 	}
 	
 	public FXMLLoader getFilmes(){
-		return this.filmes;
+		return this.menu;
 	}
 	
 	public void getAdicionarFilme(){
