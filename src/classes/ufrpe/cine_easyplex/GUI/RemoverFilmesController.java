@@ -70,7 +70,7 @@ public class RemoverFilmesController implements Initializable {
 	public void backToMenu(){
 		try{
 			ScreenManager.getInstance().getMenu();
-			System.out.println("entrou aqui");
+			System.out.println("sucesso");
 		}
 		catch(Exception e){
 			lblError.setText(e.getMessage());;
@@ -80,7 +80,7 @@ public class RemoverFilmesController implements Initializable {
 	public void sair(){
 		try{
 			ScreenManager.getInstance().getTelaLogin();
-			System.out.println("entrou aqui");
+			System.out.println("sucesso");
 		}
 		catch(Exception e){
 			lblError.setText(e.getMessage());;
