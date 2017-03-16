@@ -11,6 +11,7 @@ public class EditarFilmeController {
 	private Filme filme;
 	
 	public void pesquisar(){
+		this.lblError.setText("");
 		this.filme = Fachada.getInstancia().getFilmes().buscarFilme(tfPesquisa.getText());
 		if(filme == null){
 			this.lblError.setText("O filme não existe");
@@ -34,7 +35,7 @@ public class EditarFilmeController {
 			filme.setDuracao(Integer.valueOf(tfDuracao.getText()));
 			filme.setClassificacao(Integer.valueOf(tfClassificacao.getText()));
 			filme.setGenero(tfGenero.getText());
-			Fachada.getInstancia().getFilmes().adicionarFilme(filme);
+			Fachada.getInstancia().getFilmes().editarFilme(filme);
 			lblError.setText("Editado com sucesso!");
 			tfTitulo.clear();
 			tfGenero.clear();
@@ -54,6 +55,11 @@ public class EditarFilmeController {
 	
 	public void backToMenu(){
 		try{
+			tfTitulo.clear();
+			tfGenero.clear();
+			tfClassificacao.clear();
+			tfDuracao.clear();
+			tfPesquisa.clear();
 			ScreenManager.getInstance().getMenu();
 			System.out.println("entrou aqui");
 		}
@@ -64,6 +70,11 @@ public class EditarFilmeController {
 	
 	public void sair(){
 		try{
+			tfTitulo.clear();
+			tfGenero.clear();
+			tfClassificacao.clear();
+			tfDuracao.clear();
+			tfPesquisa.clear();
 			ScreenManager.getInstance().getTelaLogin();
 			System.out.println("entrou aqui");
 		}
