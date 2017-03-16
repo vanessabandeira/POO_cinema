@@ -1,14 +1,10 @@
 package classes.ufrpe.cine_easyplex.GUI;
 
-import java.net.URL;
 
-import classes.ufrpe.cine_easyplex.beans.Filme;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
 import classes.ufrpe.cine_easyplex.GUI.ScreenManager;
 
 
@@ -26,6 +22,7 @@ public class TelaLoginController {
 			this.fachada.getContas().logar(login, senha);
 			
 			ScreenManager.getInstance().getMenu();
+			System.out.println("entrou aqui");
 
 		}
 		catch(Exception e){

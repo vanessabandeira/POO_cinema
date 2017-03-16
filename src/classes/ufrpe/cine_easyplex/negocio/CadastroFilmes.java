@@ -32,6 +32,20 @@ public class CadastroFilmes {
 		}
 		
 	}
+	
+	public void editarFilme(Filme filme) throws ValorInvalidoException {
+		this.repositorioFilmes.alterar(filme);
+		
+	}
+	
+	public Filme buscarFilme(String nome){
+		for(int i = 0; i<this.repositorioFilmes.listar().size(); i++){
+			if(this.repositorioFilmes.listar().get(i).getTitulo().equals(nome)){
+				return this.repositorioFilmes.listar().get(i);
+			}
+		}
+		return null;
+	}
 	public boolean existe(Filme filme){
 		int existir = this.repositorioFilmes.pesquisar(filme);
 		if(existir!=-1){

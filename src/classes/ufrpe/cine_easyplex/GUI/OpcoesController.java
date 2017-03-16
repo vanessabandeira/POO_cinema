@@ -36,4 +36,13 @@ public class OpcoesController {
 			System.out.println(e.getMessage());
 		}
 	}
+	public void editarFilme(){
+		try{
+			ScreenManager.getInstance().getEditarFilme();;
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
 }

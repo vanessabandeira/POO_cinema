@@ -12,6 +12,7 @@ public class ScreenManager {
 	BorderPane paneOpcoes;
 	BorderPane border;
 	BorderPane paneAdicionarFilme;
+	BorderPane paneEditarFilme;
 	
 	FXMLLoader filmes;
 	
@@ -27,13 +28,14 @@ public class ScreenManager {
 	private ScreenManager(){
 		try{
 			
-			filmes = new FXMLLoader(this.getClass().getResource("classes/ufrpe/cine_easyplex/FXML/Menu.fxml"));
+			filmes = new FXMLLoader(this.getClass().getResource("Menu.fxml"));
 			this.paneMenu = filmes.load();     
-			URL paneLoginUrl = getClass().getResource("classes/ufrpe/cine_easyplex/FXML/TelaLogin.fxml"); 
+			URL paneLoginUrl = getClass().getResource("TelaLogin.fxml"); 
 			this.paneLogin = FXMLLoader.load( paneLoginUrl );   
-			URL paneOpcoesUrl = getClass().getResource("classes/ufrpe/cine_easyplex/FXML/Opcoes.fxml"); 
+			URL paneOpcoesUrl = getClass().getResource("Opcoes.fxml"); 
 			this.paneOpcoes = FXMLLoader.load( paneOpcoesUrl ); 
-			this.paneAdicionarFilme = FXMLLoader.load(getClass().getResource("classes/ufrpe/cine_easyplex/FXML/AdicionarFilme.fxml"));
+			this.paneAdicionarFilme = FXMLLoader.load(getClass().getResource("AdicionarFilme.fxml"));
+			this.paneEditarFilme = FXMLLoader.load(getClass().getResource("EditarFilme.fxml"));
 			this.border = Main.getRoot();
 		}
 		catch(Exception e){
@@ -60,5 +62,8 @@ public class ScreenManager {
 	
 	public void getAdicionarFilme(){
 		border.setCenter(this.paneAdicionarFilme);
+	}
+	public void getEditarFilme(){
+		border.setCenter(this.paneEditarFilme);
 	}
 }
