@@ -21,7 +21,7 @@
    <center>
       <Pane prefHeight="428.0" prefWidth="693.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tableView" layoutX="22.0" layoutY="49.0" prefHeight="413.0" prefWidth="508.0">
+            <TableView fx:id="tableView" layoutX="22.0" layoutY="49.0" onSort="#preencherTabela" prefHeight="413.0" prefWidth="508.0">
               <columns>
                 <TableColumn fx:id="listaTitulo" prefWidth="224.0" text="Titulo" />
                 <TableColumn fx:id="listaGenero" minWidth="0.0" prefWidth="103.0" text="Genero" />

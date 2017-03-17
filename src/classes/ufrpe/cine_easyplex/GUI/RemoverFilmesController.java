@@ -39,7 +39,7 @@ public class RemoverFilmesController implements Initializable {
 
 	@Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-		
+		preencherTabela();
     }
 	
 	public void preencherTabela(){
@@ -50,6 +50,7 @@ public class RemoverFilmesController implements Initializable {
 		
         tableView.setItems(FXCollections.observableArrayList(Fachada.getInstancia().getFilmes().getRepositorioFilmes().listar()));
         tableView.refresh();
+        //tableView.
 	}
 	
 	public void remover() {
