@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
-
+import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.dados.RepositorioFilmes;
 import javafx.collections.FXCollections;
@@ -33,7 +33,7 @@ public class RemoverFilmesController implements Initializable {
 	private TableColumn<Filme,Integer> listaClassificacao;
 	
 	private Filme filmeselecionado;
-	private Fachada f;
+
 	@FXML Label lblError;
 	
 
@@ -52,7 +52,7 @@ public class RemoverFilmesController implements Initializable {
         tableView.refresh();
 	}
 	
-	public void remover() {
+	public void remover() throws ValorInvalidoException {
 		filmeselecionado = tableView.getSelectionModel().getSelectedItem();
 		if (filmeselecionado != null) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -60,9 +60,9 @@ public class RemoverFilmesController implements Initializable {
 			alert.setHeaderText("Deseja remover o filme " + filmeselecionado.getTitulo() + "?");
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK) {
-				f.getInstancia().removerFilmes(filmeselecionado);
+				Fachada.getInstancia().removerFilme(filmeselecionado);
 				preencherTabela();
-				RepositorioFilmes.getInstance().salvarArquivo();
+				
 			}
 		}
 	}

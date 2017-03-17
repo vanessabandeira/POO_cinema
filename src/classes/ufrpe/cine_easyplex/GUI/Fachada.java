@@ -13,6 +13,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.dados.*;
 
@@ -141,10 +142,48 @@ public class Fachada implements Serializable {
 		return null;
 	}
 
-	public void removerFilmes(Filme filmeselecionado) {
-		// TODO Auto-generated method stub
-		
+	public void adicionarFilme(Filme filme) throws ValorInvalidoException {
+		filmes.adicionarFilme(filme);
 	}
+
+	public void removerFilme(Filme filme) throws ValorInvalidoException {
+		filmes.removerFilme(filme);
+	}
+
+	public void editarFilme(Filme filme) throws ValorInvalidoException {
+		filmes.editarFilme(filme);
+	}
+
+	public Filme buscarFilme(String nome) {
+		return filmes.buscarFilme(nome);
+	}
+
+	public boolean equals(Object arg0) {
+		return filmes.equals(arg0);
+	}
+
+	public boolean existe(Filme filme) {
+		return filmes.existe(filme);
+	}
+
+	public iRepositorioFilmes getRepositorioFilmes() {
+		return filmes.getRepositorioFilmes();
+	}
+
+	public int hashCode() {
+		return filmes.hashCode();
+	}
+
+	public void setRepositorioFilmes(RepositorioFilmes repositorioFilmes) {
+		filmes.setRepositorioFilmes(repositorioFilmes);
+	}
+
+	public String toString() {
+		return filmes.toString();
+	}
+
+	
+	
 	
 	
 
