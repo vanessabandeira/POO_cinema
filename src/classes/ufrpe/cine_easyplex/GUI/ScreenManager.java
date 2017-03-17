@@ -19,6 +19,7 @@ public class ScreenManager {
 	private Node paneRemoverFilme;
 	
 	public static ScreenManager instancia;
+	private FXMLLoader removerFilme;
 	
 	public static synchronized ScreenManager getInstance(){
 		if(instancia == null){
@@ -39,6 +40,9 @@ public class ScreenManager {
 			this.paneAdicionarFilme = adicionarFilme.load();
 			editarFilme = new FXMLLoader(this.getClass().getResource("EditarFilme.fxml"));
 			this.paneEditarFilme = editarFilme.load();
+			this.border = Main.getRoot();
+			removerFilme = new FXMLLoader(this.getClass().getResource("RemoverFilme.fxml"));
+			this.paneRemoverFilme = removerFilme.load();
 			this.border = Main.getRoot();
 		}
 		catch(Exception e){
