@@ -8,7 +8,7 @@ public class ComparadorSessao implements Comparator<Sessao>{
 
 	@Override
 	public int compare(Sessao arg0, Sessao arg1) {
-		return arg0.getHorario().compareTo(arg1.toString());
+		return arg0.getHorario().compareTo(arg1.getHorario());
 	}
 	
 }

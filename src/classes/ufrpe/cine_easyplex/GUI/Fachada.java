@@ -140,6 +140,11 @@ public class Fachada implements Serializable {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	public void removerFilmes(Filme filmeselecionado) {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	
 

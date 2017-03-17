@@ -39,7 +39,7 @@ public class RemoverFilmesController implements Initializable {
 
 	@Override
     public void initialize(URL arg0, ResourceBundle arg1) {
-		preencherTabela();
+		
     }
 	
 	public void preencherTabela(){
@@ -50,18 +50,17 @@ public class RemoverFilmesController implements Initializable {
 		
         tableView.setItems(FXCollections.observableArrayList(Fachada.getInstancia().getFilmes().getRepositorioFilmes().listar()));
         tableView.refresh();
-        //tableView.
 	}
 	
 	public void remover() {
+		filmeselecionado = tableView.getSelectionModel().getSelectedItem();
 		if (filmeselecionado != null) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("Remover filme");
-			alert.setHeaderText("Deseja remover o filme?");
+			alert.setHeaderText("Deseja remover o filme " + filmeselecionado.getTitulo() + "?");
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK) {
-				ArrayList<Filme> aux = f.listarFilmes();
-				aux.remove(filmeselecionado);
+				f.getInstancia().removerFilmes(filmeselecionado);
 				preencherTabela();
 				RepositorioFilmes.getInstance().salvarArquivo();
 			}
@@ -88,4 +87,4 @@ public class RemoverFilmesController implements Initializable {
 		}
 	}
 	
-}	
+}
