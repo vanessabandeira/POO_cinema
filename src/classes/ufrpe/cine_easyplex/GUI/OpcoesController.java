@@ -38,6 +38,13 @@ public class OpcoesController {
 	}
 	
 	public void removerFilme(){
+		try{
+			ScreenManager.getInstance().getRemoverFilme();
+			System.out.println("sucesso");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
 		
 	}
 	

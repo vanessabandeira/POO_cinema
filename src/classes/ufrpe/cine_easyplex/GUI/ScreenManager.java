@@ -3,6 +3,7 @@ package classes.ufrpe.cine_easyplex.GUI;
 import java.net.URL;
 
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
 
 public class ScreenManager {
@@ -15,6 +16,7 @@ public class ScreenManager {
 	BorderPane paneEditarFilme;
 	
 	FXMLLoader menu, login, opcoes, adicionarFilme, editarFilme;
+	private Node paneRemoverFilme;
 	
 	public static ScreenManager instancia;
 	
@@ -66,5 +68,8 @@ public class ScreenManager {
 	}
 	public void getEditarFilme(){
 		border.setCenter(this.paneEditarFilme);
+	}
+	public void getRemoverFilme(){
+		border.setCenter(this.paneRemoverFilme);
 	}
 }
