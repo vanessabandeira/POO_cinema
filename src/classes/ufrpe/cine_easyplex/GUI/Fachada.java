@@ -15,6 +15,7 @@ import java.util.ArrayList;
 
 import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Filme;
+import classes.ufrpe.cine_easyplex.beans.Sala;
 import classes.ufrpe.cine_easyplex.dados.*;
 
 public class Fachada implements Serializable {
@@ -180,6 +181,14 @@ public class Fachada implements Serializable {
 
 	public String toString() {
 		return filmes.toString();
+	}
+
+	public void adicionarSala(Sala sala) throws ValorInvalidoException {
+		salas.adicionarSala(sala);
+	}
+
+	public void removerSala(Sala sala) {
+		salas.removerSala(sala);
 	}
 
 	

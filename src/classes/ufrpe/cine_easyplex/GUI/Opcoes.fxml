@@ -71,9 +71,9 @@
                   <Font name="Gotham Light" size="15.0" />
                </font>
                <items>
-                  <MenuItem mnemonicParsing="false" text="Adicionar" />
+                  <MenuItem mnemonicParsing="false" onAction="#adicionarSala" text="Adicionar" />
                   <MenuItem mnemonicParsing="false" text="Remover" />
-                  <MenuItem mnemonicParsing="false" text="Editar" />
+                  <MenuItem mnemonicParsing="false" onAction="#editarSala" text="Editar" />
                   <MenuItem mnemonicParsing="false" text="Listar" />
                </items>
             </MenuButton>
@@ -88,7 +88,6 @@
                   <MenuItem mnemonicParsing="false" onAction="#adicionarFilme" text="Adicionar" />
                   <MenuItem mnemonicParsing="false" onAction="#removerFilme" text="Remover" />
                   <MenuItem mnemonicParsing="false" onAction="#editarFilme" text="Editar" />
-                  <MenuItem mnemonicParsing="false" text="Listar" />
                </items>
             </MenuButton>
             <MenuButton layoutX="23.0" layoutY="246.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Sessões">

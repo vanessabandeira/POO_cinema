@@ -1,5 +1,6 @@
 package classes.ufrpe.cine_easyplex.negocio;
 
+import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Sala;
 import classes.ufrpe.cine_easyplex.dados.RepositorioSalas;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSalas;
@@ -10,7 +11,7 @@ public class CadastroSalas {
 	public CadastroSalas() {
 		this.repositorioSalas = RepositorioSalas.getInstance();
 	}
-	public void adicionarSala(Sala sala){
+	public void adicionarSala(Sala sala) throws ValorInvalidoException{
 		boolean adicionar = this.repositorioSalas.inserir(sala);
 		if(adicionar){
 			System.out.println("Adicionado com sucesso!");
@@ -41,6 +42,10 @@ public class CadastroSalas {
 	}
 	public Sala procurarTipo(){
 		return null;
+	}
+	
+	public void editarSala(Sala sala){
+		this.repositorioSalas.alterar(sala);
 	}
 
 }

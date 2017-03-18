@@ -57,4 +57,23 @@ public class OpcoesController {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public void adicionarSala(){
+		try{
+			ScreenManager.getInstance().getAdicionarSala();
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+	public void editarSala(){
+		try{
+			ScreenManager.getInstance().getEditarSala();
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
 }

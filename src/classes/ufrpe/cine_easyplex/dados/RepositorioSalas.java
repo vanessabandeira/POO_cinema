@@ -6,12 +6,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSalas;
+import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Sala;
 
-public class RepositorioSalas implements iRepositorioSalas{
+public class RepositorioSalas implements iRepositorioSalas, Serializable{
 	public 	ArrayList<Sala> salas;
 	
 	private static iRepositorioSalas instancia;
@@ -78,14 +80,14 @@ public class RepositorioSalas implements iRepositorioSalas{
         }
 	}
 	
-	public boolean inserir(Sala sala){
+	public boolean inserir(Sala sala) throws ValorInvalidoException{
 			int search = pesquisar(sala);
-			if(sala != null && search == -1 && sala.getCapacidade()>0){
+			if(sala != null && search < 0 && sala.getCapacidade()>0){
 				this.salas.add(sala);
 				this.salvarArquivo();
 				return true;
 			}
-			return false;
+			else throw new ValorInvalidoException("sala");
 	}
 	
 	public int pesquisar(Sala sala){

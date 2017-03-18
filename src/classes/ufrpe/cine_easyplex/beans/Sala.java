@@ -3,7 +3,6 @@ package classes.ufrpe.cine_easyplex.beans;
 import java.io.Serializable;
 
 public class Sala implements Serializable {
-	private Filme[] filmesdasala;
 	private int capacidade;
 	private int identidade;
 	private boolean v3d;
@@ -18,12 +17,8 @@ public class Sala implements Serializable {
 		this.prime=prime;
 	}
 
-	public Filme[] getFilmesdasala() {
-		return filmesdasala;
-	}
-
-	public void setFilmesdasala(Filme[] filmesdasala) {
-		this.filmesdasala = filmesdasala;
+	public Sala() {
+		super();
 	}
 
 	public int getCapacidade() {
@@ -64,6 +59,14 @@ public class Sala implements Serializable {
 
 	public void setPrime(boolean prime) {
 		this.prime = prime;
+	}
+	
+	public boolean equals(Sala sala){
+		if(this.identidade == sala.identidade){
+			return true;
+		}
+		return false;
+		
 	}
 
 }
