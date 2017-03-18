@@ -42,7 +42,7 @@ public class CadastroSalas {
 	}
 	public Sala procurarTipo(){
 		return null;
-	}
+	} 
 	
 	public void editarSala(Sala sala){
 		this.repositorioSalas.alterar(sala);

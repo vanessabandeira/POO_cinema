@@ -33,7 +33,7 @@ public class AdicionarSalaController {
 		catch(NumberFormatException e){
 			lblError.setText("Por favor, utilize apenas números para ID e capacidade");
 		}
-		catch(Exception e){
+		catch(Exception e){ 
 			
 			lblError.setText(e.getMessage());
 		}

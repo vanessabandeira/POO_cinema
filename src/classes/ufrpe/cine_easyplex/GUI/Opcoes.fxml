@@ -13,7 +13,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.Blend?>
-<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.ColorAdjust?> 
 <?import javafx.scene.effect.DisplacementMap?>
 <?import javafx.scene.effect.FloatMap?>
 <?import javafx.scene.effect.InnerShadow?>

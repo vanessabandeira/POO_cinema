@@ -50,7 +50,7 @@ public class ScreenManager {
 		}
 		catch(Exception e){
 		}
-	}
+	} 
 	
 	public void getTelaLogin(){
 		border.setCenter(this.paneLogin);
