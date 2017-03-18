@@ -15,11 +15,11 @@ public class EditarFilmeController {
 	@FXML TextField tfPesquisa, tfTitulo, tfDuracao;
 	@FXML Label lblError;
 	private Filme filme;
+	
 	@FXML ChoiceBox<String> classificacaoBox;
 	@FXML ChoiceBox<String> generoBox;
 	
-	
-	
+
 	public void pesquisar(){
 		this.lblError.setText("");
 		this.filme = Fachada.getInstancia().getFilmes().buscarFilme(tfPesquisa.getText());
