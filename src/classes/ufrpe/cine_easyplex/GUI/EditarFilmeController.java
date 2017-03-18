@@ -4,6 +4,8 @@ import classes.ufrpe.cine_easyplex.beans.Filme;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -54,6 +56,11 @@ public class EditarFilmeController {
 			generoBox.setValue("Ação");
 			tfDuracao.clear();
 			tfPesquisa.clear();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText(null);
+			alert.setContentText(filme.getTitulo() + " foi modificado com sucesso.");
+			alert.showAndWait();
 			
 		}
 		catch(Exception e){

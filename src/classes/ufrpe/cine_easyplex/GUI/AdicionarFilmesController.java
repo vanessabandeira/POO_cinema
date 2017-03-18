@@ -1,12 +1,17 @@
 package classes.ufrpe.cine_easyplex.GUI;
 
+import java.util.Optional;
+
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class AdicionarFilmesController {
 	@FXML ObservableList<String> classificacaoList = FXCollections.observableArrayList("L","10","12","14","16","18");
@@ -34,11 +39,16 @@ public class AdicionarFilmesController {
 			filme.setClassificacao(classificacaoBox.getValue());
 			filme.setGenero(generoBox.getValue());
 			Fachada.getInstancia().getFilmes().adicionarFilme(filme);
-			lblError.setText("Adicionado com sucesso!");
+			//lblError.setText("Adicionado com sucesso!");
 			tfTitulo.clear();
 			classificacaoBox.setValue("L");
 			generoBox.setValue("Ação");
 			tfDuracao.clear();
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText(null);
+			alert.setContentText(filme.getTitulo() + " foi adicionado com sucesso.");
+			alert.showAndWait();
 			
 		}
 		catch(Exception e){
@@ -52,7 +62,7 @@ public class AdicionarFilmesController {
 			System.out.println("entrou aqui");
 		}
 		catch(Exception e){
-			lblError.setText(e.getMessage());
+			lblError.setText("adicionado");
 		}
 	}
 	
@@ -62,7 +72,7 @@ public class AdicionarFilmesController {
 			System.out.println("entrou aqui");
 		}
 		catch(Exception e){
-			lblError.setText(e.getMessage());
+			lblError.setText("adicionado");
 		}
 	}
 
