@@ -56,7 +56,7 @@ public class RemoverFilmesController implements Initializable {
 		filmeselecionado = tableView.getSelectionModel().getSelectedItem();
 		if (filmeselecionado != null) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
-			alert.setTitle("Remover filme");
+			alert.setTitle("CineEasyPlex");
 			alert.setHeaderText("Deseja remover o filme " + filmeselecionado.getTitulo() + "?");
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK) {
@@ -73,7 +73,7 @@ public class RemoverFilmesController implements Initializable {
 			System.out.println("sucesso");
 		}
 		catch(Exception e){
-			lblError.setText(e.getMessage());;
+			lblError.setText("removido");;
 		}
 	}
 	
@@ -83,7 +83,7 @@ public class RemoverFilmesController implements Initializable {
 			System.out.println("sucesso");
 		}
 		catch(Exception e){
-			lblError.setText(e.getMessage());;
+			lblError.setText("removido");;
 		}
 	}
 	
