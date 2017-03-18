@@ -63,9 +63,7 @@
                </font>
             </Label>
             <TextField fx:id="tfTitulo" layoutX="161.0" layoutY="212.0" prefHeight="33.0" prefWidth="320.0" />
-            <TextField fx:id="tfGenero" layoutX="277.0" layoutY="256.0" prefHeight="33.0" prefWidth="204.0" />
             <TextField fx:id="tfDuracao" layoutX="371.0" layoutY="303.0" prefHeight="33.0" prefWidth="110.0" />
-            <TextField fx:id="tfClassificacao" layoutX="371.0" layoutY="351.0" prefHeight="33.0" prefWidth="110.0" />
             <Label layoutX="58.0" layoutY="256.0" prefHeight="33.0" prefWidth="82.0" text="Gênero">
                <font>
                   <Font size="21.0" />
@@ -81,7 +79,9 @@
                   <Font size="21.0" />
                </font>
             </Label>
-            <Button layoutX="414.0" layoutY="431.0" mnemonicParsing="false" onAction="#concluir" prefHeight="31.0" prefWidth="67.0" text="Concluir" />
+            <Button layoutX="417.0" layoutY="413.0" mnemonicParsing="false" onAction="#concluir" prefHeight="31.0" prefWidth="67.0" text="Concluir" />
+            <ChoiceBox fx:id="generoBox" layoutX="371.0" layoutY="256.0" prefHeight="33.0" prefWidth="110.0" />
+            <ChoiceBox fx:id="classificacaoBox" layoutX="419.0" layoutY="351.0" prefHeight="33.0" prefWidth="62.0" />
          </children>
       </Pane>
    </center>

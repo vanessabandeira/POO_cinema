@@ -1,14 +1,24 @@
 package classes.ufrpe.cine_easyplex.GUI;
 
 import classes.ufrpe.cine_easyplex.beans.Filme;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class EditarFilmeController {
-	@FXML TextField tfPesquisa, tfTitulo, tfGenero, tfClassificacao, tfDuracao;
+	@FXML ObservableList<String> classificacaoList = FXCollections.observableArrayList("L","10","12","14","16","18");
+	@FXML ObservableList<String> generoList = FXCollections.observableArrayList("Ação","Animação","Cinema catástrofe","Comédia","Drama","Documentário","Erótico","Fantasia",
+			"Ficção científica","Ficção histórica","Guerra","Musical","Romance","Suspense","Terror");
+	@FXML TextField tfPesquisa, tfTitulo, tfDuracao;
 	@FXML Label lblError;
 	private Filme filme;
+	@FXML ChoiceBox<String> classificacaoBox;
+	@FXML ChoiceBox<String> generoBox;
+	
+	
 	
 	public void pesquisar(){
 		this.lblError.setText("");
@@ -17,9 +27,11 @@ public class EditarFilmeController {
 			this.lblError.setText("O filme não existe");
 		}
 		else{
+			classificacaoBox.setValue(this.filme.getClassificacao());
+			classificacaoBox.setItems(classificacaoList);
+			generoBox.setValue(this.filme.getGenero());
+			generoBox.setItems(generoList);
 			tfTitulo.setText(this.filme.getTitulo());
-			tfGenero.setText(this.filme.getGenero());
-			tfClassificacao.setText(""+(this.filme.getClassificacao()));
 			tfDuracao.setText(""+this.filme.getDuracao());
 		}
 		
@@ -33,19 +45,16 @@ public class EditarFilmeController {
 		try{
 			filme.setTitulo(tfTitulo.getText());
 			filme.setDuracao(Integer.valueOf(tfDuracao.getText()));
-			filme.setClassificacao(Integer.valueOf(tfClassificacao.getText()));
-			filme.setGenero(tfGenero.getText());
+			filme.setClassificacao(classificacaoBox.getValue());
+			filme.setGenero(generoBox.getValue());
 			Fachada.getInstancia().getFilmes().editarFilme(filme);
 			lblError.setText("Editado com sucesso!");
 			tfTitulo.clear();
-			tfGenero.clear();
-			tfClassificacao.clear();
+			classificacaoBox.setValue("L");
+			generoBox.setValue("Ação");
 			tfDuracao.clear();
 			tfPesquisa.clear();
 			
-		}
-		catch(NumberFormatException e){
-			lblError.setText("Valores de duração ou classificação inválido(s)");
 		}
 		catch(Exception e){
 			lblError.setText(e.getMessage());
@@ -56,8 +65,8 @@ public class EditarFilmeController {
 	public void backToMenu(){
 		try{
 			tfTitulo.clear();
-			tfGenero.clear();
-			tfClassificacao.clear();
+			classificacaoBox.setValue("L");
+			generoBox.setValue("Ação");
 			tfDuracao.clear();
 			tfPesquisa.clear();
 			ScreenManager.getInstance().getMenu();
@@ -71,8 +80,8 @@ public class EditarFilmeController {
 	public void sair(){
 		try{
 			tfTitulo.clear();
-			tfGenero.clear();
-			tfClassificacao.clear();
+			classificacaoBox.setValue("L");
+			generoBox.setValue("Ação");;
 			tfDuracao.clear();
 			tfPesquisa.clear();
 			ScreenManager.getInstance().getTelaLogin();
