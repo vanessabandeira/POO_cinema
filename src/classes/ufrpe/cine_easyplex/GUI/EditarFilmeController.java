@@ -59,7 +59,7 @@ public class EditarFilmeController {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("CineEasyPlex");
 			alert.setHeaderText(null);
-			alert.setContentText(filme.getTitulo() + "foi modificado com sucesso.");
+			alert.setContentText(filme.getTitulo() + " foi modificado com sucesso.");
 			alert.showAndWait();
 			
 		}
