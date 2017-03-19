@@ -76,4 +76,14 @@ public class OpcoesController {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public void adicionarConta(){
+		try{
+			ScreenManager.getInstance().getAdicionarConta();
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
 }

@@ -90,5 +90,15 @@ public class RepositorioConta implements iRepositorioContas, Serializable{
 		return this.contas;
 	}
 	
+	@Override
+	public boolean inserir(Conta conta){
+		if(conta.getLogin() != null && conta.getSenha() != null){
+			this.contas.add(conta);
+			this.salvarArquivo();
+			return true;
+		}
+		return false;
+	}
+	
 	
 }

@@ -23,5 +23,8 @@ public class CadastroContas {
 		throw new LoginException();
 		
 	}
+	public void adicionarConta(Conta conta){
+		this.repositorioContas.inserir(conta);
+	}
 
 }

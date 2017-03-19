@@ -9,4 +9,6 @@ public interface iRepositorioContas {
 	
 	public ArrayList<Conta> getContas();
 
+	public boolean inserir(Conta conta);
+
 }
