@@ -26,8 +26,11 @@ public class EditarFilmeController {
 		this.lblError.setText("");
 		this.filme = Fachada.getInstancia().getFilmes().buscarFilme(tfPesquisa.getText());
 		if(filme == null){
-			this.lblError.setText("O filme não existe");
-		}
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText(null);
+			alert.setContentText("FILME NÃO ENCONTRADO");
+			alert.showAndWait();		}
 		else{
 			classificacaoBox.setValue(this.filme.getClassificacao());
 			classificacaoBox.setItems(classificacaoList);
@@ -50,7 +53,6 @@ public class EditarFilmeController {
 			filme.setClassificacao(classificacaoBox.getValue());
 			filme.setGenero(generoBox.getValue());
 			Fachada.getInstancia().getFilmes().editarFilme(filme);
-			lblError.setText("Editado com sucesso!");
 			tfTitulo.clear();
 			classificacaoBox.setValue("L");
 			generoBox.setValue("Ação");
@@ -80,7 +82,7 @@ public class EditarFilmeController {
 			System.out.println("entrou aqui");
 		}
 		catch(Exception e){
-			lblError.setText(e.getMessage());;
+			lblError.setText("editado");;
 		}
 	}
 	
@@ -95,7 +97,7 @@ public class EditarFilmeController {
 			System.out.println("entrou aqui");
 		}
 		catch(Exception e){
-			lblError.setText(e.getMessage());;
+			lblError.setText("Editado");;
 		}
 	}
 }

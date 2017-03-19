@@ -14,9 +14,10 @@ public class ScreenManager {
 	BorderPane paneAdicionarSala;
 	BorderPane paneEditarFilme;
 	BorderPane paneEditarSala;
+	BorderPane paneRemoverFilme;
 	
 	FXMLLoader menu, login, opcoes, adicionarFilme, editarFilme, adicionarSala, removerFilme, editarSala;
-	private Node paneRemoverFilme;
+	
 	
 	public static ScreenManager instancia;
 	

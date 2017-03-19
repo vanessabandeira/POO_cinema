@@ -29,6 +29,7 @@ public class CadastroFilmes {
 	
 	public void editarFilme(Filme filme) throws ValorInvalidoException {
 		this.repositorioFilmes.alterar(filme);
+		System.out.println("Editado!");
 		
 	}
 	
