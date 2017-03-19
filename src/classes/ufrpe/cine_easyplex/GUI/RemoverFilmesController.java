@@ -33,7 +33,7 @@ public class RemoverFilmesController implements Initializable {
 	private TableColumn<Filme,Integer> listaClassificacao;
 	
 	private Filme filmeselecionado;
-
+	Fachada fachada = Fachada.getInstancia();
 	@FXML Label lblError;
 	
 
@@ -57,9 +57,14 @@ public class RemoverFilmesController implements Initializable {
 		if (filmeselecionado != null) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("CineEasyPlex");
-			alert.setHeaderText("Deseja remover o filme " + filmeselecionado.getTitulo() + "?");
+			alert.setHeaderText("Deseja remover o filme " + filmeselecionado.getTitulo() + "? Todas as sessões marcadas serão canceladas.");
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK) {
+				for(int i = 0; i < fachada.getSessoes().getRepositorioSessao().listar().size(); i++){
+					if(fachada.getSessoes().getRepositorioSessao().listar().get(i).getExibicao().getTitulo().equals(filmeselecionado.getTitulo())){
+						fachada.getSessoes().cancelarSessao(fachada.getSessoes().getRepositorioSessao().listar().get(i));
+					}
+				}
 				Fachada.getInstancia().removerFilme(filmeselecionado);
 				preencherTabela();
 				

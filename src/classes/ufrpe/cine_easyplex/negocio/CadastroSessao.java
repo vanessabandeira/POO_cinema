@@ -16,11 +16,11 @@ public class CadastroSessao {
 		this.repositorioSessao = RepositorioSessao.getInstance();
 	}
 	
-	public void adicionarSessao(){
-		
+	public void adicionarSessao(Sessao sessao){
+		this.repositorioSessao.inserir(sessao);
 	}
-	public void cancelarSessao(){
-		
+	public void cancelarSessao(Sessao sessao){
+		this.repositorioSessao.remover(sessao);
 	}
 	public boolean conferirHorario(){
 		return true;
@@ -48,6 +48,14 @@ public class CadastroSessao {
 	
 	public Sessao buscarPorHorario(){
 		return null;
+	}
+
+	public iRepositorioSessao getRepositorioSessao() {
+		return repositorioSessao;
+	}
+
+	public void setRepositorioSessao(iRepositorioSessao repositorioSessao) {
+		this.repositorioSessao = repositorioSessao;
 	}
 	
 

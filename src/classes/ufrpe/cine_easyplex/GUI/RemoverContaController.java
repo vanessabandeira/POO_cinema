@@ -46,6 +46,7 @@ public class RemoverContaController {
 			tfLogin.clear();
 			tfSenha.clear();
 			tfRepetirSenha.clear();
+			lblError.setText("");
 			ScreenManager.getInstance().getMenu();
 			System.out.println("entrou aqui");
 		}
@@ -59,6 +60,7 @@ public class RemoverContaController {
 			tfLogin.clear();
 			tfSenha.clear();
 			tfRepetirSenha.clear();
+			lblError.setText("");
 			ScreenManager.getInstance().getTelaLogin();
 			System.out.println("entrou aqui");
 		}
