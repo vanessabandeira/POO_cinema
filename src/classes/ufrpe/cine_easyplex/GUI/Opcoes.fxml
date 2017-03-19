@@ -113,7 +113,7 @@
                </font>
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#adicionarConta" text="Adicionar" />
-                  <MenuItem mnemonicParsing="false" text="Remover" />
+                  <MenuItem mnemonicParsing="false" onAction="#removerConta" text="Remover" />
                   <MenuItem mnemonicParsing="false" text="Editar" />
                   <MenuItem mnemonicParsing="false" text="Listar" />
                </items>

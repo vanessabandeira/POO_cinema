@@ -1,6 +1,7 @@
 package classes.ufrpe.cine_easyplex.negocio;
 
 import classes.ufrpe.cine_easyplex.Exceptions.LoginException;
+import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Conta;
 import classes.ufrpe.cine_easyplex.dados.RepositorioConta;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioContas;
@@ -23,8 +24,12 @@ public class CadastroContas {
 		throw new LoginException();
 		
 	}
-	public void adicionarConta(Conta conta){
+	public void adicionarConta(Conta conta) throws ValorInvalidoException{
 		this.repositorioContas.inserir(conta);
+	}
+	
+	public void removerConta(Conta conta) throws ValorInvalidoException{
+		this.repositorioContas.remover(conta);
 	}
 
 }

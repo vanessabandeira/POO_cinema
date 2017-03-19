@@ -9,6 +9,7 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
+import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Conta;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioContas;
 
@@ -91,13 +92,37 @@ public class RepositorioConta implements iRepositorioContas, Serializable{
 	}
 	
 	@Override
-	public boolean inserir(Conta conta){
-		if(conta.getLogin() != null && conta.getSenha() != null){
-			this.contas.add(conta);
+	public boolean inserir(Conta conta) throws ValorInvalidoException{
+		if(this.pesquisar(conta) == -1){
+			if(conta.getLogin() != null && conta.getSenha() != null){
+				this.contas.add(conta);
+				this.salvarArquivo();
+				return true;
+			}
+			else throw new ValorInvalidoException("login e senha");
+		}
+		else throw new ValorInvalidoException("conta já existe portanto");
+	}
+	
+	public boolean remover(Conta conta) throws ValorInvalidoException{
+		int search = pesquisar(conta);
+		if (search != -1) {
+			this.contas.remove(conta);
+			System.out.println("removeu");
 			this.salvarArquivo();
 			return true;
+		}else throw new ValorInvalidoException("conta não existe portanto");
+	}
+	
+	public int pesquisar(Conta conta){
+		for(int i = 0; i < this.contas.size(); i++){
+			if(this.contas.get(i).getLogin().equals(conta.getLogin())){
+				if(this.contas.get(i).getSenha().equals(conta.getSenha())){
+					return i;
+				}
+			}
 		}
-		return false;
+		return -1;
 	}
 	
 	

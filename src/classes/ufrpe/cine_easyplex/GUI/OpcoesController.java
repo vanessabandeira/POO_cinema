@@ -86,4 +86,14 @@ public class OpcoesController {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public void removerConta(){
+		try{
+			ScreenManager.getInstance().getRemoverConta();
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
 }
