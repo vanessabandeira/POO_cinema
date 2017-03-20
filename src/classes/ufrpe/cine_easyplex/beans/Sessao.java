@@ -1,27 +1,29 @@
 package classes.ufrpe.cine_easyplex.beans;
-
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Sessao implements Serializable {
-	private Date horario; //inicio da sessao
-	public Filme exibicao;
+	private static final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss dd-MM-yyyy");
+	private Filme exibicao;
 	private Sala hall;
+	private Date hinicio;
+	private Date hfim;
+	private boolean[] posicao;
 	private int ocupacao;
 	private float valor; // valor do ingresso inteiro
-	private boolean[] posicao; // as cadeiras da sala
 
 	/*
 	 * public Sessao{ M�TODO CONSTRUTOR }
 	 */
-	public Sessao(Date horario, Filme exibicao, Sala hall) {
-		this.exibicao = exibicao;
-		this.horario = horario;
-		this.hall = hall;
-		this.posicao = new boolean[hall.getCapacidade()];
-		for (int i = 0; i < hall.getCapacidade(); i++) {
-			this.posicao[i] = true;
-		}
+	public Sessao(Filme exibido, Sala sala, Date hinicio) {
+		super();
+		this.exibicao = exibido;
+		this.hall = sala;
+		this.hinicio = hinicio;
+		this.hfim = (Date) this.hinicio.clone();
+		this.hfim.setMinutes(this.hinicio.getMinutes() + this.exibicao.getDuracao());
+		this.ocupacao = 0;
 	}
 	
 	public boolean conferirOcupacao(int posicao){
@@ -32,12 +34,20 @@ public class Sessao implements Serializable {
 		this.posicao[Poltrona] = false;
 	}
 
-	public String getHorario() {
-		return this.horario.toString();
+	public String getHinicio() {
+		return sdf.format(this.hinicio);
 	}
 
-	public void setHorario(Date horario) {
-		this.horario = horario;
+	public void setHinicio(Date hinicio) {
+		this.hinicio = hinicio;
+	}
+
+	public String getHfim() {
+		return sdf.format(this.hfim);
+	}
+
+	public void setHfim(Date hfim) {
+		this.hfim = hfim;
 	}
 
 	public Filme getExibicao() {
@@ -82,7 +92,7 @@ public class Sessao implements Serializable {
 
 	public boolean equals(Sessao comparada) {
 		if (this.exibicao.equals(comparada.exibicao)) {
-			if (this.horario.equals(comparada.horario)) {
+			if (this.hinicio.equals(comparada.hinicio)) {
 				if (this.hall.equals(comparada.hall)) {
 					return true;
 				}
