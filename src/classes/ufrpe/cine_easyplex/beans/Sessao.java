@@ -1,39 +1,44 @@
 package classes.ufrpe.cine_easyplex.beans;
-
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Sessao implements Serializable {
+	private static final long serialVersionUID = 5529462629123733301L;
 	private static final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss dd-MM-yyyy");
 	private Filme exibicao;
 	private Sala hall;
 	private Date hinicio;
 	private Date hfim;
-	private boolean[] posicao;
-	private int ocupacao;
 	private float valor; // valor do ingresso inteiro
+	private Boolean[] cadeiras = new Boolean[200];
 
 	
-	public Sessao(Filme exibido, Sala sala, Date hinicio) {
+	public Sessao(Filme exibido, Sala sala, Date hinicio, float valor) {
+		super();
 		this.exibicao = exibido;
 		this.hall = sala;
 		this.hinicio = hinicio;
 		this.hfim = (Date) this.hinicio.clone();
 		this.hfim.setMinutes(this.hinicio.getMinutes() + this.exibicao.getDuracao());
-		this.ocupacao = 0;
-	}
-
-	public boolean conferirOcupacao(int posicao) {
-		return this.posicao[posicao];
-	}
-
-	public void ocuparcadeira(int Poltrona) {
-		this.posicao[Poltrona] = false;
+		this.valor=valor;
+		
+		for(int i=0; i<200; i++){
+			cadeiras[i] = false;
+		}
+		
 	}
 	
-	public Date getDateInicio(){
-		return this.hinicio;
+	public void setCadeira(int i){
+		this.cadeiras[i] = true;
+	}
+	
+	public Boolean getCadeiraComprada(int i){
+		if(this.cadeiras[i]){
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	public String getHinicio() {
@@ -68,14 +73,6 @@ public class Sessao implements Serializable {
 		this.hall = hall;
 	}
 
-	public int getOcupacao() {
-		return ocupacao;
-	}
-
-	public void setOcupacao(int ocupacao) {
-		this.ocupacao = ocupacao;
-	}
-
 	public float getValor() {
 		return valor;
 	}
@@ -84,42 +81,24 @@ public class Sessao implements Serializable {
 		this.valor = valor;
 	}
 
-	public boolean[] getPosicao() {
-		return posicao;
-	}
-
-	public void setPosicao(boolean[] posicao) {
-		this.posicao = posicao;
-	}
-
 	public boolean equals(Sessao comparada) {
 		if (this.exibicao.equals(comparada.exibicao)) {
 			if (this.hinicio.equals(comparada.hinicio)) {
 				if (this.hall.equals(comparada.hall)) {
-					if (!colideHorario(comparada)) {
-						return true;
-					}
-				}
-			}
-		}
-		return false;
-	}
-
-	public boolean colideHorario(Sessao comparada) {
-		if (this.hinicio.getDay() == comparada.hinicio.getDay()) {
-			if (this.hinicio.getDate() == comparada.hinicio.getDate()) {
-				if ((this.hinicio.getHours() <= comparada.hinicio.getHours()
-						&& this.hfim.getHours() >= comparada.hinicio.getHours())
-						|| (comparada.hinicio.getHours() <= this.hinicio.getHours()
-								&& comparada.hfim.getHours() >= this.hinicio.getHours())) {
 					return true;
 				}
 			}
 		}
 		return false;
 	}
+	
 	public String toString(){
 		return "Sala: "+ this.hall.getIdentidade() + ", das " + this.getHinicio() + " até às " + this.getHfim();
+	}
+
+	public Date getHorario() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
