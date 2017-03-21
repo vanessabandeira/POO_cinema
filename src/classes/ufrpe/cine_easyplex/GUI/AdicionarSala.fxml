@@ -36,12 +36,7 @@
                   <Font size="23.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="check4k" layoutX="174.0" layoutY="240.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="96.0" text="4K" textFill="WHITE">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </CheckBox>
-            <CheckBox fx:id="checkPrime" layoutX="270.0" layoutY="240.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="133.0" text="PRIME" textFill="WHITE">
+            <CheckBox fx:id="check4k" layoutX="193.0" layoutY="240.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="96.0" text="4K" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
