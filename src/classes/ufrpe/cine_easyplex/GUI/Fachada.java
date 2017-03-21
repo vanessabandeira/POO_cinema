@@ -1,9 +1,5 @@
 package classes.ufrpe.cine_easyplex.GUI;
 
-import classes.ufrpe.cine_easyplex.negocio.*;
-
-import classes.ufrpe.cine_easyplex.interfaces.*;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -16,7 +12,14 @@ import java.util.ArrayList;
 import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.beans.Sala;
-import classes.ufrpe.cine_easyplex.dados.*;
+import classes.ufrpe.cine_easyplex.dados.RepositorioFilmes;
+import classes.ufrpe.cine_easyplex.dados.RepositorioVendas;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
+import classes.ufrpe.cine_easyplex.negocio.CadastroContas;
+import classes.ufrpe.cine_easyplex.negocio.CadastroFilmes;
+import classes.ufrpe.cine_easyplex.negocio.CadastroSalas;
+import classes.ufrpe.cine_easyplex.negocio.CadastroSessao;
+import classes.ufrpe.cine_easyplex.negocio.CadastroVendas;
 
 public class Fachada implements Serializable {
 
@@ -24,7 +27,7 @@ public class Fachada implements Serializable {
 	private CadastroFilmes filmes;
 	private CadastroSalas salas;
 	private CadastroSessao sessoes;
-	private RepositorioVendas vendas;
+	private CadastroVendas vendas;
 
 	private static Fachada instancia = null;
 
@@ -32,7 +35,7 @@ public class Fachada implements Serializable {
 		this.contas = new CadastroContas();
 		this.filmes = new CadastroFilmes();
 		this.salas = new CadastroSalas();
-		this.vendas = vendas;
+		this.vendas = new CadastroVendas();
 		this.sessoes = new CadastroSessao();
 	}
 
@@ -124,14 +127,6 @@ public class Fachada implements Serializable {
 
 	public void setSessoes(CadastroSessao sessoes) {
 		this.sessoes = sessoes;
-	}
-
-	public RepositorioVendas getVendas() {
-		return vendas;
-	}
-
-	public void setVendas(RepositorioVendas vendas) {
-		this.vendas = vendas;
 	}
 
 	public static void setInstancia(Fachada instancia) {

@@ -31,6 +31,10 @@ public class Sessao implements Serializable {
 	public void ocuparcadeira(int Poltrona) {
 		this.posicao[Poltrona] = false;
 	}
+	
+	public Date getDateInicio(){
+		return this.hinicio;
+	}
 
 	public String getHinicio() {
 		return sdf.format(this.hinicio);
