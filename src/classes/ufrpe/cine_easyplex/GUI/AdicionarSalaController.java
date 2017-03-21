@@ -11,25 +11,21 @@ import javafx.scene.control.Alert.AlertType;
 
 public class AdicionarSalaController {
 	
-	@FXML TextField tfID, tfCapacidade;
-	@FXML CheckBox check3d, check4k, checkPrime; 
+	@FXML TextField tfID;
+	@FXML CheckBox check3d, check4k; 
 	@FXML Label lblError;
 	
 	public void adicionar(){
 		try{
 			
 			Sala sala = new Sala();
-			sala.setCapacidade(Integer.valueOf(tfCapacidade.getText()));
 			sala.setIdentidade(Integer.valueOf(tfID.getText()));
-			sala.setPrime(checkPrime.isSelected());
 			sala.setV3d(check3d.isSelected());
 			sala.setV4k(check4k.isSelected());
 			Fachada.getInstancia().getSalas().adicionarSala(sala);
 			tfID.clear();
-			tfCapacidade.clear();
 			check3d.setSelected(false);
 			check4k.setSelected(false);
-			checkPrime.setSelected(false);
 			
 		}
 		catch(NumberFormatException e){

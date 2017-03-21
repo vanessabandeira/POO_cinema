@@ -82,7 +82,8 @@ public class RepositorioSalas implements iRepositorioSalas, Serializable{
 	
 	public boolean inserir(Sala sala) throws ValorInvalidoException{
 			int search = pesquisar(sala);
-			if(sala != null && search < 0 && sala.getCapacidade()>0){
+			if(sala != null && search < 0){
+				sala.setTipo();
 				this.salas.add(sala);
 				this.salvarArquivo();
 				return true;

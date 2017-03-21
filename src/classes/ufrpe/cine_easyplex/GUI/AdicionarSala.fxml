@@ -20,12 +20,7 @@
                   <Image url="@../Imagens/CenterOpcoes.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="73.0" layoutY="130.0" prefHeight="45.0" prefWidth="80.0" text="ID" textFill="WHITE">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Label>
-            <Label layoutX="73.0" layoutY="175.0" prefHeight="45.0" prefWidth="132.0" text="Capacidade" textFill="WHITE">
+            <Label layoutX="78.0" layoutY="168.0" prefHeight="45.0" prefWidth="80.0" text="ID" textFill="WHITE">
                <font>
                   <Font size="23.0" />
                </font>
@@ -35,8 +30,7 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <TextField fx:id="tfID" layoutX="259.0" layoutY="137.0" prefHeight="31.0" prefWidth="67.0" />
-            <TextField fx:id="tfCapacidade" layoutX="259.0" layoutY="182.0" prefHeight="31.0" prefWidth="67.0" />
+            <TextField fx:id="tfID" layoutX="174.0" layoutY="175.0" prefHeight="31.0" prefWidth="67.0" />
             <CheckBox fx:id="check3d" layoutX="78.0" layoutY="240.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="96.0" text="3D" textFill="WHITE">
                <font>
                   <Font size="23.0" />

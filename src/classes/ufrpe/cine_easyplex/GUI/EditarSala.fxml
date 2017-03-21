@@ -38,23 +38,12 @@
                </font>
             </Label>
             <TextField fx:id="tfID" layoutX="194.0" layoutY="287.0" prefHeight="33.0" prefWidth="60.0" />
-            <TextField fx:id="tfCapacidade" layoutX="194.0" layoutY="338.0" prefHeight="33.0" prefWidth="60.0" />
-            <Label layoutX="61.0" layoutY="335.0" prefHeight="38.0" prefWidth="126.0" text="Capacidade" textFill="WHITE">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Label>
-            <CheckBox fx:id="check3d" layoutX="68.0" layoutY="398.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" text="3D" textFill="WHITE">
+            <CheckBox fx:id="check3d" layoutX="61.0" layoutY="359.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" text="3D" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="check4k" layoutX="218.0" layoutY="398.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" text="4K" textFill="WHITE">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </CheckBox>
-            <CheckBox fx:id="checkPrime" layoutX="342.0" layoutY="398.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="111.0" text="PRIME" textFill="WHITE">
+            <CheckBox fx:id="check4k" layoutX="218.0" layoutY="359.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="72.0" text="4K" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
