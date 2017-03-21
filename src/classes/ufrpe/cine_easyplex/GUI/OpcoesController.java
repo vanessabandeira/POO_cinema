@@ -97,6 +97,15 @@ public class OpcoesController {
 		}
 	}
 	
+	public void adicionarSessao(){
+		try{
+			ScreenManager.getInstance().getAdicionarSessao();
+			System.out.println("entrou aqui");
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+	
 	public void removerSessao(){
 		try{
 			ScreenManager.getInstance().getRemoverSessao();;
