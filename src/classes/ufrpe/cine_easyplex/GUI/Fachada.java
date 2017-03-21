@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.beans.Sala;
+import classes.ufrpe.cine_easyplex.beans.Sessao;
 import classes.ufrpe.cine_easyplex.dados.RepositorioFilmes;
 import classes.ufrpe.cine_easyplex.dados.RepositorioVendas;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
@@ -184,6 +185,10 @@ public class Fachada implements Serializable {
 
 	public void removerSala(Sala sala) {
 		salas.removerSala(sala);
+	}
+
+	public void removerSessao(Sessao sessaoselecionada) {
+		
 	}
 	
 
