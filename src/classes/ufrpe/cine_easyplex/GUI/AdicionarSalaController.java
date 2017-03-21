@@ -2,10 +2,12 @@ package classes.ufrpe.cine_easyplex.GUI;
 
 import classes.ufrpe.cine_easyplex.beans.Sala;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Labeled;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class AdicionarSalaController {
 	
@@ -31,7 +33,11 @@ public class AdicionarSalaController {
 			
 		}
 		catch(NumberFormatException e){
-			lblError.setText("Por favor, utilize apenas números para ID e capacidade");
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("NOTAÇÃO INVÁLIDA");
+			alert.setContentText(" Digite apenas o número");
+			alert.showAndWait();
 		}
 		catch(Exception e){ 
 			

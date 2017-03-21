@@ -66,7 +66,11 @@ public class EditarFilmeController {
 			
 		}
 		catch(Exception e){
-			lblError.setText(e.getMessage());
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("NOTAÇÃO INVÁLIDA");
+			alert.setContentText(" Digite apenas o número");
+			alert.showAndWait();
 		}
 		
 	}

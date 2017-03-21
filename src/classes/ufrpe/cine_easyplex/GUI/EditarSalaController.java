@@ -3,10 +3,12 @@ package classes.ufrpe.cine_easyplex.GUI;
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.beans.Sala;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class EditarSalaController {
 	@FXML TextField tfID, tfCapacidade, tfPesquisa;
@@ -30,11 +32,19 @@ public class EditarSalaController {
 			this.sala = Fachada.getInstancia().getSalas().procurarId(Integer.valueOf(tfPesquisa.getText()));
 		}
 		catch(Exception e){
-			lblError.setText("As salas são identificadas por números, por favor, insira um");
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("NOTAÇÃO INVÁLIDA");
+			alert.setContentText(" As salas são identificadas por números");
+			alert.showAndWait();
 		}
 		
 		if(sala == null){
-			this.lblError.setText("A sala não existe");
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText(null);
+			alert.setContentText(" A sala não existe");
+			alert.showAndWait();
 		}
 		else{
 			tfID.setText(""+this.sala.getIdentidade());
@@ -63,7 +73,11 @@ public class EditarSalaController {
 			checkPrime.setSelected(false);
 		}
 		catch(NumberFormatException e){
-			lblError.setText("Por favor, utilize apenas números para ID e capacidade");
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("NOTAÇÃO INVÁLIDA");
+			alert.setContentText(" Digite apenas números");
+			alert.showAndWait();
 		}
 	}
 	public void backToMenu(){

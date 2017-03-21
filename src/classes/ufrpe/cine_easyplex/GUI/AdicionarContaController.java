@@ -3,9 +3,11 @@ package classes.ufrpe.cine_easyplex.GUI;
 import classes.ufrpe.cine_easyplex.Exceptions.SenhasDiferentesException;
 import classes.ufrpe.cine_easyplex.beans.Conta;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class AdicionarContaController {
 	
@@ -27,10 +29,18 @@ public class AdicionarContaController {
 			else throw new SenhasDiferentesException();
 		}
 		catch(SenhasDiferentesException e){
-			lblError.setText(e.getMessage());
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("INCORRETA");
+			alert.setContentText("senhas não conferem");
+			alert.showAndWait();
 		}
 		catch(Exception e){
-			lblError.setText("Os valores de login e senha não são válidos");
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("NOTAÇÃO INVÁLIDA");
+			alert.setContentText(" Digite apenas o número");
+			alert.showAndWait();
 		}
 		
 	}
