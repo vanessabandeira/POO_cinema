@@ -100,5 +100,8 @@ public class Sessao implements Serializable {
 		}
 		return false;
 	}
+	public String toString(){
+		return "Sala: "+ this.hall.getIdentidade() + ", das " + this.getHinicio() + " até às " + this.getHfim();
+	}
 
 }

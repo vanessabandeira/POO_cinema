@@ -45,6 +45,15 @@ public class MenuController implements Initializable {
 	}
 	
 	public void comprar(){
+		try{
+			Filme filmeselecionado = tableView.getSelectionModel().getSelectedItem();
+			if(filmeselecionado != null){
+				ScreenManager.getInstance().getComprar(filmeselecionado);
+				System.out.println(filmeselecionado);
+			}
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
 		
 	}
 	

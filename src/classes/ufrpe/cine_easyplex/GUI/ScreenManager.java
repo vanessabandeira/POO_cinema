@@ -1,5 +1,6 @@
 package classes.ufrpe.cine_easyplex.GUI;
 
+import classes.ufrpe.cine_easyplex.beans.Filme;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;
@@ -17,8 +18,9 @@ public class ScreenManager {
 	BorderPane paneRemoverFilme;
 	BorderPane paneAdicionarConta;
 	BorderPane paneRemoverConta;
-	
-	FXMLLoader menu, login, opcoes, adicionarFilme, editarFilme, adicionarSala, removerFilme, editarSala, adicionarConta, removerConta;
+	BorderPane paneComprar;
+	BorderPane paneAdicionarSessao;
+	FXMLLoader menu, login, opcoes, adicionarFilme, editarFilme, adicionarSala, removerFilme, editarSala, adicionarConta, removerConta,comprar, adicionarSessao;
 	
 	
 	public static ScreenManager instancia;
@@ -54,6 +56,10 @@ public class ScreenManager {
 			removerConta = new FXMLLoader(this.getClass().getResource("RemoverConta.fxml"));
 			this.paneRemoverConta = removerConta.load();
 			this.border = Main.getRoot();
+			comprar = new FXMLLoader(this.getClass().getResource("Comprar.fxml"));
+			this.paneComprar = comprar.load();
+			adicionarSessao = new FXMLLoader(this.getClass().getResource("AdicionarSessao.fxml"));
+			this.paneAdicionarSessao = adicionarSessao.load();
 		}
 		catch(Exception e){
 		}
@@ -99,5 +105,16 @@ public class ScreenManager {
 	}
 	public void getRemoverConta(){
 		border.setCenter(paneRemoverConta);
+	}
+	public void getAdicionarSessao(){
+		border.setCenter(paneAdicionarSessao);
+		AdicionarSessaoController controlador = adicionarSessao.getController();
+		controlador.preencherTabela();
+	}
+	public void getComprar(Filme filme){
+		border.setCenter(paneComprar);
+		ComprarController controlador = comprar.getController();
+		controlador.setFilme(filme);
+		controlador.atualizarSessao();
 	}
 }

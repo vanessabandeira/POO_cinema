@@ -3,6 +3,7 @@ package classes.ufrpe.cine_easyplex.negocio;
 import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Sala;
 import classes.ufrpe.cine_easyplex.dados.RepositorioSalas;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSalas;
 
 public class CadastroSalas {
@@ -46,6 +47,10 @@ public class CadastroSalas {
 	
 	public void editarSala(Sala sala){
 		this.repositorioSalas.alterar(sala);
+	}
+	public iRepositorioFilmes getRepositorioSalas() {
+		
+		return null;
 	}
 
 }
