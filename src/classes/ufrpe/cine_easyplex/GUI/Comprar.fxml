@@ -25,10 +25,15 @@
    <center>
       <Pane fx:id="comprar" prefHeight="428.0" prefWidth="997.0" BorderPane.alignment="CENTER">
          <children>
-            <GridPane layoutX="29.0" prefHeight="103.0" prefWidth="666.0">
+            <ImageView fitHeight="550.0" fitWidth="1080.0" layoutY="53.0">
+               <image>
+                  <Image url="@../Imagens/BBBBBB.jpg" />
+               </image>
+            </ImageView>
+            <GridPane layoutX="638.0" layoutY="103.0" prefHeight="164.0" prefWidth="398.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="531.0" minWidth="10.0" prefWidth="144.0" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="936.0" minWidth="10.0" prefWidth="522.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="531.0" minWidth="10.0" prefWidth="128.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="936.0" minWidth="10.0" prefWidth="270.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -37,25 +42,25 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Título:">
+                  <Label text="Título:" textFill="WHITE">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <Label text="Classificação:" GridPane.rowIndex="1">
+                  <Label text="Classificação:" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <Label text="Gênero:" GridPane.rowIndex="2">
+                  <Label text="Gênero:" textFill="WHITE" GridPane.rowIndex="2">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelTitulo" prefHeight="17.0" prefWidth="900.0" GridPane.columnIndex="1" />
-                  <Label fx:id="labelClassificacao" prefHeight="17.0" prefWidth="439.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label fx:id="labelGenero" prefHeight="17.0" prefWidth="503.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Label text="Sessão:" GridPane.rowIndex="3">
+                  <Label fx:id="labelTitulo" prefHeight="17.0" prefWidth="900.0" textFill="WHITE" GridPane.columnIndex="1" />
+                  <Label fx:id="labelClassificacao" prefHeight="17.0" prefWidth="439.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="labelGenero" prefHeight="17.0" prefWidth="503.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Sessão:" textFill="WHITE" GridPane.rowIndex="3">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -63,7 +68,7 @@
                   <ChoiceBox fx:id="boxSessao" onAction="#atualizarSessao" prefHeight="25.0" prefWidth="326.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                </children>
             </GridPane>
-            <GridPane fx:id="gridCadeiras" layoutY="111.0" prefHeight="402.0" prefWidth="1080.0">
+            <GridPane fx:id="gridCadeiras" layoutX="14.0" layoutY="149.0" prefHeight="311.0" prefWidth="578.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -99,7 +104,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
             </GridPane>
-            <GridPane layoutX="695.0" layoutY="7.0" prefHeight="96.0" prefWidth="387.0">
+            <GridPane layoutX="638.0" layoutY="305.0" prefHeight="96.0" prefWidth="387.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -110,17 +115,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label text="Meia Entrada:">
+                  <Label text="Meia Entrada:" textFill="WHITE">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <Label text="Valor Total:" GridPane.rowIndex="1">
+                  <Label text="Valor Total:" textFill="WHITE" GridPane.rowIndex="1">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelValor" textFill="RED" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Label fx:id="labelValor" prefHeight="28.0" prefWidth="92.0" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -128,15 +133,22 @@
                   <CheckBox fx:id="checkMeia" mnemonicParsing="false" prefHeight="33.0" prefWidth="30.0" GridPane.columnIndex="1" />
                </children>
             </GridPane>
+            <Button fx:id="cancelar" layoutX="664.0" layoutY="436.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="48.0" prefWidth="154.0" text="CANCELAR COMPRA" />
+            <Button fx:id="confirmar" layoutX="857.0" layoutY="436.0" mnemonicParsing="false" onAction="#comprar" prefHeight="48.0" prefWidth="165.0" text="CONFIRMAR SESSÃO" />
          </children>
       </Pane>
    </center>
    <top>
       <Pane prefHeight="117.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="30.0" layoutY="59.0" prefHeight="47.0" prefWidth="362.0" text="COMPRAR INGRESSO">
+            <ImageView fitHeight="178.0" fitWidth="1080.0" layoutY="-2.0">
+               <image>
+                  <Image url="@../Imagens/Top.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="36.0" layoutY="81.0" prefHeight="47.0" prefWidth="507.0" text="COMPRAR INGRESSO" textFill="WHITE">
                <font>
-                  <Font name="Gotham Light" size="32.0" />
+                  <Font name="Gotham Light" size="42.0" />
                </font>
                <contextMenu>
                   <ContextMenu>
@@ -152,11 +164,6 @@
                   <ColorAdjust />
                </effect>
             </Label>
-            <ImageView fitHeight="75.0" fitWidth="341.0" layoutX="651.0" layoutY="42.0">
-               <image>
-                  <Image url="@../Imagens/logo.png" />
-               </image>
-            </ImageView>
          </children>
          <effect>
             <DisplacementMap>
@@ -169,8 +176,6 @@
    <bottom>
       <Pane prefHeight="92.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="confirmar" layoutX="878.0" layoutY="22.0" mnemonicParsing="false" onAction="#comprar" prefHeight="48.0" prefWidth="165.0" text="CONFIRMAR SESSÃO" />
-            <Button fx:id="cancelar" layoutX="695.0" layoutY="23.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="48.0" prefWidth="154.0" text="CANCELAR COMPRA" />
             <Label fx:id="labelErro" layoutX="47.0" layoutY="39.0" textFill="RED">
                <font>
                   <Font size="20.0" />
