@@ -62,7 +62,7 @@ public class RemoverFilmesController implements Initializable {
 			if (result.get() == ButtonType.OK) {
 				for(int i = 0; i < fachada.getSessoes().getRepositorioSessao().listar().size(); i++){
 					if(fachada.getSessoes().getRepositorioSessao().listar().get(i).getExibicao().getTitulo().equals(filmeselecionado.getTitulo())){
-						fachada.getSessoes().cancelarSessao(fachada.getSessoes().getRepositorioSessao().listar().get(i));
+						fachada.getSessoes().removerSessao(fachada.getSessoes().getRepositorioSessao().listar().get(i));
 					}
 				}
 				Fachada.getInstancia().removerFilme(filmeselecionado);
