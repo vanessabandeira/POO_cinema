@@ -70,5 +70,8 @@ public class Sala implements Serializable {
 		return false;
 		
 	}
+	public String toString(){
+		return String.valueOf(this.getIdentidade());
+	}
 
 }

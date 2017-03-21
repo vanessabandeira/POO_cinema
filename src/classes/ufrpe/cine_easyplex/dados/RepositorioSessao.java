@@ -6,6 +6,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,7 +15,9 @@ import classes.ufrpe.cine_easyplex.beans.Sessao;
 import classes.ufrpe.cine_easyplex.comparadores.ComparadorSessao;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
 
-public class RepositorioSessao implements iRepositorioSessao{
+public class RepositorioSessao implements iRepositorioSessao, Serializable{
+	private static final long serialVersionUID = 6909618405924724329L;
+
 	private ArrayList<Sessao> sessoes;
 	
 	private static iRepositorioSessao instancia;
@@ -129,7 +132,7 @@ public class RepositorioSessao implements iRepositorioSessao{
 
 	public List<Sessao> listar() {
 		List<Sessao> listaOrdenada = this.sessoes;
-		Collections.sort(listaOrdenada, new ComparadorSessao());
+		//Collections.sort(listaOrdenada, new ComparadorSessao());
 		return listaOrdenada;
 	}
 

@@ -56,8 +56,8 @@ public class Filme implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Filme [titulo=" + titulo + ", classificacao=" + classificacao + ", genero=" + genero + ", duracao="
-				+ duracao + ", nvendas=" + nvendas + "]";
+		return " Título:" + titulo + " Classificação: " + classificacao + " Gênero: " + genero + " Duração:  "
+				+ duracao + " Nº Vendas: " + nvendas + "";
 	}
 	
 	public boolean equals(Filme filme){
