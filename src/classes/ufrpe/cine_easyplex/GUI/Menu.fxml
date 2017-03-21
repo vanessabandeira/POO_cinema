@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
@@ -17,11 +23,16 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classes.ufrpe.cine_easyplex.GUI.MenuController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classes.ufrpe.cine_easyplex.GUI.MenuController">
    <center>
-      <Pane prefHeight="428.0" prefWidth="693.0" BorderPane.alignment="CENTER">
+      <Pane prefHeight="446.0" prefWidth="676.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tableView" layoutX="22.0" layoutY="49.0" prefHeight="413.0" prefWidth="508.0">
+            <ImageView fitHeight="587.0" fitWidth="1080.0" layoutX="-83.0" layoutY="-49.0">
+               <image>
+                  <Image url="@../Imagens/CenterMenu.jpg" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tableView" layoutX="54.0" layoutY="47.0" prefHeight="391.0" prefWidth="511.0">
               <columns>
                 <TableColumn fx:id="listaTitulo" prefWidth="224.0" text="Título" />
                 <TableColumn fx:id="listaGenero" minWidth="0.0" prefWidth="103.0" text="Gênero" />
@@ -29,38 +40,46 @@
                   <TableColumn fx:id="listaClassificacao" minWidth="0.0" prefWidth="96.0" text="Classificação" />
               </columns>
             </TableView>
+            <Button layoutX="690.0" layoutY="128.0" mnemonicParsing="false" onAction="#comprar" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+               <font>
+                  <Font name="Gotham Light" size="19.0" />
+               </font>
+            </Button>
+            <Button layoutX="690.0" layoutY="196.0" mnemonicParsing="false" onAction="#opcoes" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+               <font>
+                  <Font name="Gotham Light" size="19.0" />
+               </font>
+            </Button>
+            <Button layoutX="690.0" layoutY="267.0" mnemonicParsing="false" onAction="#sair" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+               <font>
+                  <Font name="Gotham Light" size="19.0" />
+               </font>
+            </Button>
          </children>
       </Pane>
    </center>
    <top>
-      <Pane prefHeight="117.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label layoutX="30.0" layoutY="59.0" prefHeight="42.0" prefWidth="126.0" text="MENU">
-               <font>
-                  <Font name="Gotham Light" size="32.0" />
-               </font>
-               <contextMenu>
-                  <ContextMenu>
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                    </items>
-                  </ContextMenu>
-               </contextMenu>
-               <tooltip>
-                  <Tooltip text="Empty Tooltip" />
-               </tooltip>
-               <effect>
-                  <ColorAdjust />
-               </effect>
-            </Label>
-         </children>
+      <Pane prefHeight="182.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <effect>
             <DisplacementMap>
                <mapData>
                   <FloatMap />
                </mapData>
             </DisplacementMap>
-         </effect></Pane>
+         </effect>
+         <children>
+            <ImageView fitHeight="178.0" fitWidth="1080.0">
+               <image>
+                  <Image url="@../Imagens/Top.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="36.0" layoutY="81.0" prefHeight="49.0" prefWidth="132.0" text="MENU" textFill="WHITE">
+               <font>
+                  <Font name="Gotham Light" size="42.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </top>
    <left>
       <Pane prefHeight="511.0" prefWidth="83.0" BorderPane.alignment="CENTER" />
@@ -69,30 +88,7 @@
       <Pane prefHeight="92.0" prefWidth="1080.0" BorderPane.alignment="CENTER" />
    </bottom>
    <right>
-      <Pane prefHeight="511.0" prefWidth="338.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutY="150.0" mnemonicParsing="false" onAction="#comprar" prefHeight="54.0" prefWidth="220.0" text="COMPRAR">
-               <font>
-                  <Font name="Gotham Light" size="19.0" />
-               </font>
-            </Button>
-            <Button layoutY="229.0" mnemonicParsing="false" onAction="#opcoes" prefHeight="54.0" prefWidth="220.0" text="OPÇÕES">
-               <font>
-                  <Font name="Gotham Light" size="19.0" />
-               </font>
-            </Button>
-            <Button layoutY="302.0" mnemonicParsing="false" onAction="#sair" prefHeight="54.0" prefWidth="220.0" text="SAIR">
-               <font>
-                  <Font name="Gotham Light" size="19.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="75.0" fitWidth="341.0" layoutX="-60.0" layoutY="-23.0">
-               <image>
-                  <Image url="@../Imagens/logo.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
+      <Pane prefHeight="446.0" prefWidth="84.0" BorderPane.alignment="CENTER" />
    </right>
    <effect>
       <Blend />

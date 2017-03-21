@@ -27,7 +27,12 @@
    <center>
       <Pane prefHeight="428.0" prefWidth="693.0" BorderPane.alignment="CENTER">
          <children>
-            <TableView fx:id="tableView" layoutX="22.0" layoutY="49.0" onSort="#preencherTabela" prefHeight="413.0" prefWidth="508.0">
+            <ImageView fitHeight="548.0" fitWidth="1080.0" layoutX="-83.0" layoutY="55.0">
+               <image>
+                  <Image url="@../Imagens/CenterRemoverFilme.jpg" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tableView" layoutX="75.0" layoutY="98.0" onSort="#preencherTabela" prefHeight="413.0" prefWidth="510.0">
               <columns>
                 <TableColumn fx:id="listaTitulo" prefWidth="224.0" text="Titulo" />
                 <TableColumn fx:id="listaGenero" minWidth="0.0" prefWidth="103.0" text="Genero" />
@@ -41,9 +46,14 @@
    <top>
       <Pane prefHeight="117.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="30.0" layoutY="59.0" prefHeight="47.0" prefWidth="203.0" text="REMOVER">
+            <ImageView fitHeight="178.0" fitWidth="1080.0" layoutY="-2.0">
+               <image>
+                  <Image url="@../Imagens/Top.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="36.0" layoutY="81.0" prefHeight="47.0" prefWidth="252.0" text="REMOVER" textFill="WHITE">
                <font>
-                  <Font name="Gotham Light" size="32.0" />
+                  <Font name="Gotham Light" size="42.0" />
                </font>
                <contextMenu>
                   <ContextMenu>
@@ -77,22 +87,17 @@
    <right>
       <Pane prefHeight="511.0" prefWidth="338.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="7.0" layoutY="202.0" mnemonicParsing="false" onAction="#remover" prefHeight="54.0" prefWidth="220.0" text="REMOVER">
+            <Button layoutX="31.0" layoutY="194.0" mnemonicParsing="false" onAction="#remover" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
-            <Button layoutX="7.0" layoutY="352.0" mnemonicParsing="false" onAction="#sair" prefHeight="54.0" prefWidth="220.0" text="SAIR">
+            <Button layoutX="31.0" layoutY="331.0" mnemonicParsing="false" onAction="#sair" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
-            <ImageView fitHeight="75.0" fitWidth="341.0" layoutX="-60.0" layoutY="-23.0">
-               <image>
-                  <Image url="@../Imagens/logo.png" />
-               </image>
-            </ImageView>
-            <Button layoutX="7.0" layoutY="283.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="54.0" prefWidth="220.0" text="TELA PRINCIPAL">
+            <Button layoutX="31.0" layoutY="263.0" mnemonicParsing="false" onAction="#backToMenu" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>

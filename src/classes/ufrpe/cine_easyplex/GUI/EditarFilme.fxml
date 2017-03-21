@@ -27,19 +27,24 @@
    <center>
       <Pane prefHeight="428.0" prefWidth="693.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="414.0" layoutY="149.0" mnemonicParsing="false" onAction="#pesquisar" prefHeight="31.0" prefWidth="67.0" text="Pesquisar" />
-            <TextField fx:id="tfPesquisa" layoutX="161.0" layoutY="90.0" prefHeight="33.0" prefWidth="320.0" />
-            <Label layoutY="21.0" prefHeight="56.0" prefWidth="197.0" text="BUSCAR FILME">
+            <ImageView fitHeight="549.0" fitWidth="1080.0" layoutX="-83.0" layoutY="54.0">
+               <image>
+                  <Image url="@../Imagens/CenterOpcoes.jpg" />
+               </image>
+            </ImageView>
+            <Button layoutX="503.0" layoutY="161.0" mnemonicParsing="false" onAction="#pesquisar" prefHeight="31.0" prefWidth="67.0" text="Pesquisar" />
+            <TextField fx:id="tfPesquisa" layoutX="158.0" layoutY="160.0" prefHeight="33.0" prefWidth="320.0" />
+            <Label layoutX="7.0" layoutY="104.0" prefHeight="56.0" prefWidth="197.0" text="BUSCAR FILME" textFill="WHITE">
                <font>
                   <Font name="Gotham Light" size="21.0" />
                </font>
             </Label>
-            <Label layoutX="58.0" layoutY="90.0" prefHeight="33.0" prefWidth="82.0" text="Título">
+            <Label layoutX="52.0" layoutY="160.0" prefHeight="33.0" prefWidth="82.0" text="Título" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label layoutY="165.0" prefHeight="47.0" prefWidth="151.0" text="EDITAR">
+            <Label layoutX="7.0" layoutY="209.0" prefHeight="47.0" prefWidth="151.0" text="EDITAR" textFill="WHITE">
                <contextMenu>
                   <ContextMenu>
                      <items>
@@ -57,40 +62,45 @@
                   <Tooltip text="Empty Tooltip" />
                </tooltip>
             </Label>
-            <Label layoutX="58.0" layoutY="212.0" prefHeight="33.0" prefWidth="82.0" text="Título">
+            <Label layoutX="52.0" layoutY="266.0" prefHeight="33.0" prefWidth="82.0" text="Título" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <TextField fx:id="tfTitulo" layoutX="161.0" layoutY="212.0" prefHeight="33.0" prefWidth="320.0" />
-            <TextField fx:id="tfDuracao" layoutX="371.0" layoutY="303.0" prefHeight="33.0" prefWidth="110.0" />
-            <Label layoutX="58.0" layoutY="256.0" prefHeight="33.0" prefWidth="82.0" text="Gênero">
+            <TextField fx:id="tfTitulo" layoutX="161.0" layoutY="266.0" prefHeight="33.0" prefWidth="320.0" />
+            <TextField fx:id="tfDuracao" layoutX="371.0" layoutY="378.0" prefHeight="33.0" prefWidth="110.0" />
+            <Label layoutX="52.0" layoutY="320.0" prefHeight="33.0" prefWidth="82.0" text="Gênero" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label layoutX="58.0" layoutY="303.0" prefHeight="33.0" prefWidth="211.0" text="Duração (em minutos)">
+            <Label layoutX="52.0" layoutY="378.0" prefHeight="33.0" prefWidth="211.0" text="Duração (em minutos)" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <Label layoutX="58.0" layoutY="351.0" prefHeight="33.0" prefWidth="130.0" text="Classificação">
+            <Label layoutX="52.0" layoutY="433.0" prefHeight="33.0" prefWidth="130.0" text="Classificação" textFill="WHITE">
                <font>
                   <Font size="21.0" />
                </font>
             </Label>
-            <Button layoutX="417.0" layoutY="413.0" mnemonicParsing="false" onAction="#concluir" prefHeight="31.0" prefWidth="67.0" text="Concluir" />
-            <ChoiceBox fx:id="generoBox" layoutX="371.0" layoutY="256.0" prefHeight="33.0" prefWidth="110.0" />
-            <ChoiceBox fx:id="classificacaoBox" layoutX="419.0" layoutY="351.0" prefHeight="33.0" prefWidth="62.0" />
+            <Button layoutX="536.0" layoutY="466.0" mnemonicParsing="false" onAction="#concluir" prefHeight="31.0" prefWidth="67.0" text="Concluir" />
+            <ChoiceBox fx:id="generoBox" layoutX="371.0" layoutY="320.0" prefHeight="33.0" prefWidth="110.0" />
+            <ChoiceBox fx:id="classificacaoBox" layoutX="417.0" layoutY="433.0" prefHeight="33.0" prefWidth="62.0" />
          </children>
       </Pane>
    </center>
    <top>
       <Pane prefHeight="117.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="30.0" layoutY="59.0" prefHeight="47.0" prefWidth="151.0" text="EDITAR">
+            <ImageView fitHeight="178.0" fitWidth="1080.0" layoutY="-2.0">
+               <image>
+                  <Image url="@../Imagens/Top.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="36.0" layoutY="81.0" prefHeight="47.0" prefWidth="189.0" text="EDITAR" textFill="WHITE">
                <font>
-                  <Font name="Gotham Light" size="32.0" />
+                  <Font name="Gotham Light" size="42.0" />
                </font>
                <contextMenu>
                   <ContextMenu>
@@ -106,7 +116,7 @@
                   <ColorAdjust />
                </effect>
             </Label>
-            <Label fx:id="lblError" layoutX="365.0" layoutY="14.0" prefHeight="25.0" prefWidth="351.0">
+            <Label fx:id="lblError" layoutX="13.0" layoutY="14.0" prefHeight="25.0" prefWidth="1055.0" textFill="WHITE">
                <font>
                   <Font size="15.0" />
                </font>
@@ -129,22 +139,17 @@
    <right>
       <Pane prefHeight="511.0" prefWidth="338.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutY="202.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="54.0" prefWidth="220.0" text="MENU PRINCIPAL">
+            <Button layoutX="31.0" layoutY="262.0" mnemonicParsing="false" onAction="#backToMenu" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
-            <Button layoutY="295.0" mnemonicParsing="false" onAction="#sair" prefHeight="54.0" prefWidth="220.0" text="SAIR">
+            <Button layoutX="31.0" layoutY="331.0" mnemonicParsing="false" onAction="#sair" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
-            <ImageView fitHeight="75.0" fitWidth="341.0" layoutX="-60.0" layoutY="-23.0">
-               <image>
-                  <Image url="@../Imagens/logo.png" />
-               </image>
-            </ImageView>
-            <Button layoutY="115.0" mnemonicParsing="false" onAction="#comprar" prefHeight="54.0" prefWidth="220.0" text="COMPRAR">
+            <Button layoutX="31.0" layoutY="193.0" mnemonicParsing="false" onAction="#comprar" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>

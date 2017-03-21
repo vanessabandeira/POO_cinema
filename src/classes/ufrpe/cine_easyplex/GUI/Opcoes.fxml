@@ -27,7 +27,12 @@
    <center>
       <Pane prefHeight="428.0" prefWidth="693.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="23.0" layoutY="51.0" prefHeight="42.0" prefWidth="151.0" text="EDITAR">
+            <ImageView fitHeight="555.0" fitWidth="1080.0" layoutX="-83.0" layoutY="48.0">
+               <image>
+                  <Image url="@../Imagens/CenterOpcoes.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="23.0" layoutY="127.0" prefHeight="42.0" prefWidth="151.0" text="EDITAR" textFill="WHITE">
                <contextMenu>
                   <ContextMenu>
                      <items>
@@ -45,7 +50,7 @@
                   <Tooltip text="Empty Tooltip" />
                </tooltip>
             </Label>
-            <Label layoutX="296.0" layoutY="51.0" prefHeight="42.0" prefWidth="151.0" text="VENDA">
+            <Label layoutX="296.0" layoutY="127.0" prefHeight="42.0" prefWidth="151.0" text="VENDA" textFill="WHITE">
                <contextMenu>
                   <ContextMenu>
                      <items>
@@ -63,7 +68,7 @@
                   <Tooltip text="Empty Tooltip" />
                </tooltip>
             </Label>
-            <MenuButton layoutX="23.0" layoutY="181.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Salas">
+            <MenuButton layoutX="23.0" layoutY="273.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Salas">
                <effect>
                   <InnerShadow />
                </effect>
@@ -77,7 +82,7 @@
                   <MenuItem mnemonicParsing="false" text="Listar" />
                </items>
             </MenuButton>
-            <MenuButton layoutX="23.0" layoutY="116.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Filmes">
+            <MenuButton layoutX="23.0" layoutY="216.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Filmes">
                <effect>
                   <InnerShadow />
                </effect>
@@ -90,7 +95,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#editarFilme" text="Editar" />
                </items>
             </MenuButton>
-            <MenuButton layoutX="23.0" layoutY="246.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Sessões">
+            <MenuButton layoutX="23.0" layoutY="336.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Sessões">
                <effect>
                   <InnerShadow />
                </effect>
@@ -104,7 +109,7 @@
                   <MenuItem mnemonicParsing="false" text="Listar" />
                </items>
             </MenuButton>
-            <MenuButton layoutX="23.0" layoutY="314.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Contas">
+            <MenuButton layoutX="23.0" layoutY="394.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Contas">
                <effect>
                   <InnerShadow />
                </effect>
@@ -118,7 +123,7 @@
                   <MenuItem mnemonicParsing="false" text="Listar" />
                </items>
             </MenuButton>
-            <Button layoutX="296.0" layoutY="116.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Cancelar sessão">
+            <Button layoutX="296.0" layoutY="216.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Cancelar sessão">
                <effect>
                   <InnerShadow />
                </effect>
@@ -126,7 +131,7 @@
                   <Font name="Gotham Light" size="15.0" />
                </font>
             </Button>
-            <Button layoutX="296.0" layoutY="181.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Pesquisar">
+            <Button layoutX="296.0" layoutY="273.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Pesquisar">
                <effect>
                   <InnerShadow />
                </effect>
@@ -134,12 +139,34 @@
                   <Font name="Gotham Light" size="15.0" />
                </font>
             </Button>
-            <Button layoutX="296.0" layoutY="246.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Arrecadação">
+            <Button layoutX="296.0" layoutY="336.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Arrecadação">
                <effect>
                   <InnerShadow />
                </effect>
                <font>
                   <Font name="Gotham Light" size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="690.0" layoutY="189.0" mnemonicParsing="false" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+               <font>
+                  <Font name="Gotham Light" size="19.0" />
+               </font>
+            </Button>
+            <Button layoutX="690.0" layoutY="258.0" mnemonicParsing="false" onAction="#backToMenu" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+               <font>
+                  <Font name="Gotham Light" size="19.0" />
+               </font>
+               <contextMenu>
+                  <ContextMenu>
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+            </Button>
+            <Button layoutX="690.0" layoutY="328.0" mnemonicParsing="false" onAction="#sair" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+               <font>
+                  <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
          </children>
@@ -148,9 +175,14 @@
    <top>
       <Pane prefHeight="117.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="30.0" layoutY="59.0" prefHeight="42.0" prefWidth="151.0" text="OPÇÕES">
+            <ImageView fitHeight="178.0" fitWidth="1080.0" layoutY="-2.0">
+               <image>
+                  <Image url="@../Imagens/Top.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="36.0" layoutY="81.0" prefHeight="44.0" prefWidth="215.0" text="OPÇÕES" textFill="WHITE">
                <font>
-                  <Font name="Gotham Light" size="32.0" />
+                  <Font name="Gotham Light" size="42.0" />
                </font>
                <contextMenu>
                   <ContextMenu>
@@ -182,37 +214,7 @@
       <Pane prefHeight="92.0" prefWidth="1080.0" BorderPane.alignment="CENTER" />
    </bottom>
    <right>
-      <Pane prefHeight="511.0" prefWidth="338.0" BorderPane.alignment="CENTER">
-         <children>
-            <Button layoutY="150.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="220.0" text="COMPRAR">
-               <font>
-                  <Font name="Gotham Light" size="19.0" />
-               </font>
-            </Button>
-            <Button layoutY="229.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="54.0" prefWidth="220.0" text="TELA PRINCIPAL">
-               <font>
-                  <Font name="Gotham Light" size="19.0" />
-               </font>
-               <contextMenu>
-                  <ContextMenu>
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                    </items>
-                  </ContextMenu>
-               </contextMenu>
-            </Button>
-            <Button layoutY="302.0" mnemonicParsing="false" onAction="#sair" prefHeight="54.0" prefWidth="220.0" text="SAIR">
-               <font>
-                  <Font name="Gotham Light" size="19.0" />
-               </font>
-            </Button>
-            <ImageView fitHeight="75.0" fitWidth="341.0" layoutX="-60.0" layoutY="-23.0">
-               <image>
-                  <Image url="@../Imagens/logo.png" />
-               </image>
-            </ImageView>
-         </children>
-      </Pane>
+      <Pane prefHeight="511.0" prefWidth="73.0" BorderPane.alignment="CENTER" />
    </right>
    <effect>
       <Blend />

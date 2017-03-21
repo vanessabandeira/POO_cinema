@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
@@ -10,24 +15,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classes.ufrpe.cine_easyplex.GUI.TelaLoginController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classes.ufrpe.cine_easyplex.GUI.TelaLoginController">
    <center>
       <AnchorPane prefHeight="459.0" prefWidth="743.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="508.0" layoutY="440.0" mnemonicParsing="false" onAction="#Login" prefHeight="29.0" prefWidth="66.0" text="Entrar" />
-            <TextField fx:id="tfLogin" layoutX="451.0" layoutY="322.0" prefHeight="25.0" prefWidth="183.0" />
-            <Label layoutX="387.0" layoutY="323.0" prefHeight="23.0" prefWidth="60.0" text="Login" />
-            <Label layoutX="387.0" layoutY="383.0" prefHeight="23.0" prefWidth="60.0" text="Senha" />
-            <PasswordField fx:id="tfSenha" layoutX="451.0" layoutY="382.0" onAction="#Login" prefHeight="25.0" prefWidth="183.0" />
-            <Label fx:id="lblError" layoutX="481.0" layoutY="416.0" prefHeight="17.0" prefWidth="327.0" textAlignment="CENTER" textFill="#ff0404" wrapText="true" />
-            <ImageView fitHeight="84.0" fitWidth="382.0" layoutX="347.0" layoutY="155.0">
+            <ImageView fitHeight="720.0" fitWidth="1080.0">
                <image>
-                  <Image url="@../Imagens/logo.png" />
+                  <Image url="@../Imagens/Login.jpg" />
                </image>
-               <effect>
-                  <Reflection fraction="0.58" topOpacity="0.29" />
-               </effect>
             </ImageView>
+            <Button layoutX="461.0" layoutY="558.0" mnemonicParsing="false" onAction="#Login" opacity="0.09" prefHeight="36.0" prefWidth="149.0" />
+            <TextField fx:id="tfLogin" layoutX="449.0" layoutY="398.0" prefHeight="25.0" prefWidth="183.0" />
+            <PasswordField fx:id="tfSenha" layoutX="449.0" layoutY="444.0" onAction="#Login" prefHeight="25.0" prefWidth="183.0" />
+            <Label fx:id="lblError" layoutX="445.0" layoutY="500.0" prefHeight="27.0" prefWidth="187.0" textAlignment="CENTER" textFill="WHITE" wrapText="true" />
          </children>
       </AnchorPane>
    </center>
