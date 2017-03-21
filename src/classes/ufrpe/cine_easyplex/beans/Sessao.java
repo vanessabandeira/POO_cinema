@@ -1,4 +1,5 @@
 package classes.ufrpe.cine_easyplex.beans;
+
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -17,7 +18,6 @@ public class Sessao implements Serializable {
 	 * public Sessao{ M�TODO CONSTRUTOR }
 	 */
 	public Sessao(Filme exibido, Sala sala, Date hinicio) {
-		super();
 		this.exibicao = exibido;
 		this.hall = sala;
 		this.hinicio = hinicio;
@@ -25,8 +25,8 @@ public class Sessao implements Serializable {
 		this.hfim.setMinutes(this.hinicio.getMinutes() + this.exibicao.getDuracao());
 		this.ocupacao = 0;
 	}
-	
-	public boolean conferirOcupacao(int posicao){
+
+	public boolean conferirOcupacao(int posicao) {
 		return this.posicao[posicao];
 	}
 
@@ -94,6 +94,22 @@ public class Sessao implements Serializable {
 		if (this.exibicao.equals(comparada.exibicao)) {
 			if (this.hinicio.equals(comparada.hinicio)) {
 				if (this.hall.equals(comparada.hall)) {
+					if (!colideHorario(comparada)) {
+						return true;
+					}
+				}
+			}
+		}
+		return false;
+	}
+
+	public boolean colideHorario(Sessao comparada) {
+		if (this.hinicio.getDay() == comparada.hinicio.getDay()) {
+			if (this.hinicio.getDate() == comparada.hinicio.getDate()) {
+				if ((this.hinicio.getHours() <= comparada.hinicio.getHours()
+						&& this.hfim.getHours() >= comparada.hinicio.getHours())
+						|| (comparada.hinicio.getHours() <= this.hinicio.getHours()
+								&& comparada.hfim.getHours() >= this.hinicio.getHours())) {
 					return true;
 				}
 			}
