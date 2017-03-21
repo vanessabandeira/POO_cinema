@@ -119,8 +119,6 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#adicionarConta" text="Adicionar" />
                   <MenuItem mnemonicParsing="false" onAction="#removerConta" text="Remover" />
-                  <MenuItem mnemonicParsing="false" text="Editar" />
-                  <MenuItem mnemonicParsing="false" text="Listar" />
                </items>
             </MenuButton>
             <Button layoutX="296.0" layoutY="216.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Cancelar sessão">
