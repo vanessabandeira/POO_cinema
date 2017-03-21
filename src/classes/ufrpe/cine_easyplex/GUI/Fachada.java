@@ -12,9 +12,11 @@ import java.util.ArrayList;
 import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Filme;
 import classes.ufrpe.cine_easyplex.beans.Sala;
+import classes.ufrpe.cine_easyplex.beans.Sessao;
 import classes.ufrpe.cine_easyplex.dados.RepositorioFilmes;
 import classes.ufrpe.cine_easyplex.dados.RepositorioVendas;
 import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
+import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
 import classes.ufrpe.cine_easyplex.negocio.CadastroContas;
 import classes.ufrpe.cine_easyplex.negocio.CadastroFilmes;
 import classes.ufrpe.cine_easyplex.negocio.CadastroSalas;
@@ -184,6 +186,38 @@ public class Fachada implements Serializable {
 
 	public void removerSala(Sala sala) {
 		salas.removerSala(sala);
+	}
+
+	public void adicionarSessao(Sessao sessao) {
+		sessoes.adicionarSessao(sessao);
+	}
+
+	public void removerSessao(Sessao sessao) {
+		sessoes.removerSessao(sessao);
+	}
+
+	public boolean conferirHorario() {
+		return sessoes.conferirHorario();
+	}
+
+	public ArrayList<Sessao> buscarPorFilme(Filme filme) {
+		return sessoes.buscarPorFilme(filme);
+	}
+
+	public ArrayList<Sessao> buscarPorSala(Sala sala) {
+		return sessoes.buscarPorSala(sala);
+	}
+
+	public Sessao buscarPorHorario() {
+		return sessoes.buscarPorHorario();
+	}
+
+	public iRepositorioSessao getRepositorioSessao() {
+		return sessoes.getRepositorioSessao();
+	}
+
+	public void setRepositorioSessao(iRepositorioSessao repositorioSessao) {
+		sessoes.setRepositorioSessao(repositorioSessao);
 	}
 
 	

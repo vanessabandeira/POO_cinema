@@ -96,4 +96,14 @@ public class OpcoesController {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public void removerSessao(){
+		try{
+			ScreenManager.getInstance().getRemoverSessao();;
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
 }

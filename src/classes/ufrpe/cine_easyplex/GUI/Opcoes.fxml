@@ -104,7 +104,7 @@
                </font>
                <items>
                   <MenuItem mnemonicParsing="false" text="Adicionar" />
-                  <MenuItem mnemonicParsing="false" text="Remover" />
+                  <MenuItem mnemonicParsing="false" onAction="#removerSessao" text="Remover" />
                   <MenuItem mnemonicParsing="false" text="Editar" />
                   <MenuItem mnemonicParsing="false" text="Listar" />
                </items>

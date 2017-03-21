@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.effect.DisplacementMap?>
+<?import javafx.scene.effect.FloatMap?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="classes.ufrpe.cine_easyplex.GUI.RemoverSessaoController">
+   <center>
+      <Pane prefHeight="428.0" prefWidth="693.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="548.0" fitWidth="1080.0" layoutX="-83.0" layoutY="55.0">
+               <image>
+                  <Image url="@../Imagens/CenterRemoverFilme.jpg" />
+               </image>
+            </ImageView>
+            <TableView fx:id="tableView" layoutX="75.0" layoutY="98.0" onSort="#preencherTabela" prefHeight="413.0" prefWidth="510.0">
+               <columns>
+                  <TableColumn fx:id="listaSala" prefWidth="45.0" text="Sala" />
+                  <TableColumn fx:id="listaTitulos" minWidth="0.0" prefWidth="238.0" text="Exibição" />
+                  <TableColumn fx:id="listaHinicio" minWidth="0.0" prefWidth="117.0" text="Horário de Início" />
+                  <TableColumn fx:id="listaHfim" minWidth="0.0" prefWidth="107.0" text="Horário de Fim" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </center>
+   <top>
+      <Pane prefHeight="117.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="178.0" fitWidth="1080.0" layoutY="-2.0">
+               <image>
+                  <Image url="@../Imagens/Top.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="36.0" layoutY="81.0" prefHeight="62.0" prefWidth="447.0" text="REMOVER SESSÃO" textFill="WHITE">
+               <font>
+                  <Font name="Gotham Light" size="42.0" />
+               </font>
+               <contextMenu>
+                  <ContextMenu>
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                     </items>
+                  </ContextMenu>
+               </contextMenu>
+               <tooltip>
+                  <Tooltip text="Empty Tooltip" />
+               </tooltip>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+            </Label>
+         </children>
+         <effect>
+            <DisplacementMap>
+               <mapData>
+                  <FloatMap />
+               </mapData>
+            </DisplacementMap>
+         </effect>
+      </Pane>
+   </top>
+   <left>
+      <Pane prefHeight="511.0" prefWidth="83.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <Pane prefHeight="92.0" prefWidth="1080.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <right>
+      <Pane prefHeight="511.0" prefWidth="338.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="31.0" layoutY="194.0" mnemonicParsing="false" onAction="#remover" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+               <font>
+                  <Font name="Gotham Light" size="19.0" />
+               </font>
+            </Button>
+            <Button layoutX="31.0" layoutY="331.0" mnemonicParsing="false" onAction="#sair" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+               <font>
+                  <Font name="Gotham Light" size="19.0" />
+               </font>
+            </Button>
+            <Button layoutX="31.0" layoutY="263.0" mnemonicParsing="false" onAction="#backToMenu" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+               <font>
+                  <Font name="Gotham Light" size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+   </right>
+   <effect>
+      <Blend />
+   </effect>
+</BorderPane>

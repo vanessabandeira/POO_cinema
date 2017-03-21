@@ -19,7 +19,7 @@ public class CadastroSessao {
 	public void adicionarSessao(Sessao sessao){
 		this.repositorioSessao.inserir(sessao);
 	}
-	public void cancelarSessao(Sessao sessao){
+	public void removerSessao(Sessao sessao){
 		this.repositorioSessao.remover(sessao);
 	}
 	public boolean conferirHorario(){
