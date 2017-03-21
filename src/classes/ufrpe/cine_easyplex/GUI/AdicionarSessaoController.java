@@ -1,7 +1,5 @@
 package classes.ufrpe.cine_easyplex.GUI;
 
-
-import java.util.Date;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,7 +22,7 @@ public class AdicionarSessaoController {
 	
 	Filme filmeselecionado;
 	Sala salaselecionada;
-	double valor;
+	float valor;
 	
 	public void preencherTabela(){
 		boxFilme.setItems(FXCollections.observableArrayList(Fachada.getInstancia().getFilmes().getRepositorioFilmes().listar()));
@@ -38,8 +36,9 @@ public class AdicionarSessaoController {
 			Date data = new Date();
 			data.setHours(Integer.parseInt(caixaHora.getText()));
 			data.setMinutes(Integer.parseInt(caixaMinutos.getText()));
+			valor = Float.parseFloat(caixaValor.getText());
 			
-			Sessao sessao = new Sessao(this.filmeselecionado, this.salaselecionada, data);
+			Sessao sessao = new Sessao(this.filmeselecionado, this.salaselecionada, data, valor);
 			try{
 				Fachada.getInstancia().getSessoes().adicionarSessao(sessao);
 				lblError.setText("Sessão Cadastrada.");
@@ -59,4 +58,5 @@ public class AdicionarSessaoController {
 	public void sair(){
 		
 	}
+
 }
