@@ -4,9 +4,11 @@ import classes.ufrpe.cine_easyplex.Exceptions.SenhasDiferentesException;
 import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
 import classes.ufrpe.cine_easyplex.beans.Conta;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 
 public class RemoverContaController {
 	
@@ -36,7 +38,11 @@ public class RemoverContaController {
 			lblError.setText(e.getMessage());
 		}
 		catch(Exception e){
-			lblError.setText("Os valores de login e senha não são válidos");
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("NOTAÇÃO INVÁLIDA");
+			alert.setContentText(" Digite novamente o login e senha");
+			alert.showAndWait();
 		}
 		
 	}
