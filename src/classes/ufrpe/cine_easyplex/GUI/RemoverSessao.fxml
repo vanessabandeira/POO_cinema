@@ -70,14 +70,7 @@
                </effect>
             </Label>
          </children>
-         <effect>
-            <DisplacementMap>
-               <mapData>
-                  <FloatMap />
-               </mapData>
-            </DisplacementMap>
-         </effect>
-      </Pane>
+             </Pane>
    </top>
    <left>
       <Pane prefHeight="511.0" prefWidth="83.0" BorderPane.alignment="CENTER" />

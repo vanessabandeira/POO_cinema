@@ -46,10 +46,6 @@ public class CadastroSessao {
 		
 	}
 	
-	public Sessao buscarPorHorario(){
-		return null;
-	}
-
 	public iRepositorioSessao getRepositorioSessao() {
 		return repositorioSessao;
 	}
