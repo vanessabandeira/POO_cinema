@@ -14,9 +14,7 @@ public class Sessao implements Serializable {
 	private int ocupacao;
 	private float valor; // valor do ingresso inteiro
 
-	/*
-	 * public Sessao{ Mï¿½TODO CONSTRUTOR }
-	 */
+	
 	public Sessao(Filme exibido, Sala sala, Date hinicio) {
 		this.exibicao = exibido;
 		this.hall = sala;
@@ -115,6 +113,9 @@ public class Sessao implements Serializable {
 			}
 		}
 		return false;
+	}
+	public String toString(){
+		return "Sala: "+ this.hall.getIdentidade() + ", das " + this.getHinicio() + " até às " + this.getHfim();
 	}
 
 }
