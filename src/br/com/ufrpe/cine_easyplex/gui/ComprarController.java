@@ -127,6 +127,7 @@ public class ComprarController {
 		} else {
 			valor = sessaoselecionada.getValor();
 		}
+		labelValor.setText("R$ "+valor);
 	}
 
 	public void comprar() {
