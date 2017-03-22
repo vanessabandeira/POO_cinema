@@ -1,15 +1,19 @@
 package br.com.ufrpe.cine_easyplex.gui;
 
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
 public class ArrecadacaoController{
 	
-	@FXML Label lblTotalDia, lblTotalTotal;
+	@FXML Label  lblTotalTotal;
 	
 	public void initialize(){
-		lblTotalDia.setText("R$ "+Fachada.getInstancia().getVendas().arrecadacaoDia());
-		lblTotalTotal.setText("R$ "+Fachada.getInstancia().getVendas().arrecadacao());
+		double valorTotalArrecadado = 0;
+		for(int i = 0; i<Fachada.getInstancia().getVendas().getRepositorioVendas().listar().size(); i++){
+			valorTotalArrecadado+=Fachada.getInstancia().getVendas().getRepositorioVendas().listar().get(i).calcularPreco();
+		}
+		lblTotalTotal.setText("R$ "+valorTotalArrecadado);
 	}
 	
 	public void backToMenu(){

@@ -31,17 +31,12 @@ public class CadastroVendas {
 		return valorArrecadado;
 	}
 	
-	public double arrecadacaoDia(){
-		double valorArrecadado = 0;
-		Date data = new Date();
-		for(int i = 0; i<this.repositorioVendas.listar().size(); i++){
-			if(data.getMonth() == this.repositorioVendas.listar().get(i).getSessao().getDateInicio().getMonth()){
-				if(data.getDay() == this.repositorioVendas.listar().get(i).getSessao().getDateInicio().getDay()){
-					valorArrecadado+=this.repositorioVendas.listar().get(i).calcularPreco();
-				}
-			}
-		}
-		return valorArrecadado;
+	public iRepositorioVendas getRepositorioVendas() {
+		return repositorioVendas;
+	}
+
+	public void setRepositorioVendas(iRepositorioVendas repositorioVendas) {
+		this.repositorioVendas = repositorioVendas;
 	}
 	
 }

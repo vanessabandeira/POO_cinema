@@ -32,25 +32,7 @@
                   <Image url="@../Imagens/CenterOpcoes.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="23.0" layoutY="127.0" prefHeight="42.0" prefWidth="151.0" text="POR DIA" textFill="WHITE">
-               <contextMenu>
-                  <ContextMenu>
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                     </items>
-                  </ContextMenu>
-               </contextMenu>
-               <effect>
-                  <ColorAdjust />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="32.0" />
-               </font>
-               <tooltip>
-                  <Tooltip text="Empty Tooltip" />
-               </tooltip>
-            </Label>
-            <Label layoutX="337.0" layoutY="127.0" prefHeight="42.0" prefWidth="151.0" text="TOTAL" textFill="WHITE">
+            <Label layoutX="14.0" layoutY="127.0" prefHeight="42.0" prefWidth="648.0" text="ARRECADAÇÃO TOTAL DE VENDAS" textFill="WHITE">
                <contextMenu>
                   <ContextMenu>
                      <items>
@@ -83,14 +65,9 @@
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
-            <Label fx:id="lblTotalDia" layoutX="23.0" layoutY="189.0" prefHeight="36.0" prefWidth="97.0" textFill="WHITE">
+            <Label fx:id="lblTotalTotal" layoutX="309.0" layoutY="189.0" prefHeight="105.0" prefWidth="293.0" textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font size="22.0" />
-               </font>
-            </Label>
-            <Label fx:id="lblTotalTotal" layoutX="337.0" layoutY="189.0" prefHeight="36.0" prefWidth="95.0" textFill="WHITE">
-               <font>
-                  <Font size="22.0" />
+                  <Font size="72.0" />
                </font>
             </Label>
          </children>
