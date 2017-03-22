@@ -48,7 +48,6 @@ public class Filme implements Serializable {
 		this.duracao = duracao;
 	}
 
-	@Override
 	public String toString() {
 		return this.titulo;
 	}

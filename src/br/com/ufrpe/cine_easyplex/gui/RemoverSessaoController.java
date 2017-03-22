@@ -26,57 +26,61 @@ public class RemoverSessaoController {
 	private TableColumn<Sessao, String> listaHinicio = new TableColumn("Horário");
 	@FXML
 	private TableColumn<Sessao, String> listaHfim = new TableColumn("Término");
-	
+
 	private Sessao sessaoselecionada;
 	Fachada fachada = Fachada.getInstancia();
-	@FXML Label lblError;
-	
+	@FXML
+	Label lblError;
 
-	public void preencherTabela(){
+	public void preencherTabela() {
 		listaSala.setCellValueFactory(new PropertyValueFactory<Sessao, String>("hall"));
 		listaTitulo.setCellValueFactory(new PropertyValueFactory<Sessao, String>("exibicao"));
 		listaHinicio.setCellValueFactory(new PropertyValueFactory<Sessao, String>("Hinicio"));
 		listaHfim.setCellValueFactory(new PropertyValueFactory<Sessao, String>("Hfim"));
-		
-        tableView.setItems(FXCollections.observableArrayList(Fachada.getInstancia().getSessoes().getRepositorioSessao().listar()));
-        tableView.refresh();
+
+		tableView.setItems(
+				FXCollections.observableArrayList(Fachada.getInstancia().getSessoes().getRepositorioSessao().listar()));
+		tableView.refresh();
 	}
+
 	public void remover() throws ValorInvalidoException {
 		sessaoselecionada = tableView.getSelectionModel().getSelectedItem();
 		if (sessaoselecionada != null) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("CineEasyPlex");
-			alert.setHeaderText("Deseja remover o sessão " + sessaoselecionada.getExibicao() + " às "+ sessaoselecionada.getHinicio() +" na sala" + sessaoselecionada.getHall()+" ?");
+			alert.setHeaderText("Deseja remover o sessão " + sessaoselecionada.getExibicao() + " às "
+					+ sessaoselecionada.getHinicio() + " na sala" + sessaoselecionada.getHall() + " ?");
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK) {
-				for(int i = 0; i < fachada.getSessoes().getRepositorioSessao().listar().size(); i++){
-					if(fachada.getSessoes().getRepositorioSessao().listar().get(i).equals(sessaoselecionada)){
+				for (int i = 0; i < fachada.getSessoes().getRepositorioSessao().listar().size(); i++) {
+					if (fachada.getSessoes().getRepositorioSessao().listar().get(i).equals(sessaoselecionada)) {
 						fachada.getSessoes().removerSessao(fachada.getSessoes().getRepositorioSessao().listar().get(i));
 					}
 				}
 				Fachada.getInstancia().removerSessao(sessaoselecionada);
 				preencherTabela();
-				
+
 			}
 		}
 	}
-	public void backToMenu(){
-		try{
+
+	public void backToMenu() {
+		try {
 			ScreenManager.getInstance().getMenu();
 			System.out.println("sucesso");
-		}
-		catch(Exception e){
-			lblError.setText("removido");;
+		} catch (Exception e) {
+			lblError.setText("removido");
+			;
 		}
 	}
-	
-	public void sair(){
-		try{
+
+	public void sair() {
+		try {
 			ScreenManager.getInstance().getTelaLogin();
 			System.out.println("sucesso");
-		}
-		catch(Exception e){
-			lblError.setText("removido");;
+		} catch (Exception e) {
+			lblError.setText("removido");
+			;
 		}
 	}
 }
