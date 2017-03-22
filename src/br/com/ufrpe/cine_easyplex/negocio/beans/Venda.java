@@ -17,6 +17,10 @@ public class Venda implements Serializable {
 		this.indiceLugar = indiceLugar;
 		this.valorInteiro = valorInteiro;
 	}
+	
+	public Venda(){
+		
+	}
 
 	public float calcularPreco(){
 		if(meia) return this.valorInteiro/2;
