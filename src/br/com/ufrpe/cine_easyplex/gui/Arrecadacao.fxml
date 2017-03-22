@@ -104,7 +104,7 @@
                   <Image url="@../Imagens/Top.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="36.0" layoutY="81.0" prefHeight="44.0" prefWidth="215.0" text="OPÇÕES" textFill="WHITE">
+            <Label layoutX="36.0" layoutY="81.0" prefHeight="44.0" prefWidth="391.0" text="ARRECADAÇÃO" textFill="WHITE">
                <font>
                   <Font name="Gotham Light" size="42.0" />
                </font>

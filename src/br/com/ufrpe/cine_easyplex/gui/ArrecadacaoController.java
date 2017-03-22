@@ -8,8 +8,8 @@ public class ArrecadacaoController{
 	@FXML Label lblTotalDia, lblTotalTotal;
 	
 	public void initialize(){
-		lblTotalDia.setText("R$"+Fachada.getInstancia().getVendas().arrecadacaoDia());
-		lblTotalTotal.setText("R$"+Fachada.getInstancia().getVendas().arrecadacao());
+		lblTotalDia.setText("R$ "+Fachada.getInstancia().getVendas().arrecadacaoDia());
+		lblTotalTotal.setText("R$ "+Fachada.getInstancia().getVendas().arrecadacao());
 	}
 	
 	public void backToMenu(){

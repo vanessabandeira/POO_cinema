@@ -6,14 +6,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioVendas;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Venda;
-import br.com.ufrpe.cine_easyplex.utils.exceptions.PosicaoOcupadaException;
-import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
-public class RepositorioVendas implements iRepositorioVendas{
+public class RepositorioVendas implements iRepositorioVendas, Serializable{
 	private ArrayList<Venda> vendas;
 	
 	private static iRepositorioVendas instancia;

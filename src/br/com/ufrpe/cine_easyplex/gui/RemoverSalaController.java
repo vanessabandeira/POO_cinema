@@ -21,9 +21,9 @@ public class RemoverSalaController implements Initializable {
 	@FXML
 	private TableView<Sala> tableView;
 	@FXML 
-	private TableColumn<Sala,Integer> listaID;
+	private TableColumn<Sala,Integer> listaID =  new TableColumn<>("identidade");
 	@FXML 
-	private TableColumn<Sala,String> listaTipo;
+	private TableColumn<Sala,String> listaTipo = new TableColumn<>("tipo");
 	
 	private Sala salaselecionada;
 	Fachada fachada = Fachada.getInstancia();
@@ -34,9 +34,8 @@ public class RemoverSalaController implements Initializable {
 	}
 	
 	public void preencherTabela(){
-		listaID.setCellValueFactory(new PropertyValueFactory<Sala, Integer>("ID"));
-		listaTipo.setCellValueFactory(new PropertyValueFactory<Sala, String>("Tipo"));
-		
+		listaID.setCellValueFactory(new PropertyValueFactory<Sala, Integer>("identidade"));
+		listaTipo.setCellValueFactory(new PropertyValueFactory<Sala, String>("tipo"));
 		
         tableView.setItems(FXCollections.observableArrayList(Fachada.getInstancia().getSalas().getRepositorioSalas().listar()));
         tableView.refresh();

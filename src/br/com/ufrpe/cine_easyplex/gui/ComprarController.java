@@ -138,8 +138,10 @@ public class ComprarController {
 			venda.setValorInteiro(sessaoselecionada.getValor());
 			venda.setIndiceLugar(cadeira);
 			sessao.setCadeira(cadeira);
+			
 			Fachada.getInstancia().getSessoes().getRepositorioSessao().alterar(sessao);
 			Fachada.getInstancia().getVendas().adicionarVenda(venda);
+			
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("CineEasyPlex");
 			alert.setHeaderText("COMPRA REALIZADA");

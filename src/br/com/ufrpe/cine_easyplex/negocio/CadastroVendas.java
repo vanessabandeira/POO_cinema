@@ -31,7 +31,6 @@ public class CadastroVendas {
 		return valorArrecadado;
 	}
 	
-	
 	public double arrecadacaoDia(){
 		double valorArrecadado = 0;
 		Date data = new Date();
