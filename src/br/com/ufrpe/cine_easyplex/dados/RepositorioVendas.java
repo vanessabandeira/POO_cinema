@@ -67,6 +67,7 @@ public class RepositorioVendas implements iRepositorioVendas{
             fos = new FileOutputStream(out);
             oos = new ObjectOutputStream(fos);
             oos.writeObject(instancia);
+            
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
