@@ -131,5 +131,6 @@ public class ScreenManager {
 	}
 	public void getArrecadacao(){
 		border.setCenter(paneArrecadacao);
+		ArrecadacaoController controlador = this.arrecadacao.getController();
 	}
 }
