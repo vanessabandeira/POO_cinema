@@ -13,6 +13,7 @@ public class AdicionarContaController {
 	
 	@FXML TextField tfLogin;
 	@FXML PasswordField tfSenha, tfRepetirSenha;
+	@FXML Label lblError;
 	
 	public void adicionar(){
 		try{
