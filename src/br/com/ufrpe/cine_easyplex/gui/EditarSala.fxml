@@ -126,7 +126,7 @@
    <right>
       <Pane prefHeight="511.0" prefWidth="338.0" BorderPane.alignment="CENTER">
          <children>
-            <Button layoutX="31.0" layoutY="192.0" mnemonicParsing="false" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+            <Button disable="true" layoutX="31.0" layoutY="192.0" mnemonicParsing="false" opacity="0.45" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>

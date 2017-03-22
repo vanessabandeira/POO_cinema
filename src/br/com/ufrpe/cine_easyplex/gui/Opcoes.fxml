@@ -105,8 +105,6 @@
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#adicionarSessao" text="Adicionar" />
                   <MenuItem mnemonicParsing="false" onAction="#removerSessao" text="Remover" />
-                  <MenuItem mnemonicParsing="false" text="Editar" />
-                  <MenuItem mnemonicParsing="false" text="Listar" />
                </items>
             </MenuButton>
             <MenuButton layoutX="23.0" layoutY="394.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Contas">
@@ -121,7 +119,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#removerConta" text="Remover" />
                </items>
             </MenuButton>
-            <Button layoutX="296.0" layoutY="216.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Cancelar sessão">
+            <Button layoutX="296.0" layoutY="216.0" mnemonicParsing="false" onAction="#arrecadacao" prefHeight="39.0" prefWidth="175.0" text="Arrecadação">
                <effect>
                   <InnerShadow />
                </effect>
@@ -129,23 +127,7 @@
                   <Font name="Gotham Light" size="15.0" />
                </font>
             </Button>
-            <Button layoutX="296.0" layoutY="273.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Pesquisar">
-               <effect>
-                  <InnerShadow />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="15.0" />
-               </font>
-            </Button>
-            <Button layoutX="296.0" layoutY="336.0" mnemonicParsing="false" onAction="#arrecadacao" prefHeight="39.0" prefWidth="175.0" text="Arrecadação">
-               <effect>
-                  <InnerShadow />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="15.0" />
-               </font>
-            </Button>
-            <Button layoutX="690.0" layoutY="189.0" mnemonicParsing="false" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+            <Button disable="true" layoutX="690.0" layoutY="189.0" mnemonicParsing="false" opacity="0.45" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>

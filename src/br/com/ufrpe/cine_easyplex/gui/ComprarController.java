@@ -80,7 +80,7 @@ public class ComprarController {
 						gridCadeiras.add(button, c, r);
 					} else {
 						Button button = new Button();
-						button.setBackground(new Background(new BackgroundFill(Color.BLUE, null, null)));
+						button.setBackground(new Background(new BackgroundFill(Color.GREEN, null, null)));
 						button.setMinHeight(20);
 						button.setMinWidth(20);
 						button.setId(String.valueOf(number));

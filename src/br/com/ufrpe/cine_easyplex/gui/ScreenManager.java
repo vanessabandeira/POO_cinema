@@ -126,6 +126,8 @@ public class ScreenManager {
 	}
 	public void getRemoverSessao(){
 		border.setCenter(paneRemoverSessao);
+		RemoverSessaoController controlador = this.removerSessao.getController();
+		controlador.preencherTabela();
 	}
 	public void getArrecadacao(){
 		border.setCenter(paneArrecadacao);

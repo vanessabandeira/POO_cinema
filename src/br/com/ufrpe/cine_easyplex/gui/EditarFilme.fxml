@@ -149,7 +149,7 @@
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
-            <Button layoutX="31.0" layoutY="193.0" mnemonicParsing="false" onAction="#comprar" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
+            <Button disable="true" layoutX="31.0" layoutY="193.0" mnemonicParsing="false" onAction="#comprar" opacity="0.45" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>
