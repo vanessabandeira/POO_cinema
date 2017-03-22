@@ -97,7 +97,22 @@ public class Sessao implements Serializable {
 	}
 
 	public Date getHorario() {
-		// TODO Auto-generated method stub
+		
+		return null;
+	}
+
+	public boolean[] getPosicao() {
+		
+		return null;
+	}
+
+	public boolean conferirOcupacao(Integer integer) {
+		
+		return false;
+	}
+
+	public Date getDateInicio() {
+		
 		return null;
 	}
 

@@ -13,7 +13,6 @@ public class AdicionarContaController {
 	
 	@FXML TextField tfLogin;
 	@FXML PasswordField tfSenha, tfRepetirSenha;
-	@FXML Label lblError;
 	
 	public void adicionar(){
 		try{
@@ -54,7 +53,11 @@ public class AdicionarContaController {
 			System.out.println("entrou aqui");
 		}
 		catch(Exception e){
-			lblError.setText(e.getMessage());;
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("NOTAÇÃO INVÁLIDA");
+			alert.setContentText(e.getMessage());
+			alert.showAndWait();
 		}
 	}
 	
@@ -67,7 +70,11 @@ public class AdicionarContaController {
 			System.out.println("entrou aqui");
 		}
 		catch(Exception e){
-			lblError.setText(e.getMessage());;
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("NOTAÇÃO INVÁLIDA");
+			alert.setContentText(e.getMessage());
+			alert.showAndWait();
 		}
 	}
 
