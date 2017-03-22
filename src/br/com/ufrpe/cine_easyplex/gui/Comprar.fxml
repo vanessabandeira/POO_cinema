@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ContextMenu?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.effect.DisplacementMap?>
 <?import javafx.scene.effect.FloatMap?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.cine_easyplex.gui.ComprarController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.cine_easyplex.gui.ComprarController">
    <center>
       <Pane fx:id="comprar" prefHeight="428.0" prefWidth="997.0" BorderPane.alignment="CENTER">
          <children>
@@ -135,6 +134,13 @@
             </GridPane>
             <Button fx:id="cancelar" layoutX="664.0" layoutY="436.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="48.0" prefWidth="154.0" text="CANCELAR COMPRA" />
             <Button fx:id="confirmar" layoutX="857.0" layoutY="436.0" mnemonicParsing="false" onAction="#comprar" prefHeight="48.0" prefWidth="165.0" text="CONFIRMAR SESSÃO" />
+            <Label layoutX="26.0" layoutY="95.0" prefHeight="17.0" prefWidth="569.0" text="A     B      C      D      E      F      G      H      I      J      K      L      M      N      O      P      Q      R       S       T       U" textFill="#fcf6f6" />
+            <Label layoutX="608.0" layoutY="160.0" text="   1" textFill="#fcfafa" />
+            <Label layoutX="613.0" layoutY="195.0" text="   2" textFill="#f5f0f0" />
+            <Label layoutX="621.0" layoutY="212.0" text="3" textFill="#fcf2f2" />
+            <Label layoutX="629.0" layoutY="239.0" text="4" textFill="#e8e2e2" />
+            <Label layoutX="610.0" layoutY="296.0" text="5" textFill="#f5efef" />
+            <Label layoutX="610.0" layoutY="320.0" text="6" textFill="#fffafa" />
          </children>
       </Pane>
    </center>
