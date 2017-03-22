@@ -27,7 +27,7 @@
             <TableView fx:id="tableView" layoutX="75.0" layoutY="98.0" onSort="#preencherTabela" prefHeight="413.0" prefWidth="510.0">
                <columns>
                   <TableColumn fx:id="listaSala" prefWidth="236.0" text="ID" />
-                  <TableColumn fx:id="listaHinicio" minWidth="0.0" prefWidth="273.0" text="Tipo da Sala" />
+                  <TableColumn fx:id="listaTipo" minWidth="0.0" prefWidth="273.0" text="Tipo da Sala" />
                </columns>
             </TableView>
          </children>

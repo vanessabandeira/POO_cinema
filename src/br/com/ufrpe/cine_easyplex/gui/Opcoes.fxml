@@ -71,7 +71,7 @@
                </font>
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#adicionarSala" text="Adicionar" />
-                  <MenuItem mnemonicParsing="false" text="Remover" />
+                  <MenuItem mnemonicParsing="false" onAction="#removerSala" text="Remover" />
                   <MenuItem mnemonicParsing="false" onAction="#editarSala" text="Editar" />
                </items>
             </MenuButton>
