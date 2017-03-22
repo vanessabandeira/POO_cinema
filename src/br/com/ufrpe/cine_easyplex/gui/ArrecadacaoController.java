@@ -1,4 +1,4 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
