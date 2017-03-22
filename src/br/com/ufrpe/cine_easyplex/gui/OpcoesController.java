@@ -125,4 +125,13 @@ public class OpcoesController {
 			System.out.println(e.getMessage());
 		}
 	}
+	public void removerSala(){
+		try{
+			ScreenManager.getInstance().getRemoverSala();;
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
 }
