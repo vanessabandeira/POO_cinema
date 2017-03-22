@@ -21,8 +21,9 @@ public class ScreenManager {
 	BorderPane paneComprar;
 	BorderPane paneAdicionarSessao;
 	BorderPane paneRemoverSessao;
+	BorderPane paneArrecadacao;
 	
-	FXMLLoader menu, login, opcoes, adicionarFilme, editarFilme, adicionarSala, removerFilme, editarSala, adicionarConta, removerConta,comprar, adicionarSessao, removerSessao;
+	FXMLLoader menu, login, opcoes, adicionarFilme, editarFilme, adicionarSala, removerFilme, editarSala, adicionarConta, removerConta,comprar, adicionarSessao, removerSessao, arrecadacao;
 	
 	
 	public static ScreenManager instancia;
@@ -64,6 +65,8 @@ public class ScreenManager {
 			this.paneAdicionarSessao = adicionarSessao.load();
 			removerSessao = new FXMLLoader(this.getClass().getResource("RemoverSessao.fxml"));
 			this.paneRemoverSessao = removerSessao.load();
+			arrecadacao = new FXMLLoader(this.getClass().getResource("Arrecadacao.fxml"));
+			this.paneArrecadacao = arrecadacao.load();
 		}
 		catch(Exception e){
 		}
@@ -123,5 +126,8 @@ public class ScreenManager {
 	}
 	public void getRemoverSessao(){
 		border.setCenter(paneRemoverSessao);
+	}
+	public void getArrecadacao(){
+		border.setCenter(paneArrecadacao);
 	}
 }

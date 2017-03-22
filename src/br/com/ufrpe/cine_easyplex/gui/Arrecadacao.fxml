@@ -23,7 +23,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.cine_easyplex.gui.OpcoesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.ufrpe.cine_easyplex.guiArrecadacaoController">
    <center>
       <Pane prefHeight="428.0" prefWidth="693.0" BorderPane.alignment="CENTER">
          <children>
@@ -32,7 +32,7 @@
                   <Image url="@../Imagens/CenterOpcoes.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="23.0" layoutY="127.0" prefHeight="42.0" prefWidth="151.0" text="EDITAR" textFill="WHITE">
+            <Label layoutX="23.0" layoutY="127.0" prefHeight="42.0" prefWidth="151.0" text="POR DIA" textFill="WHITE">
                <contextMenu>
                   <ContextMenu>
                      <items>
@@ -50,7 +50,7 @@
                   <Tooltip text="Empty Tooltip" />
                </tooltip>
             </Label>
-            <Label layoutX="296.0" layoutY="127.0" prefHeight="42.0" prefWidth="151.0" text="VENDA" textFill="WHITE">
+            <Label layoutX="337.0" layoutY="127.0" prefHeight="42.0" prefWidth="151.0" text="TOTAL" textFill="WHITE">
                <contextMenu>
                   <ContextMenu>
                      <items>
@@ -68,83 +68,6 @@
                   <Tooltip text="Empty Tooltip" />
                </tooltip>
             </Label>
-            <MenuButton layoutX="23.0" layoutY="273.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Salas">
-               <effect>
-                  <InnerShadow />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="15.0" />
-               </font>
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#adicionarSala" text="Adicionar" />
-                  <MenuItem mnemonicParsing="false" text="Remover" />
-                  <MenuItem mnemonicParsing="false" onAction="#editarSala" text="Editar" />
-                  <MenuItem mnemonicParsing="false" text="Listar" />
-               </items>
-            </MenuButton>
-            <MenuButton layoutX="23.0" layoutY="216.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Filmes">
-               <effect>
-                  <InnerShadow />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="15.0" />
-               </font>
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#adicionarFilme" text="Adicionar" />
-                  <MenuItem mnemonicParsing="false" onAction="#removerFilme" text="Remover" />
-                  <MenuItem mnemonicParsing="false" onAction="#editarFilme" text="Editar" />
-               </items>
-            </MenuButton>
-            <MenuButton layoutX="23.0" layoutY="336.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Sessões">
-               <effect>
-                  <InnerShadow />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="15.0" />
-               </font>
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#adicionarSessao" text="Adicionar" />
-                  <MenuItem mnemonicParsing="false" onAction="#removerSessao" text="Remover" />
-                  <MenuItem mnemonicParsing="false" text="Editar" />
-                  <MenuItem mnemonicParsing="false" text="Listar" />
-               </items>
-            </MenuButton>
-            <MenuButton layoutX="23.0" layoutY="394.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Contas">
-               <effect>
-                  <InnerShadow />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="15.0" />
-               </font>
-               <items>
-                  <MenuItem mnemonicParsing="false" onAction="#adicionarConta" text="Adicionar" />
-                  <MenuItem mnemonicParsing="false" onAction="#removerConta" text="Remover" />
-               </items>
-            </MenuButton>
-            <Button layoutX="296.0" layoutY="216.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Cancelar sessão">
-               <effect>
-                  <InnerShadow />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="15.0" />
-               </font>
-            </Button>
-            <Button layoutX="296.0" layoutY="273.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="175.0" text="Pesquisar">
-               <effect>
-                  <InnerShadow />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="15.0" />
-               </font>
-            </Button>
-            <Button layoutX="296.0" layoutY="336.0" mnemonicParsing="false" onAction="#arrecadacao" prefHeight="39.0" prefWidth="175.0" text="Arrecadação">
-               <effect>
-                  <InnerShadow />
-               </effect>
-               <font>
-                  <Font name="Gotham Light" size="15.0" />
-               </font>
-            </Button>
             <Button layoutX="690.0" layoutY="189.0" mnemonicParsing="false" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
@@ -154,19 +77,22 @@
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>
-               <contextMenu>
-                  <ContextMenu>
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                    </items>
-                  </ContextMenu>
-               </contextMenu>
             </Button>
             <Button layoutX="690.0" layoutY="328.0" mnemonicParsing="false" onAction="#sair" opacity="0.09" prefHeight="54.0" prefWidth="220.0">
                <font>
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
+            <Label fx:id="tfTotalDia" layoutX="23.0" layoutY="189.0" prefHeight="36.0" prefWidth="97.0" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="tfTotalTotal" layoutX="337.0" layoutY="189.0" prefHeight="36.0" prefWidth="95.0" textFill="WHITE">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </center>
