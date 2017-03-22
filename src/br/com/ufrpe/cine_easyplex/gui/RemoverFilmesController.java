@@ -57,11 +57,11 @@ public class RemoverFilmesController implements Initializable {
 		if (filmeselecionado != null) {
 			Alert alert = new Alert(AlertType.CONFIRMATION);
 			alert.setTitle("CineEasyPlex");
-			alert.setHeaderText("Deseja remover o filme " + filmeselecionado.getTitulo() + "? Todas as sessões marcadas serão canceladas.");
+			alert.setHeaderText("Deseja remover o filme " + filmeselecionado.toString() + "? Todas as sessões marcadas serão canceladas.");
 			Optional<ButtonType> result = alert.showAndWait();
 			if (result.get() == ButtonType.OK) {
 				for(int i = 0; i < fachada.getSessoes().getRepositorioSessao().listar().size(); i++){
-					if(fachada.getSessoes().getRepositorioSessao().listar().get(i).getExibicao().getTitulo().equals(filmeselecionado.getTitulo())){
+					if(fachada.getSessoes().getRepositorioSessao().listar().get(i).getExibicao().toString().equals(filmeselecionado.toString())){
 						fachada.getSessoes().removerSessao(fachada.getSessoes().getRepositorioSessao().listar().get(i));
 					}
 				}

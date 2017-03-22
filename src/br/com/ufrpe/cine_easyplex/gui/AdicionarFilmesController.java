@@ -47,7 +47,7 @@ public class AdicionarFilmesController {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("CineEasyPlex");
 			alert.setHeaderText(null);
-			alert.setContentText(filme.getTitulo() + " foi adicionado com sucesso.");
+			alert.setContentText(filme.toString() + " foi adicionado com sucesso.");
 			alert.showAndWait();
 			
 		}

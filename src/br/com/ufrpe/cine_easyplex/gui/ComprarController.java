@@ -56,7 +56,7 @@ public class ComprarController {
 	public void setFilme(Filme filmeselecionado) {
 		this.filme = filmeselecionado;
 		gridCadeiras.getChildren().clear();
-		labelTitulo.setText(this.filme.getTitulo());
+		labelTitulo.setText(this.filme.toString());
 		labelClassificacao.setText(this.filme.getClassificacao());
 		labelGenero.setText(this.filme.getGenero());
 		boxSessao.setItems(FXCollections
@@ -145,7 +145,7 @@ public class ComprarController {
 		Alert alert = new Alert(AlertType.INFORMATION);
 		alert.setTitle("CineEasyPlex");
 		alert.setHeaderText("COMPRA REALIZADA");
-		alert.setContentText("Valor:R$" + valor + " Filme: " + filme.getTitulo());
+		alert.setContentText("Valor:R$" + valor + " Filme: " + filme.toString());
 		alert.showAndWait();
 		atualizarSessao();
 		menuPrincipal();

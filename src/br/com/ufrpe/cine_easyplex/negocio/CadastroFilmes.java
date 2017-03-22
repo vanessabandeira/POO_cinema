@@ -35,7 +35,7 @@ public class CadastroFilmes {
 	
 	public Filme buscarFilme(String nome){
 		for(int i = 0; i<this.repositorioFilmes.listar().size(); i++){
-			if(this.repositorioFilmes.listar().get(i).getTitulo().equals(nome)){
+			if(this.repositorioFilmes.listar().get(i).toString().equals(nome)){
 				return this.repositorioFilmes.listar().get(i);
 			}
 		}

@@ -36,7 +36,7 @@ public class EditarFilmeController {
 			classificacaoBox.setItems(classificacaoList);
 			generoBox.setValue(this.filme.getGenero());
 			generoBox.setItems(generoList);
-			tfTitulo.setText(this.filme.getTitulo());
+			tfTitulo.setText(this.filme.toString());
 			tfDuracao.setText(""+this.filme.getDuracao());
 		}
 		
@@ -61,7 +61,7 @@ public class EditarFilmeController {
 			Alert alert = new Alert(AlertType.INFORMATION);
 			alert.setTitle("CineEasyPlex");
 			alert.setHeaderText(null);
-			alert.setContentText(filme.getTitulo() + " foi modificado com sucesso.");
+			alert.setContentText(filme.toString() + " foi modificado com sucesso.");
 			alert.showAndWait();
 			
 		}
