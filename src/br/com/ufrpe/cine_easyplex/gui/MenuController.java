@@ -1,10 +1,10 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import classes.ufrpe.cine_easyplex.beans.Filme;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;

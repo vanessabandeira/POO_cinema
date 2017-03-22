@@ -1,10 +1,10 @@
-package classes.ufrpe.cine_easyplex.negocio;
+package br.com.ufrpe.cine_easyplex.negocio;
 
-import classes.ufrpe.cine_easyplex.Exceptions.LoginException;
-import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
-import classes.ufrpe.cine_easyplex.beans.Conta;
-import classes.ufrpe.cine_easyplex.dados.RepositorioConta;
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioContas;
+import br.com.ufrpe.cine_easyplex.dados.RepositorioConta;
+import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioContas;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Conta;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.LoginException;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 public class CadastroContas {
 	iRepositorioContas repositorioContas;

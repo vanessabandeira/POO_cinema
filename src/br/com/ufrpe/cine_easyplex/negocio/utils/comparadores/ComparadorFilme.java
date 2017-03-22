@@ -1,8 +1,8 @@
-package classes.ufrpe.cine_easyplex.comparadores;
+package br.com.ufrpe.cine_easyplex.negocio.utils.comparadores;
 
 import java.util.Comparator;
 
-import classes.ufrpe.cine_easyplex.beans.Filme;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
 
 public class ComparadorFilme implements Comparator<Filme>{
 

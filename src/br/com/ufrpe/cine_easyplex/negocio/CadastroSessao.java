@@ -1,13 +1,13 @@
-package classes.ufrpe.cine_easyplex.negocio;
+package br.com.ufrpe.cine_easyplex.negocio;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 
-import classes.ufrpe.cine_easyplex.beans.Filme;
-import classes.ufrpe.cine_easyplex.beans.Sala;
-import classes.ufrpe.cine_easyplex.beans.Sessao;
-import classes.ufrpe.cine_easyplex.dados.RepositorioSessao;
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
+import br.com.ufrpe.cine_easyplex.dados.RepositorioSessao;
+import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sala;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sessao;
 
 public class CadastroSessao {
 	private iRepositorioSessao repositorioSessao;

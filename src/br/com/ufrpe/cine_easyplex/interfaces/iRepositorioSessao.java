@@ -1,8 +1,8 @@
-package classes.ufrpe.cine_easyplex.interfaces;
+package br.com.ufrpe.cine_easyplex.interfaces;
 
 import java.util.List;
 
-import classes.ufrpe.cine_easyplex.beans.Sessao;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sessao;
 
 public interface iRepositorioSessao {
 

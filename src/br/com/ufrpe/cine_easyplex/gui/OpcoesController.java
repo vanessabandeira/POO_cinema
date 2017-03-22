@@ -1,4 +1,4 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
 import java.net.URL;
 

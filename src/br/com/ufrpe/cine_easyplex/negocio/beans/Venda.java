@@ -1,4 +1,4 @@
-package classes.ufrpe.cine_easyplex.beans;
+package br.com.ufrpe.cine_easyplex.negocio.beans;
 
 import java.io.Serializable;
 import java.util.ArrayList;

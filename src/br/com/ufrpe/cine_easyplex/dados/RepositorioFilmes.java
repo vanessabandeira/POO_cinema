@@ -1,4 +1,4 @@
-package classes.ufrpe.cine_easyplex.dados;
+package br.com.ufrpe.cine_easyplex.dados;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -10,10 +10,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
-import classes.ufrpe.cine_easyplex.beans.Filme;
-import classes.ufrpe.cine_easyplex.comparadores.ComparadorFilme;
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
+import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
+import br.com.ufrpe.cine_easyplex.negocio.utils.comparadores.ComparadorFilme;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 @SuppressWarnings("serial")
 public class RepositorioFilmes implements iRepositorioFilmes, Serializable{

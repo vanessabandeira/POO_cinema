@@ -1,11 +1,11 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
 
+import br.com.ufrpe.cine_easyplex.gui.ScreenManager;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import classes.ufrpe.cine_easyplex.GUI.ScreenManager;
 
 
 public class TelaLoginController {

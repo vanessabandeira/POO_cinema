@@ -1,12 +1,12 @@
-package classes.ufrpe.cine_easyplex.negocio;
+package br.com.ufrpe.cine_easyplex.negocio;
 
 import java.util.Date;
 
-import classes.ufrpe.cine_easyplex.Exceptions.PosicaoOcupadaException;
-import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
-import classes.ufrpe.cine_easyplex.beans.Venda;
-import classes.ufrpe.cine_easyplex.dados.RepositorioVendas;
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioVendas;
+import br.com.ufrpe.cine_easyplex.dados.RepositorioVendas;
+import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioVendas;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Venda;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.PosicaoOcupadaException;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 public class CadastroVendas {
 	iRepositorioVendas repositorioVendas;

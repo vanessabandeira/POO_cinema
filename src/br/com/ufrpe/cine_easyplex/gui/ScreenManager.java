@@ -1,6 +1,7 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
-import classes.ufrpe.cine_easyplex.beans.Filme;
+import br.com.ufrpe.cine_easyplex.aplicacao.Main;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.BorderPane;

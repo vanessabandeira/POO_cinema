@@ -1,5 +1,6 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.aplicacao;
 
+import br.com.ufrpe.cine_easyplex.gui.Fachada;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

@@ -1,6 +1,6 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
-import classes.ufrpe.cine_easyplex.beans.Sala;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sala;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;

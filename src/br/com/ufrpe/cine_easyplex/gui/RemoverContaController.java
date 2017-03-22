@@ -1,8 +1,8 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
-import classes.ufrpe.cine_easyplex.Exceptions.SenhasDiferentesException;
-import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
-import classes.ufrpe.cine_easyplex.beans.Conta;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Conta;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.SenhasDiferentesException;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;

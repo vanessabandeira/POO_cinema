@@ -1,4 +1,4 @@
-package classes.ufrpe.cine_easyplex.dados;
+package br.com.ufrpe.cine_easyplex.dados;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,9 +9,9 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
-import classes.ufrpe.cine_easyplex.beans.Conta;
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioContas;
+import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioContas;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Conta;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 @SuppressWarnings("serial")
 public class RepositorioConta implements iRepositorioContas, Serializable{

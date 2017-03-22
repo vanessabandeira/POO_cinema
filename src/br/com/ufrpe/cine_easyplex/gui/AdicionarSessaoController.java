@@ -1,11 +1,11 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import classes.ufrpe.cine_easyplex.beans.Filme;
-import classes.ufrpe.cine_easyplex.beans.Sala;
-import classes.ufrpe.cine_easyplex.beans.Sessao;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sala;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sessao;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;

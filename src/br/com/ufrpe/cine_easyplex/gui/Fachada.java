@@ -1,4 +1,4 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -9,18 +9,18 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
-import classes.ufrpe.cine_easyplex.beans.Filme;
-import classes.ufrpe.cine_easyplex.beans.Sala;
-import classes.ufrpe.cine_easyplex.beans.Sessao;
-import classes.ufrpe.cine_easyplex.dados.RepositorioFilmes;
-import classes.ufrpe.cine_easyplex.dados.RepositorioVendas;
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
-import classes.ufrpe.cine_easyplex.negocio.CadastroContas;
-import classes.ufrpe.cine_easyplex.negocio.CadastroFilmes;
-import classes.ufrpe.cine_easyplex.negocio.CadastroSalas;
-import classes.ufrpe.cine_easyplex.negocio.CadastroSessao;
-import classes.ufrpe.cine_easyplex.negocio.CadastroVendas;
+import br.com.ufrpe.cine_easyplex.dados.RepositorioFilmes;
+import br.com.ufrpe.cine_easyplex.dados.RepositorioVendas;
+import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
+import br.com.ufrpe.cine_easyplex.negocio.CadastroContas;
+import br.com.ufrpe.cine_easyplex.negocio.CadastroFilmes;
+import br.com.ufrpe.cine_easyplex.negocio.CadastroSalas;
+import br.com.ufrpe.cine_easyplex.negocio.CadastroSessao;
+import br.com.ufrpe.cine_easyplex.negocio.CadastroVendas;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sala;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sessao;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 public class Fachada implements Serializable {
 

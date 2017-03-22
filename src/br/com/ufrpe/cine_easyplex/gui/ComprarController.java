@@ -1,10 +1,10 @@
-package classes.ufrpe.cine_easyplex.GUI;
+package br.com.ufrpe.cine_easyplex.gui;
 
 import java.util.Date;
 
-import classes.ufrpe.cine_easyplex.beans.Filme;
-import classes.ufrpe.cine_easyplex.beans.Sessao;
-import classes.ufrpe.cine_easyplex.beans.Venda;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sessao;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Venda;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;

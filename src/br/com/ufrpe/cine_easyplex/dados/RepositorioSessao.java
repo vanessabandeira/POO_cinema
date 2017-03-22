@@ -1,4 +1,4 @@
-package classes.ufrpe.cine_easyplex.dados;
+package br.com.ufrpe.cine_easyplex.dados;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import classes.ufrpe.cine_easyplex.beans.Sessao;
-import classes.ufrpe.cine_easyplex.comparadores.ComparadorSessao;
-import classes.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
+import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Sessao;
+import br.com.ufrpe.cine_easyplex.negocio.utils.comparadores.ComparadorSessao;
 
 public class RepositorioSessao implements iRepositorioSessao, Serializable{
 	private static final long serialVersionUID = 6909618405924724329L;

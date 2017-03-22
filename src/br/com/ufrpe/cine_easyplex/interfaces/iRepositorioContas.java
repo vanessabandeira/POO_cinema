@@ -1,10 +1,10 @@
-package classes.ufrpe.cine_easyplex.interfaces;
+package br.com.ufrpe.cine_easyplex.interfaces;
 
 import java.util.ArrayList;
 
-import classes.ufrpe.cine_easyplex.Exceptions.ValorInvalidoException;
-import classes.ufrpe.cine_easyplex.beans.Conta;
-import classes.ufrpe.cine_easyplex.dados.RepositorioConta;
+import br.com.ufrpe.cine_easyplex.dados.RepositorioConta;
+import br.com.ufrpe.cine_easyplex.negocio.beans.Conta;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 public interface iRepositorioContas {
 	
