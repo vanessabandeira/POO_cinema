@@ -135,6 +135,11 @@ public class ScreenManager {
 	public void getArrecadacao(){
 		border.setCenter(paneArrecadacao);
 		ArrecadacaoController controlador = this.arrecadacao.getController();
+		double valorTotalArrecadado = 0;
+		for(int i = 0; i<Fachada.getInstancia().getVendas().getRepositorioVendas().listar().size(); i++){
+			valorTotalArrecadado+=Fachada.getInstancia().getVendas().getRepositorioVendas().listar().get(i).calcularPreco();
+		}
+		controlador.lblTotalTotal.setText("R$ "+valorTotalArrecadado);
 	}
 	public void getRemoverSala(){
 		border.setCenter(paneRemoverSala);

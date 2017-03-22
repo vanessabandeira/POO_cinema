@@ -25,6 +25,7 @@ public class ArrecadacaoController{
 			System.out.println(e.getMessage());
 		}
 	}
+
 	public void sair(){
 		try{
 			ScreenManager.getInstance().getTelaLogin();
