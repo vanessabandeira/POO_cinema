@@ -115,4 +115,14 @@ public class OpcoesController {
 			System.out.println(e.getMessage());
 		}
 	}
+	
+	public void arrecadacao(){
+		try{
+			ScreenManager.getInstance().getArrecadacao();
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
 }
