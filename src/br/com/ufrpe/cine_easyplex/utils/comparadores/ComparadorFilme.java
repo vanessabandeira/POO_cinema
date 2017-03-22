@@ -1,4 +1,4 @@
-package br.com.ufrpe.cine_easyplex.negocio.utils.comparadores;
+package br.com.ufrpe.cine_easyplex.utils.comparadores;
 
 import java.util.Comparator;
 

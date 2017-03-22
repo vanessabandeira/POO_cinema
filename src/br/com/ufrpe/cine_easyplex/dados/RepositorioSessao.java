@@ -13,7 +13,7 @@ import java.util.List;
 
 import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Sessao;
-import br.com.ufrpe.cine_easyplex.negocio.utils.comparadores.ComparadorSessao;
+import br.com.ufrpe.cine_easyplex.utils.comparadores.ComparadorSessao;
 
 public class RepositorioSessao implements iRepositorioSessao, Serializable{
 	private static final long serialVersionUID = 6909618405924724329L;

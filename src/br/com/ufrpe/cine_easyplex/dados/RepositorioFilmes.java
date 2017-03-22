@@ -12,7 +12,7 @@ import java.util.Collections;
 
 import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
-import br.com.ufrpe.cine_easyplex.negocio.utils.comparadores.ComparadorFilme;
+import br.com.ufrpe.cine_easyplex.utils.comparadores.ComparadorFilme;
 import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 @SuppressWarnings("serial")
