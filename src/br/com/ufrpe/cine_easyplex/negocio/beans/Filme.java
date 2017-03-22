@@ -43,6 +43,11 @@ public class Filme implements Serializable {
 	public int getDuracao() {
 		return duracao;
 	}
+	
+	
+	public String getTitulo() {
+		return titulo;
+	}
 
 	public void setDuracao(int duracao) {
 		this.duracao = duracao;

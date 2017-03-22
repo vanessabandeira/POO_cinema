@@ -188,7 +188,7 @@ public class Fachada implements Serializable {
 	}
 
 	public void removerSessao(Sessao sessaoselecionada) {
-		sessoes.removerSessao(sessaoselecionada);
+		
 	}
 
 	public CadastroVendas getVendas() {
