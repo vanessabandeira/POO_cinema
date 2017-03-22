@@ -23,8 +23,6 @@ public class Venda implements Serializable {
 		else return this.valorInteiro;
 	}
 
-
-
 	public Sessao getSessao() {
 		return sessao;
 	}
