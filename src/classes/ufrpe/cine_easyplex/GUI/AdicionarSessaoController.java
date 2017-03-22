@@ -56,6 +56,13 @@ public class AdicionarSessaoController {
 	}
 	
 	public void sair(){
+		try{
+			ScreenManager.getInstance().getTelaLogin();
+			System.out.println("entrou aqui");
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
 		
 	}
 

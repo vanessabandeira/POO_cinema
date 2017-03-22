@@ -48,9 +48,9 @@ public class CadastroSalas {
 	public void editarSala(Sala sala){
 		this.repositorioSalas.alterar(sala);
 	}
-	public iRepositorioFilmes getRepositorioSalas() {
+	public iRepositorioSalas getRepositorioSalas() {
 		
-		return null;
+		return this.repositorioSalas;
 	}
 
 }
