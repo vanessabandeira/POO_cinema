@@ -3,7 +3,7 @@ package br.com.ufrpe.cine_easyplex.negocio.beans;
 import java.io.Serializable;
 
 public class Filme implements Serializable {
-	private String titulo;
+	public String titulo;
 	private String classificacao;
 	private String genero;
 	private int duracao;

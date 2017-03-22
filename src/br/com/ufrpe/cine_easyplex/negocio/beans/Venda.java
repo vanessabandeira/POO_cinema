@@ -4,40 +4,26 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Venda implements Serializable {
-	private int qtdIngressos, qtdMeias;
+	private boolean meia;;
 	private Sessao sessao;
-	private ArrayList<Integer> indiceLugar; 
+	private int indiceLugar; 
 	private int valorInteiro;
 	private int idVenda;
 	
-	public Venda(int qtdIngressos, int qtdMeias, Sessao sessao, ArrayList<Integer> indiceLugar, int valorInteiro) {
+	public Venda(int qtdIngressos, int qtdMeias, Sessao sessao, int indiceLugar, int valorInteiro) {
 		super();
-		this.qtdIngressos = qtdIngressos;
-		this.qtdMeias = qtdMeias;
+		this.meia = meia;;
 		this.sessao = sessao;
 		this.indiceLugar = indiceLugar;
 		this.valorInteiro = valorInteiro;
 	}
 
 	public float calcularPreco(){
-		return (this.qtdIngressos-this.qtdMeias)*valorInteiro + this.qtdMeias*valorInteiro/2;
+		if(meia) return this.valorInteiro/2;
+		else return this.valorInteiro;
 	}
 
-	public int getQtdIngressos() {
-		return qtdIngressos;
-	}
 
-	public void setQtdIngressos(int qtdIngressos) {
-		this.qtdIngressos = qtdIngressos;
-	}
-
-	public int getQtdMeias() {
-		return this.getQtdMeias();
-	}
-
-	public void setQtdMeias(int qtdMeias) {
-		this.qtdMeias = qtdMeias;
-	}
 
 	public Sessao getSessao() {
 		return sessao;
@@ -47,11 +33,20 @@ public class Venda implements Serializable {
 		this.sessao = sessao;
 	}
 
-	public ArrayList<Integer> getIndiceLugar() {
+
+	public boolean isMeia() {
+		return meia;
+	}
+
+	public void setMeia(boolean meia) {
+		this.meia = meia;
+	}
+
+	public int getIndiceLugar() {
 		return indiceLugar;
 	}
 
-	public void setIndiceLugar(ArrayList<Integer> indiceLugar) {
+	public void setIndiceLugar(int indiceLugar) {
 		this.indiceLugar = indiceLugar;
 	}
 

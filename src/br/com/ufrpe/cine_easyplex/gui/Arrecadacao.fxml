@@ -83,12 +83,12 @@
                   <Font name="Gotham Light" size="19.0" />
                </font>
             </Button>
-            <Label fx:id="tfTotalDia" layoutX="23.0" layoutY="189.0" prefHeight="36.0" prefWidth="97.0" textFill="WHITE">
+            <Label fx:id="lblTotalDia" layoutX="23.0" layoutY="189.0" prefHeight="36.0" prefWidth="97.0" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>
             </Label>
-            <Label fx:id="tfTotalTotal" layoutX="337.0" layoutY="189.0" prefHeight="36.0" prefWidth="95.0" textFill="WHITE">
+            <Label fx:id="lblTotalTotal" layoutX="337.0" layoutY="189.0" prefHeight="36.0" prefWidth="95.0" textFill="WHITE">
                <font>
                   <Font size="22.0" />
                </font>

@@ -1,15 +1,15 @@
 package br.com.ufrpe.cine_easyplex.gui;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
 
 public class ArrecadacaoController{
 	
-	@FXML TextField tfTotalDia, tfTotalTotal;
+	@FXML Label lblTotalDia, lblTotalTotal;
 	
 	public void initialize(){
-		tfTotalDia.setText(""+Fachada.getInstancia().getVendas().arrecadacaoDia());
-		tfTotalTotal.setText(""+Fachada.getInstancia().getVendas().arrecadacao());
+		lblTotalDia.setText("R$"+Fachada.getInstancia().getVendas().arrecadacaoDia());
+		lblTotalTotal.setText("R$"+Fachada.getInstancia().getVendas().arrecadacao());
 	}
 	
 	public void backToMenu(){
