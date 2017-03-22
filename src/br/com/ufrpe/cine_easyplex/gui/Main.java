@@ -1,6 +1,5 @@
-package br.com.ufrpe.cine_easyplex.aplicacao;
+package br.com.ufrpe.cine_easyplex.gui;
 
-import br.com.ufrpe.cine_easyplex.gui.Fachada;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -14,7 +13,7 @@ public class Main extends Application{
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			this.root = (BorderPane)FXMLLoader.load(getClass().getResource("TelaLogin.fxml"));
+			this.root = FXMLLoader.load(getClass().getResource("/br/com/ufrpe/cine_easyplex/gui/TelaLogin.fxml"));
 			Scene scene = new Scene(root,1080,720);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setTitle("Cine EasyPlex");

@@ -1,6 +1,5 @@
 package br.com.ufrpe.cine_easyplex.gui;
 
-import br.com.ufrpe.cine_easyplex.aplicacao.Main;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
