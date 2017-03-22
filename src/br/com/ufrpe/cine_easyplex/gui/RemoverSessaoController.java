@@ -19,28 +19,28 @@ public class RemoverSessaoController {
 	@FXML
 	private TableView<Sessao> tableView;
 	@FXML
-	private TableColumn<Sessao,Integer> listaSala;
+	private TableColumn<Sessao, String> listaSala = new TableColumn("Sala");
 	@FXML
-	private TableColumn<Sessao, String> listaTitulo;
+	private TableColumn<Sessao, String> listaTitulo = new TableColumn("Filme");
 	@FXML
-	private TableColumn<Sessao, String> listaHinicio;
+	private TableColumn<Sessao, String> listaHinicio = new TableColumn("Horário");
 	@FXML
-	private TableColumn<Sessao, String> listaHfim;
+	private TableColumn<Sessao, String> listaHfim = new TableColumn("Término");
 	
 	private Sessao sessaoselecionada;
 	Fachada fachada = Fachada.getInstancia();
 	@FXML Label lblError;
+	
 
 	public void preencherTabela(){
-		listaSala.setCellValueFactory(new PropertyValueFactory<Sessao, Integer>("Sala"));
-		listaTitulo.setCellValueFactory(new PropertyValueFactory<Sessao, String>("Titulo"));
+		listaSala.setCellValueFactory(new PropertyValueFactory<Sessao, String>("hall"));
+		listaTitulo.setCellValueFactory(new PropertyValueFactory<Sessao, String>("exibicao"));
 		listaHinicio.setCellValueFactory(new PropertyValueFactory<Sessao, String>("Hinicio"));
 		listaHfim.setCellValueFactory(new PropertyValueFactory<Sessao, String>("Hfim"));
 		
         tableView.setItems(FXCollections.observableArrayList(Fachada.getInstancia().getSessoes().getRepositorioSessao().listar()));
         tableView.refresh();
 	}
-	
 	public void remover() throws ValorInvalidoException {
 		sessaoselecionada = tableView.getSelectionModel().getSelectedItem();
 		if (sessaoselecionada != null) {

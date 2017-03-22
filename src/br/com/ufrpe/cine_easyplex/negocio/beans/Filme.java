@@ -20,10 +20,6 @@ public class Filme implements Serializable {
 
 	}
 
-	public String getTitulo() {
-		return titulo;
-	}
-
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
@@ -54,8 +50,7 @@ public class Filme implements Serializable {
 
 	@Override
 	public String toString() {
-		return " Título:" + titulo + " Classificação: " + classificacao + " Gênero: " + genero + " Duração:  " + duracao
-				+ " Nº Vendas: " + nvendas + "";
+		return this.titulo;
 	}
 
 	public boolean equals(Filme filme) {

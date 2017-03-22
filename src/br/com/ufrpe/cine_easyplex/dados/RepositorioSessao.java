@@ -121,14 +121,6 @@ public class RepositorioSessao implements iRepositorioSessao, Serializable{
 		return this.sessoes.indexOf(sessao);
 	}
 
-	public void pesquisarHorario(/* HoraInicio, HoraFim */) {
-		// recebe horario de inicio e fim e imprime sess�es dispon�veis entre o
-		// per�odo,
-		// caso horafim seja NULL, imprimir� todas as sess�es dispon�veis ap�s o
-		// horario de inicio
-		// HoraIn�cio n�o pode ser NULL
-		
-	}
 
 	public List<Sessao> listar() {
 		List<Sessao> listaOrdenada = this.sessoes;
