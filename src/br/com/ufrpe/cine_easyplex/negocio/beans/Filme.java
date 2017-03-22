@@ -2,14 +2,12 @@ package br.com.ufrpe.cine_easyplex.negocio.beans;
 
 import java.io.Serializable;
 
-
 public class Filme implements Serializable {
 	private String titulo;
 	private String classificacao;
 	private String genero;
 	private int duracao;
 	private int nvendas;
-	
 
 	public Filme(String titulo, String classificacao, String genero, int duracao) {
 		this.titulo = titulo;
@@ -17,9 +15,9 @@ public class Filme implements Serializable {
 		this.genero = genero;
 		this.duracao = duracao;
 	}
-	
-	public Filme(){
-		
+
+	public Filme() {
+
 	}
 
 	public String getTitulo() {
@@ -56,16 +54,19 @@ public class Filme implements Serializable {
 
 	@Override
 	public String toString() {
-		return " Título:" + titulo + " Classificação: " + classificacao + " Gênero: " + genero + " Duração:  "
-				+ duracao + " Nº Vendas: " + nvendas + "";
+		return " Título:" + titulo + " Classificação: " + classificacao + " Gênero: " + genero + " Duração:  " + duracao
+				+ " Nº Vendas: " + nvendas + "";
 	}
-	
-	public boolean equals(Filme filme){
-		if(this.titulo.equals(filme.titulo)){
+
+	public boolean equals(Filme filme) {
+		String a = this.titulo.toString();
+		String b = filme.titulo.toString();
+		a.toUpperCase();
+		b.toUpperCase();
+		if (a.toUpperCase().equals(b.toUpperCase())) {
 			return true;
 		}
 		return false;
 	}
-	
 
 }
