@@ -80,46 +80,21 @@ public class RepositorioVendas implements iRepositorioVendas{
         }
 	}
 	
-	public boolean inserir(Venda venda) throws ValorInvalidoException, PosicaoOcupadaException{
-		if(venda.getQtdIngressos() != 0){
-			if(venda.getIndiceLugar().size()==venda.getQtdIngressos()){
-				if(venda.getQtdMeias()<=venda.getQtdIngressos()){
-					int conferir = 0;
-					for(int i = 0; i < venda.getIndiceLugar().size(); i++){
-						if(venda.getSessao().conferirOcupacao(venda.getIndiceLugar().get(i))){
-							conferir++;
-						}
-					}
-					if(conferir == venda.getIndiceLugar().size()){
-						venda.setIdVenda(this.vendas.size()+1);
-						for(int i = 0; i < venda.getIndiceLugar().size(); i++){
-							venda.getSessao().getPosicao()[venda.getIndiceLugar().get(i)] = false;
-						}
-						this.vendas.add(venda);
-						this.salvarArquivo();
-						return true;
-					}
-					else{
-						throw new PosicaoOcupadaException();
-					}
-				}else throw new ValorInvalidoException("meias");
-			}else throw new ValorInvalidoException("lugares");
-		}else throw new ValorInvalidoException("ingressos");
+	public void inserir(Venda venda) {
+		this.vendas.add(venda);
+		this.salvarArquivo();
 		
 	}
-	public boolean remover(int idVenda) throws ValorInvalidoException{
+	public boolean remover(int idVenda){
 		Venda venda = this.pesquisar(idVenda);
 		if(venda != null){
-			for(int i = 0; i < venda.getIndiceLugar().size(); i++){
-				if(venda.getSessao().getPosicao()[venda.getIndiceLugar().get(i)]){
-					this.vendas.remove(venda);
-					this.salvarArquivo();
-					return true;
-				}
-			}
+			this.vendas.remove(venda);
+			this.salvarArquivo();
+			return true;
 		}
-		throw new ValorInvalidoException("venda");
+		return false;
 	}
+
 	
 	public Venda pesquisar(int idVenda) {
 		for(int i = 0; i < this.vendas.size(); i++){

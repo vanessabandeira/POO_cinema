@@ -7,7 +7,7 @@ public class Venda implements Serializable {
 	private boolean meia;;
 	private Sessao sessao;
 	private int indiceLugar; 
-	private int valorInteiro;
+	private float valorInteiro;
 	private int idVenda;
 	
 	public Venda(int qtdIngressos, int qtdMeias, Sessao sessao, int indiceLugar, int valorInteiro) {
@@ -52,11 +52,11 @@ public class Venda implements Serializable {
 		this.indiceLugar = indiceLugar;
 	}
 
-	public int getValorInteiro() {
+	public float getValorInteiro() {
 		return valorInteiro;
 	}
 
-	public void setValorInteiro(int valorInteiro) {
+	public void setValorInteiro(float valorInteiro) {
 		this.valorInteiro = valorInteiro;
 	}
 
