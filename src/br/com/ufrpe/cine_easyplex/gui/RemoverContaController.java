@@ -28,6 +28,11 @@ public class RemoverContaController {
 				tfSenha.clear();
 				tfRepetirSenha.clear();
 				lblError.setText("");
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("CineEasyPlex");
+				alert.setHeaderText("CONTA REMOVIDA");
+				alert.setContentText(null);
+				alert.showAndWait();
 			}
 			else throw new SenhasDiferentesException();
 		}
