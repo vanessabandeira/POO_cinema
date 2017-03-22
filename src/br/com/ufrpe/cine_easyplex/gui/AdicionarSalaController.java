@@ -26,6 +26,11 @@ public class AdicionarSalaController {
 			tfID.clear();
 			check3d.setSelected(false);
 			check4k.setSelected(false);
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("Adicionada com sucesso");
+			alert.setContentText(null);
+			alert.showAndWait();
 			
 		}
 		catch(NumberFormatException e){

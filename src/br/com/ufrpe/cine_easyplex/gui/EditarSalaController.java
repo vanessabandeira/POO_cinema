@@ -62,6 +62,11 @@ public class EditarSalaController {
 			tfPesquisa.clear();
 			check3d.setSelected(false);
 			check4k.setSelected(false);
+			Alert alert = new Alert(AlertType.INFORMATION);
+			alert.setTitle("CineEasyPlex");
+			alert.setHeaderText("SALA EDITADA COM SUCESSO");
+			alert.setContentText(null);
+			alert.showAndWait();
 		}
 		catch(NumberFormatException e){
 			Alert alert = new Alert(AlertType.INFORMATION);
