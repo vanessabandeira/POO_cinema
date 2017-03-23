@@ -1,6 +1,5 @@
 package br.com.ufrpe.cine_easyplex.negocio;
 
-import java.util.Date;
 
 import br.com.ufrpe.cine_easyplex.dados.RepositorioVendas;
 import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioVendas;

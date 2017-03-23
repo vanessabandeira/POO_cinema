@@ -77,6 +77,10 @@ public class ScreenManager {
 	
 	public void getTelaLogin(){
 		border.setCenter(this.paneLogin);
+		TelaLoginController controlador = this.login.getController();
+		controlador.tfLogin.clear();
+		controlador.tfSenha.clear();
+		
 	}
 	
 	public void getMenu(){

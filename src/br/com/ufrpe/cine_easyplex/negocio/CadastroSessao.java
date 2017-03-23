@@ -1,7 +1,6 @@
 package br.com.ufrpe.cine_easyplex.negocio;
 
 import java.util.ArrayList;
-import java.util.GregorianCalendar;
 
 import br.com.ufrpe.cine_easyplex.dados.RepositorioSessao;
 import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioSessao;

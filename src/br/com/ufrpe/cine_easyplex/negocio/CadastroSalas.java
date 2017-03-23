@@ -1,7 +1,6 @@
 package br.com.ufrpe.cine_easyplex.negocio;
 
 import br.com.ufrpe.cine_easyplex.dados.RepositorioSalas;
-import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioSalas;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Sala;
 import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
