@@ -3,6 +3,8 @@ package br.com.ufrpe.cine_easyplex.gui;
 import java.util.Optional;
 
 import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.FilmeExistenteException;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -38,17 +40,28 @@ public class AdicionarFilmesController {
 			filme.setDuracao(Integer.valueOf(tfDuracao.getText()));
 			filme.setClassificacao(classificacaoBox.getValue());
 			filme.setGenero(generoBox.getValue());
-			Fachada.getInstancia().getFilmes().adicionarFilme(filme);
-			//lblError.setText("Adicionado com sucesso!");
-			tfTitulo.clear();
-			classificacaoBox.setValue("L");
-			generoBox.setValue("Ação");
-			tfDuracao.clear();
-			Alert alert = new Alert(AlertType.INFORMATION);
-			alert.setTitle("CineEasyPlex");
-			alert.setHeaderText(null);
-			alert.setContentText(filme.toString() + " foi adicionado com sucesso.");
-			alert.showAndWait();
+			
+			try{
+				Fachada.getInstancia().getFilmes().adicionarFilme(filme);
+				Alert alert = new Alert(AlertType.INFORMATION);
+				alert.setTitle("CineEasyPlex");
+				alert.setHeaderText(null);
+				alert.setContentText(filme.toString() + " foi adicionado com sucesso.");
+				alert.showAndWait();
+				
+				tfTitulo.clear();
+				classificacaoBox.setValue("L");
+				generoBox.setValue("Ação");
+				tfDuracao.clear();
+				
+			}catch(FilmeExistenteException e){
+				System.out.println(e.getMessage());
+				Alert alert = new Alert(AlertType.ERROR);
+				alert.setTitle("CineEasyPlex");
+				alert.setHeaderText(null);
+				alert.setContentText(filme.toString() + " já existe.");
+				alert.showAndWait();
+			}
 			
 		}
 		catch(Exception e){

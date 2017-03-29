@@ -10,7 +10,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 import br.com.ufrpe.cine_easyplex.dados.RepositorioFilmes;
-import br.com.ufrpe.cine_easyplex.dados.RepositorioVendas;
 import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 import br.com.ufrpe.cine_easyplex.negocio.CadastroContas;
 import br.com.ufrpe.cine_easyplex.negocio.CadastroFilmes;
@@ -20,6 +19,7 @@ import br.com.ufrpe.cine_easyplex.negocio.CadastroVendas;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Sala;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Sessao;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.FilmeExistenteException;
 import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 public class Fachada implements Serializable {
@@ -135,11 +135,11 @@ public class Fachada implements Serializable {
 	}
 
 	public ArrayList<Filme> listarFilmes() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
-	public void adicionarFilme(Filme filme) throws ValorInvalidoException {
+	public void adicionarFilme(Filme filme) throws ValorInvalidoException, FilmeExistenteException {
 		filmes.adicionarFilme(filme);
 	}
 

@@ -3,6 +3,7 @@ package br.com.ufrpe.cine_easyplex.negocio;
 import br.com.ufrpe.cine_easyplex.dados.RepositorioFilmes;
 import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.FilmeExistenteException;
 import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 public class CadastroFilmes {
@@ -12,7 +13,7 @@ public class CadastroFilmes {
 		this.repositorioFilmes = RepositorioFilmes.getInstance();
 	}
 	
-	public void adicionarFilme(Filme filme) throws ValorInvalidoException{
+	public void adicionarFilme(Filme filme) throws ValorInvalidoException, FilmeExistenteException{
 		boolean adicionar = this.repositorioFilmes.inserir(filme);
 		if(adicionar){
 			System.out.println("Adicionado com sucesso!");

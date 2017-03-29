@@ -13,6 +13,7 @@ import java.util.Collections;
 import br.com.ufrpe.cine_easyplex.interfaces.iRepositorioFilmes;
 import br.com.ufrpe.cine_easyplex.negocio.beans.Filme;
 import br.com.ufrpe.cine_easyplex.utils.comparadores.ComparadorFilme;
+import br.com.ufrpe.cine_easyplex.utils.exceptions.FilmeExistenteException;
 import br.com.ufrpe.cine_easyplex.utils.exceptions.ValorInvalidoException;
 
 @SuppressWarnings("serial")
@@ -86,17 +87,28 @@ public class RepositorioFilmes implements iRepositorioFilmes, Serializable{
         }
 	}
 
-	public boolean inserir(Filme filme) throws ValorInvalidoException {
+	public boolean inserir(Filme filme) throws ValorInvalidoException, FilmeExistenteException {
 		if (filme != null) {
-			int search = pesquisar(filme);
-			if (search == -1) {
+
+			boolean existe = false;
+
+			for (int i = 0; i < this.filmes.size(); i++) {
+				if (filme.equals(this.filmes.get(i))) {
+					System.out.println(filme.getTitulo() + " / " + this.filmes.get(i));
+					existe = true;
+				}
+			}
+
+			if (!existe) {
 				this.filmes.add(filme);
 				this.salvarArquivo();
 				return true;
-			}else throw new ValorInvalidoException("filme já existe portanto");
-		}
-		else throw new ValorInvalidoException("filme");
+			} else
+				throw new FilmeExistenteException();
+		} else
+			throw new ValorInvalidoException("filme");
 	}
+
 
 	public boolean remover(Filme filme) throws ValorInvalidoException {
 		int search = pesquisar(filme);

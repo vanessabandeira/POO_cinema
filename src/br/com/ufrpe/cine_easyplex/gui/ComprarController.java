@@ -45,7 +45,7 @@ public class ComprarController {
 	int cadeira = -1;
 	float valor;
 	Sessao sessaoselecionada;
-//hello
+
 	public void setFilme(Filme filmeselecionado) {
 		this.filme = filmeselecionado;
 		gridCadeiras.getChildren().clear();
