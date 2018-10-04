@@ -32,7 +32,7 @@ public class RepositorioFilmes implements iRepositorioFilmes, Serializable{
 	
 	private RepositorioFilmes() {
 		this.filmes = new ArrayList<Filme>();
-		Filme filme = new Filme("Batman v Superman","14","Ação",150);
+		Filme filme = new Filme("Batman v Superman","14","Acao",150);
 		this.filmes.add(filme);
 	}
 	
@@ -116,7 +116,7 @@ public class RepositorioFilmes implements iRepositorioFilmes, Serializable{
 			this.filmes.remove(filme);
 			this.salvarArquivo();
 			return true;
-		}else throw new ValorInvalidoException("filme não existe portanto");
+		}else throw new ValorInvalidoException("filme nï¿½o existe portanto");
 
 	}
 
@@ -130,7 +130,7 @@ public class RepositorioFilmes implements iRepositorioFilmes, Serializable{
 			this.filmes.set(search, filme);
 			this.salvarArquivo();
 			return true;
-		}else throw new ValorInvalidoException("filme não existe portanto");
+		}else throw new ValorInvalidoException("filme nï¿½o existe portanto");
 		
 	}
 

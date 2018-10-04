@@ -99,19 +99,19 @@ public class RepositorioConta implements iRepositorioContas, Serializable{
 				this.salvarArquivo();
 				return true;
 			}
-			else throw new ValorInvalidoException("login e senha");
+			else throw new ValorInvalidoException("Erro no login e senha");
 		}
-		else throw new ValorInvalidoException("conta j· existe portanto");
+		else throw new ValorInvalidoException("Conta ja existente");
 	}
 	
 	public boolean remover(Conta conta) throws ValorInvalidoException{
 		int search = pesquisar(conta);
 		if (search != -1) {
 			this.contas.remove(conta);
-			System.out.println("removeu");
+			//System.out.println("removeu");
 			this.salvarArquivo();
 			return true;
-		}else throw new ValorInvalidoException("conta n„o existe portanto");
+		}else throw new ValorInvalidoException("Conta n√£o existe");
 	}
 	
 	public int pesquisar(Conta conta){
