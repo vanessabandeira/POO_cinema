@@ -124,7 +124,7 @@ public class RepositorioSessao implements iRepositorioSessao, Serializable{
 
 	public List<Sessao> listar() {
 		List<Sessao> listaOrdenada = this.sessoes;
-		//Collections.sort(listaOrdenada, new ComparadorSessao());
+		Collections.sort(listaOrdenada, new ComparadorSessao());
 		return listaOrdenada;
 	}
 
